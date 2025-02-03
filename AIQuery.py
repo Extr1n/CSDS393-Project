@@ -1,10 +1,7 @@
-import os
 from dotenv import load_dotenv
-from openai import OpenAI
-import requests
+from groq import Groq
 
 load_dotenv()
-from groq import Groq
 
 client = Groq()
 
