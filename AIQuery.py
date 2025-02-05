@@ -15,12 +15,12 @@ chat_completion = client.chat.completions.create(
         # how it should behave throughout the conversation.
         {
             "role": "system",
-            "content": "you are a helpful assistant."
+            "content": "You are an advisor for Case Western Reserve University."
         },
         # Set a user message for the assistant to respond to.
         {
             "role": "user",
-            "content": "Explain the importance of fast language models",
+            "content": "Hello!",
         }
     ],
 
