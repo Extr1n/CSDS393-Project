@@ -1,0 +1,358 @@
+[
+    {
+        "title":"EBME\u00a0105.  Introduction to Biomedical Engineering.  3 Units.",
+        "desc":"This course introduces students to a wide variety of biomedical engineering fields including: biomaterials, biomechanics, biomedical devices & instrumentation, and biomedical computing & analysis.  Emphasis is given to recognizing the difference between medical technology as a subject area vs. career tracks within which this subject area is: imagined, designed, fabricated and used.  Students learn to distinguish the difference between how a scientist, an engineer, and a clinician are trained and interact with medical technology.  Foundational topics like:  engineering design, structure-function relationship, biomimicry, and biocompatibility are presented at an introductory level.  Students well served by this course include:  first year students trying to decide if they want to major in biomedical engineering, first year students who know they want to major in biomedical engineering but are not certain which track they wish to pursue, and upper class students in non-biomedical engineering majors who are looking for deeper insight into what this fast growing field is about."
+    },
+    {
+        "title":"EBME\u00a0201.  Physiology-Biophysics I.  3 Units.",
+        "desc":"Fundamental concepts of physiology from the cells to organ systems.  Cell structure and function: DNA-RNA related enzyme\/protein synthesis, membrane permeation (receptors\/channels\/gates), cellular biochemistry and energetic metabolic functions. Essential systems-level concepts include endocrinology, immunology, cellular\/capillary\/interphase transport, regulation of fluid volume, solutes, and pH. Liver, renal and respiratory physiology. Basic concepts in thermodynamics, transport and kinetics provide a framework for quantitative analysis and modeling of systems physiology.\nPrereq: Must have declared major or minor in Biomedical Engineering."
+    },
+    {
+        "title":"EBME\u00a0202.  Physiology-Biophysics II.  3 Units.",
+        "desc":"This course is an extension ofEBME\u00a0201that will include structure and function of (1) the nervous system, including vision, somatic and proprioceptive sensation, and control of movement, (2) skeletal and smooth muscle, (3) cardiac muscle and the cardiovascular system, and (4) the metabolic system. The material will be taught from a quantitative and functional perspective, with some examples of human pathophysiology.\nPrereq:EBME\u00a0201."
+    },
+    {
+        "title":"EBME\u00a0300.  Dynamics of Biological Systems: A Quantitative Introduction to Biology.  3 Units.",
+        "desc":"This course will introduce students to dynamic biological phenomena, from the molecular to the population level, and models of these dynamical phenomena.  It will describe a biological system, discuss how to model its dynamics, and experimentally evaluate the resulting models.  Topics will include molecular dynamics of biological molecules, kinetics of cell metabolism and the cell cycle, biophysics of excitability, scaling laws for biological systems, biomechanics, and population dynamics.  Mathematical tools for the analysis of dynamic biological processes will also be presented.  Students will manipulate and analyze simulations of biological processes, and learn to formulate and analyze their own models. This course satisfies a laboratory requirement for the biology major.\nOffered asBIOL\u00a0300andEBME\u00a0300."
+    },
+    {
+        "title":"EBME\u00a0303.  Structure of Biological Materials.  3 Units.",
+        "desc":"Structure of proteins, nucleic acids, connective tissue and bone, from molecular to microscopic levels.  An introduction to bioengineering biological materials and biomimetic materials, and an understanding of how different instruments may be used for imaging, identification and characterization of biological materials. Recommended preparation:EMAC\u00a0270.\nOffered as:EBME\u00a0303andEMAC\u00a0303.\nPrereq:EBME\u00a0201,EBME\u00a0202, andEBME\u00a0306."
+    },
+    {
+        "title":"EBME\u00a0305.  Materials for Prosthetics and Orthotics.  3 Units.",
+        "desc":"A synthesis of skeletal tissue structure and biology, materials engineering, and strength of materials concepts.  This course is centered on deepening the concept of biocompatibility  and using it to pose and solve biomaterials problems.  We cover: fundamental concepts of materials used for load bearing medical applications, wear, corrosion, and failure of implants.  Structure and properties of hard tissues and joints are presented using a size hierarchy motif.  Tools and analysis paradigms useful in the characterization of biomaterials are covered in the context of orthopedic and dental applications.\nPrereq:EBME\u00a0306andEBME\u00a0370or Requisites Not Met permission."
+    },
+    {
+        "title":"EBME\u00a0306.  Introduction to Biomedical Materials.  3 Units.",
+        "desc":"Biomaterials design and application in different tissue and organ systems.  The relationship between the physical and chemical structure of biomaterials, functional properties, and biological response.\nPrereq:EBME\u00a0201andEBME\u00a0202."
+    },
+    {
+        "title":"EBME\u00a0307.  Biomechanical Prosthetic Systems.  3 Units.",
+        "desc":"Introduction to the basic biomechanics of human movement and applications to the design and evaluation of artificial devices intended to restore or improve movement lost due to injury or disease.  Measurement techniques in movement biomechanics, including motion analysis, electromyography, and gait analysis.  Design and use of upper and lower limb prostheses.  Principles of neuroprostheses with applications to paralyzed upper and lower extremities. Recommended preparation: Consent of instructor and senior standing.\nPrereq:EBME\u00a0308."
+    },
+    {
+        "title":"EBME\u00a0308.  Biomedical Signals and Systems.  3 Units.",
+        "desc":"Quantitative analysis of biomedical signals and physiological systems.  Time domain and frequency domain analysis of linear systems.  Fourier and Laplace transforms.  A\/D conversion and sampling.  Filter design.  Computational laboratory experiences with biomedical applications.\nPrereq:MATH\u00a0224orMATH\u00a0228.  Prereq or Coreq:ENGR\u00a0210.  Coreq:EBME\u00a0358."
+    },
+    {
+        "title":"EBME\u00a0309.  Modeling of Biomedical Systems.  3 Units.",
+        "desc":"Mathematical modeling and computational methods applied to biomedical systems. Spatially lumped and distributed models of electrical, mechanical, and chemical processes applied to cells, tissues, organ, and whole-body systems.\nPrereq:EBME\u00a0202andEBME\u00a0308. Coreq:EBME\u00a0359."
+    },
+    {
+        "title":"EBME\u00a0310.  Principles of Biomedical Instrumentation.  3 Units.",
+        "desc":"Physical, chemical, and biological, and system principles for biomedical measurements. Modular blocks and system integration. Sensors for displacement, force, pressure, flow, temperature, biopotentials, chemical composition of body fluids and biomaterial characterization. Patient safety related to instrumentation will also be covered.\nPrereq:EBME\u00a0308. Coreq:EBME\u00a0360."
+    },
+    {
+        "title":"EBME\u00a0316.  Biomaterials for Drug Delivery.  3 Units.",
+        "desc":"The teaching objective is to provide students with a basic understanding of the principles of design and engineering of well-defined molecular structures and architectures intended for applications in controlled release and organ-targeted drug delivery.  The course will discuss the therapeutic basic of drug delivery based on drug pharmacodynamics and clinical pharmacokinetics.  Biomaterials with specialized structural and interfacial properties will be introduced to achieve drug targeting and controlled release.  Offered asEBME\u00a0316andEBME\u00a0416.\nPrereq:EBME\u00a0306."
+    },
+    {
+        "title":"EBME\u00a0317.  Fundamentals of Biomechanics.  3 Units.",
+        "desc":"Fundamentals of biomechanics will teach students how to apply basic principles of mechanics to understand, explain and model biological processes at across the relevant length-scales (cell-tissue-organ-organism), and over a broad range of physiological systems (respiratory, ocular, circulatory, and musculoskeletal). Physiology of organs and tissues that are involved in biomechanical functions will also be covered.\nOffered asEMAE\u00a0307andEMAE\u00a0407andEBME\u00a0317.\nPrereq:ENGR\u00a0200."
+    },
+    {
+        "title":"EBME\u00a0320.  Biomedical Imaging.  3 Units.",
+        "desc":"General principles, instrumentation, and applications of biomedical imaging.  Topics include: x-ray, ultrasound, computed tomography, magnetic resonance imaging, nuclear imaging, image reconstruction, and image quality.  Recommended preparation:ENGR\u00a0210andEBME\u00a0202or equivalent.\nPrereq:EBME\u00a0308orECSE\u00a0246."
+    },
+    {
+        "title":"EBME\u00a0325.  Introduction to Tissue Engineering.  3 Units.",
+        "desc":"The goal of this course is to present students with a firm understanding of the primary components, design principles, and engineering concepts central to the field of tissue engineering. First, the biological principles of tissue formation during morphogenesis and wound repair will be examined. The cellular processes underlying these events will be presented with an emphasis on microenvironment regulation of cell behavior. Biomimetic approaches to controlling cell function and tissue formation via the development of biomaterial systems will then be investigated. Case studies of regeneration strategies for specific tissues will be presented in order to examine the different tissue-specific engineering strategies that may be employed. Special current topics in tissue engineering will also be covered. Recommended preparation:EBME\u00a0306,BIOL\u00a0362, andCHEM\u00a0223."
+    },
+    {
+        "title":"EBME\u00a0327.  Bioelectric Engineering.  3 Units.",
+        "desc":"Quantitative bioelectricity: action potentials and cable equations. Origins of biopotentials, biopotential recording, electrical stimulation of excitable tissue, electrodes\/electrochemistry and cardiac electrophysiology. Overview of major biomedical devices. Intended for graduating seniors.\nPrereq: Senior student standing."
+    },
+    {
+        "title":"EBME\u00a0328.  Biomedical Engineering R&D Training.  1 Unit.",
+        "desc":"This course will provide research and development in the laboratory of a mentoring faculty member.  Varied R&D experiences will include activities in biomedical instrumentation, tissue engineering, imaging, drug delivery, and neural engineering.  Each Student must identify a faculty mentor, and together they will create description of the training experience prior to the first class.\nPrereq:EBME\u00a0201andEBME\u00a0202."
+    },
+    {
+        "title":"EBME\u00a0329.  Tissue Biomechanics.  3 Units.",
+        "desc":"Building on prior coursework in the mechanical behavior of skeletal biological tissues and systems, this course will expand students' understanding of the biomechanics of tissue and the influence of material properties on the structure and function of organs and organisms. Specific course topics will include structure and functional relationships in tissues and organs; the response of the heart, vasculature, and tissue scaffolds to mechanical loads, including characteristics such as nonlinearity, viscoelasticity, and orthotropy.  Emphasis is placed on integrating basic analytical, experimental, and computational methods for a more complete understanding of the biomechanics of organs and tissues.\nPrereq:EBME\u00a0201andEBME\u00a0202."
+    },
+    {
+        "title":"EBME\u00a0330.  Clinical Correlates in Biomedical Engineering.  1 Unit.",
+        "desc":"Clinical correlations in biomedical engineering enable synthesis of basic engineering concepts around applications in medical practice.  In course, students will draw upon prior training in biophysics, anatomic structure and function, and mathematical modeling of physiologic systems in a weekly case-based critical care scenario.  Blending engineering and clinical concepts in this fashion will expand student's medical expertise.  This eight-week course will feature six critical care cases designed to associate and translate engineering concepts into relevant medical knowledge. Course didactic components will be posted on Canvas, and students will be expected to read and prepare arguments for each case to be discussed in class. Successful students will conclude this course with enhanced systems thinking and insight on prior biomedical knowledge and innovation, as well as having demonstrated measurable improvement in their critical thinking skills in the field of medicine.\nPrereq:EBME\u00a0202."
+    },
+    {
+        "title":"EBME\u00a0350.  Quantitative Molecular, Cellular and Tissue Bioengineering.  3 Units.",
+        "desc":"Physical and chemical principles associated with kinetics and mass transport. Molecular-cellular components incorporated in quantitative analysis of cellular, tissue, and organ systems. Mathematical and computational modeling developed for diagnostic and therapeutic applications.\nOffered asEBME\u00a0350andECHE\u00a0355.\nPrereq: Senior Status."
+    },
+    {
+        "title":"EBME\u00a0356.  Introduction to Biomaterials Engineering - Laboratory.  1 Unit.",
+        "desc":"This is a core BME Laboratory course directed at providing Biomedical Engineering undergraduate students 'hands on' experience in a component of biomaterials engineering, specifically, biocompatibility. To that end, the course will focus on blood compatibility (hemocompatibility) of biomaterials, by teaching students how to analyze the interaction of blood components (proteins, platelets, RBCs) on biomedical relevant coated versus uncoated polymer surfaces. The students will learn important characterization techniques like contact angle measurement, UV-Vis spectroscopy and optical microscopy in the context of characterizing blood interactions with materials. This course satisfies the GER Disciplinary Communication requirement only in combination withEBME\u00a0370. Counts as a Disciplinary Communication course.\nPrereq:EBME\u00a0201andEBME\u00a0202.  Prereq or Coreq:EBME\u00a0306."
+    },
+    {
+        "title":"EBME\u00a0358.  Biomedical Signals and Systems Laboratory.  1 Unit.",
+        "desc":"Computational laboratory experiences with biomedical applications.  Numerical methods with MATLAB applications in biomedical engineering.\nCoreq:EBME\u00a0308."
+    },
+    {
+        "title":"EBME\u00a0359.  Biomedical Computer Simulation Laboratory.  1 Unit.",
+        "desc":"Computer simulation of mathematical models of biomedical systems. Numerical methods with MATLAB applications.\nCoreq:EBME\u00a0309."
+    },
+    {
+        "title":"EBME\u00a0360.  Biomedical Instrumentation Laboratory.  1 Unit.",
+        "desc":"A laboratory which focuses on the basic components of biomedical instrumentation and provides hands-on experience for students inEBME\u00a0310, Biomedical Instrumentation. The purpose of the course is to develop design skills and laboratory skills in analysis and circuit development.\nCoreq:EBME\u00a0310."
+    },
+    {
+        "title":"EBME\u00a0361.  Biomedical Image Processing and Analysis.  3 Units.",
+        "desc":"Principles of image processing and analysis with applications to clinical and biomedical research.  Topics include image filtering, registration, morphological processing, segmentation, classification, and 3D image visualization.  There will be interesting, realistic computer projects in Matlab.   \nOffered asCSDS\u00a0361,CSDS\u00a0461,EBME\u00a0361, andEBME\u00a0461.\nPrereq:EBME\u00a0308."
+    },
+    {
+        "title":"EBME\u00a0370.  Principles of Biomedical Engineering Design.  3 Units.",
+        "desc":"Students learn and implement the design process to produce working prototypes of medical devices with potential commercial value to meet significant clinical needs.  Critical examination of contemporary medical problems is used to develop a specific problem statement.  The class is divided into teams of 3 to 4 students.  Each team integrates their knowledge and skills to design a device to meet their clinical need.  Project planning and management, including resource allocation, milestones, and documentation, are required to ensure successful completion of projects within the allotted time and budget.  Formal design reviews by a panel of advisors and outside medical device experts are required every four weeks.  Every student is required to give oral presentations at each formal review and is responsible for formal documentation of the design process, resulting in an executive summary and complete design history file of the project.  The course culminates with a public presentation of the team's device to a panel of experts.  This course is expected to provide the student with a real-world, capstone design experience.  Recommended preparation:EBME\u00a0310. This course satisfies the GER Disciplinary Communication requirement only in combination withEBME\u00a0356. Counts as a Disciplinary Communication course.\nPrereq: Senior standing or requisites not met permission."
+    },
+    {
+        "title":"EBME\u00a0380.  Biomedical Engineering Design Experience.  3 Units.",
+        "desc":"This course is the culmination of the BME educational experience in which the student will apply acquired skills and knowledge to create a working device or product to meet a medical need. Students will learn how to apply engineering skills to solve problems and physically realize a project design. The course structure includes regular meetings with a faculty project advisor, regular reports of accomplished activity, hands on fabrication of devices, and several lectures from leading engineers from industry and academia that have first hand experience in applying the principles of design to Biomedical Engineering. Students will also provide periodic oral progress reports and a final oral presentation with a written design report. Counts as a SAGES Senior Capstone course.\nPrereq:EBME\u00a0370and Senior standing or requisites not met permission."
+    },
+    {
+        "title":"EBME\u00a0398.  Biomedical Engineering Research Experience I.  1 - 3 Units.",
+        "desc":"Biomedical engineering students doing independent research in a laboratory of a Primary or Adjunct BME Faculty may obtain credit for their research effort if they register forEBME\u00a0398before they begin their research. The total number of credits is limited to three with a minimum of 1 credit per semester. Earning one credit requires about 4 hours of work per week. This is split between actual research in the lab (2-3 hours) and communication of results (1-2 hours). The communication component requires preparation of oral presentations and written reports. Grades are jointly determined by the research supervisor and the instructor.\nStudents are encouraged to work with others in the faculty laboratory, but they must make a major contribution to the project. A research project is expected to include a significant engineering component, such as design and\/or analysis. A design project must include a significant research component, such as applying the developed design to solve an actual biomedical problem. In advance of registration, all students must submit a course proposal (see FORMS on the BME web site). This proposal must be approved by their research mentor and submitted via email for approval by the course instructor. This course can qualify as a technical elective if the project includes material pertinent to the student's BME track and is approved in advance by the BME faculty member responsible for the BME track. To be approved as a technical elective, the project proposal should identify the new technical material the student will master, and a plan for assessing mastery."
+    },
+    {
+        "title":"EBME\u00a0399.  Biomedical Engineering Research Experience II.  1 - 3 Units.",
+        "desc":"The project can be a continuation of theEBME\u00a0398project but performed more independently, or a new project that is more challenging than the first project. As withEBME\u00a0398, the course may be taken for 1-3 credits, and repeated up to a total of 3 credits. Consent of Instructor is required.\nPrereq:EBME\u00a0398."
+    },
+    {
+        "title":"EBME\u00a0400.  Principles of Physiology.  1 Unit.",
+        "desc":"Students are expected to learn the principles of physiology of cells, tissues, and organ systems.  These include cell structure and function, genetics, endocrinology, immunology, renal and respiratory physiology, the cardiovascular system and the nervous system.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0400T.  Graduate Teaching I.  0 Unit.",
+        "desc":"This will provide the Ph.D. candidate with experience in teaching undergraduate or graduate students. The experience is expected to consist of direct student contact, but will be based upon the specific departmental needs and teaching obligations. This teaching experience will be conducted under the supervision of the faculty member who is responsible for the course, but the academic advisor will assess the educational plan to ensure that it provides an educational opportunity for the student. Recommended preparation:UNIV\u00a0400, BME Ph.D. student."
+    },
+    {
+        "title":"EBME\u00a0401D.  Biomedical Instrumentation and Signal Processing.  3 Units.",
+        "desc":"Graduate students with various undergraduate backgrounds will learn the fundamental principles of biomedical measurements that integrate instrumentation and signal processing with problem-based hands-on experience. Recommended preparation: Undergraduate circuit and signal processing class."
+    },
+    {
+        "title":"EBME\u00a0401L.  Biomedical Instrumentation and Signal Analysis Laboratory.  1 Unit.",
+        "desc":"This course accompanies EBME401D, Biomedical Instrumentation and Signal Analysis, an introductory graduate course for MS and PhD BME students. Students in the PhD section are required to take this course to gain hands-on experience with each of the three areas of this course: measurement circuits\/electronics, signal analysis, and transducers. The course involves the design, realization and testing of a device proposed by each student team. A final oral presentation and report on the results of the projects are graded and combined in one letter grade.\nCoreq:EBME\u00a0401D."
+    },
+    {
+        "title":"EBME\u00a0405.  ImmunoEngineering.  3 Units.",
+        "desc":"Immune engineering represents the intersection of engineering and immunology to design new technologies that can be used to better understand the immune system as well as direct it to improve health. Students will gain proficiency in the field by becoming capable of integrating basic concepts in immunology with emerging technologies, understanding primary research literature, critically analyzing data, and designing experiments. Toward this objective, the course will be taught using modules: (1) fundamentals of immunology, covering nomenclature of immunology, components of innate and adaptive immunity, and more; (2) the immunologist's toolbox, covering key experimental tools used to study immune responses, enabling students to critically analyze data in the literature and design experiments; (3) vaccines and immunotherapies, describing established and emerging vaccines and immunomodulatory drugs and mechanisms of action; and (4) the immune engineer's toolbox, providing a foundation of drug-delivery, material science and molecular engineering principles in the context of vaccines and immunomodulatory drugs."
+    },
+    {
+        "title":"EBME\u00a0406.  Polymers in Medicine.  3 Units.",
+        "desc":"This course covers the important fundamentals and applications of polymers in medicine, and consists of three major components: (i) the blood and soft-tissue reactions to polymer implants; (ii) the structure, characterization and modification of biomedical polymers; and (iii) the application of polymers in a broad range of cardiovascular and extravascular devices.  The chemical and physical characteristics of biomedical polymers and the properties required to meet the needs of the intended biological function will be presented.  Clinical evaluation, including recent advances and current problems associated with different polymer implants.  Recommended preparation:EBME\u00a0306or equivalent.\nOffered asEBME\u00a0406andEMAC\u00a0471.\nPrereq: Graduate Standing."
+    },
+    {
+        "title":"EBME\u00a0407.  Neural Interfacing.  3 Units.",
+        "desc":"Neural interfacing refers to the principles, methods, and devices that bridge the boundary between engineered devices and the nervous system. It includes the methods and mechanisms to get information efficiently and effectively into and out of the nervous system to analyze and control its function. This course examines advanced engineering, neurobiology, neurophysiology, and the interaction between all of them to develop methods of connecting to the nervous system. The course builds on a sound background in Bioelectric Phenomenon to explore fundamental principles of recording and simulation, electrochemistry of electrodes in biological tissue, tissue damage generated by electrical stimulation, materials and material properties, and molecular functionalization of devices for interfacing with the nervous system. Several examples of the state-of-art neural interfaces will be analyzed and discussed. Recommended preparation: EBME 401.\nPrereq: Graduate standing or Undergraduate with Junior or Senior standing and a cumulative GPA of 3.2 or above."
+    },
+    {
+        "title":"EBME\u00a0410.  Medical Imaging Fundamentals.  3 Units.",
+        "desc":"Physical principles of medical imaging. Imaging devices for x-ray, ultrasound, magnetic resonance, etc. Image quality descriptions. Patient risk. Recommended preparation:EBME\u00a0308andEBME\u00a0310or equivalent.\nPrereq: Graduate standing or Undergraduate with Junior or Senior standing and a cumulative GPA of 3.2 or above."
+    },
+    {
+        "title":"EBME\u00a0411.  Underpinnings of the Extracellular Matrix.  3 Units.",
+        "desc":"Collagen is the most plentiful protein in the body. Every tissue that lays down basement membrane utilizes collagen to attach cells to the extracellular matrix. Collagen is a primary structural element of tissues ranging from bone, cartilage and tendon to arterial wall, sclera and skin. Many of the mechanisms currently under consideration to describe how mechanical forces are transduced into cellular activity require the forces to travel through collagenous structures on their way to the cells.  This class presents the fundamentals of collagenous tissues in a combined lecture\/seminar format. Details at the molecular, fibrillar and whole tissue levels are presented. Applications ranging from how to obtain collagen molecules, to synthesizing gels for use in tissue engineering, to design and creation of collagen based materials for replacement and\/or augmentation of several tissues are presented. A series of guest lectures by researchers currently using and\/or developing collagen based materials are presented. Throughout the course, students choose articles of interest, present them to the class, and participate in discussions surrounding these presentations. The course concludes with a series of in-class presentations by the students who pick a specific application of interest to them and then demonstrate how the fundamentals presented in the first portion of the class play out in their application. While not required, it is recommended that students have an undergraduate course in biomaterials, two semesters of undergraduate biology, and organic chemistry.\nPrereq: Graduate Student standing."
+    },
+    {
+        "title":"EBME\u00a0416.  Biomaterials for Drug Delivery.  3 Units.",
+        "desc":"The teaching objective is to provide students with a basic understanding of the principles of design and engineering of well-defined molecular structures and architectures intended for applications in controlled release and organ-targeted drug delivery.  The course will discuss the therapeutic basic of drug delivery based on drug pharmacodynamics and clinical pharmacokinetics.  Biomaterials with specialized structural and interfacial properties will be introduced to achieve drug targeting and controlled release.  Offered asEBME\u00a0316andEBME\u00a0416.\nPrereq:EBME\u00a0306andPHRM\u00a0309or graduate standing."
+    },
+    {
+        "title":"EBME\u00a0419.  Applied Probability and Stochastic Processes for Biology.  3 Units.",
+        "desc":"Applications of probability and stochastic processes to biological systems. Mathematical topics will include: introduction to discrete and continuous probability spaces (including numerical generation of pseudo random samples from specified probability distributions), Markov processes in discrete and continuous time with discrete and continuous sample spaces, point processes including homogeneous and inhomogeneous Poisson processes and Markov chains on graphs, and diffusion processes including Brownian motion and the Ornstein-Uhlenbeck process.  Biological topics will be determined by the interests of the students and the instructor.  Likely topics include: stochastic ion channels, molecular motors and stochastic ratchets, actin and tubulin polymerization, random walk models for neural spike trains, bacterial chemotaxis, signaling and genetic regulatory networks, and stochastic predator-prey dynamics.  The emphasis will be on practical simulation and analysis of stochastic phenomena in biological systems.  Numerical methods will be developed using a combination of MATLAB, the R statistical package, MCell, and\/or URDME, at the discretion of the instructor.  Student projects will comprise a major part of the course.\nOffered asBIOL\u00a0319,ECSE\u00a0319,MATH\u00a0319,SYBB\u00a0319,BIOL\u00a0419,EBME\u00a0419,MATH\u00a0419,PHOL\u00a0419, andSYBB\u00a0419."
+    },
+    {
+        "title":"EBME\u00a0421.  Bioelectric Phenomena.  3 Units.",
+        "desc":"The goal of this course is to provide working knowledge of the theoretical methods that are used in the fields of electrophysiology and bioelectricity for both neural and cardiac systems.  These methods will be applied to describe, from a theoretical and quantitative perspective, the electrical behavior of excitable cells, the methods for recording their activity and the effect of applied electrical and magnetic fields on excitable issues.  A team modeling project will be required.  Recommended preparation: differential equations, circuits.\nPrereq: Graduate standing or Undergraduate with Junior or Senior standing and a cumulative GPA of 3.2 or above."
+    },
+    {
+        "title":"EBME\u00a0426.  Nanomedicine.  3 Units.",
+        "desc":"Principles of the design and application of nanomedicine, including nanosized drug delivery systems, protein delivery systems, gene delivery systems and imaging probes.  Methods for bioconjugation and surface modifications.  Structure property relationships of nanosized biomaterials.  In vivo and intracellular transport, pharmacokinetics, biodistribution, drug release kinetics, and biocompatibility of various nanosized therapeutics and diagnostics.  Theranostics, image-guided drug delivery and therapy.\nPrereq:EBME\u00a0316orEBME\u00a0416or requisites not met permission"
+    },
+    {
+        "title":"EBME\u00a0427.  Movement Biomechanics and Rehabilitation.  3 Units.",
+        "desc":"Introduction to the basic biomechanics of human movement and applications to the design and evaluation of artificial devices intended to restore or improve movement lost due to injury or disease. Measurement techniques in movement biomechanics, including motion analysis, electromyography, and gait analysis. Design and use of upper and lower limb prostheses. Principles of neuroprostheses with applications to paralyzed upper and lower extremities. Term paper required. Recommended preparation: Consent of instructor and graduate standing.\nPrereq: Graduate standing or Undergraduate with Junior or Senior standing and a cumulative GPA of 3.2 or above."
+    },
+    {
+        "title":"EBME\u00a0431.  Physics of Imaging.  3 Units.",
+        "desc":"Description of physical principles underlying the spin behavior in MR and Fourier imaging in multi-dimensions. Introduction of conventional, fast, and chemical-shift imaging techniques. Spin echo, gradient echo, and variable flip-angle methods. Projection reconstruction and sampling theorems. Bloch equations, T1 and T2 relaxation times, rf penetration, diffusion and perfusion. Flow imaging, MR angiography, and functional brain imaging. Sequence and coil design. Prerequisite may be waived with consent of instructor. Recommended preparation:PHYS\u00a0122orPHYS\u00a0124orEBME\u00a0410.\nOffered asEBME\u00a0431andPHYS\u00a0431."
+    },
+    {
+        "title":"EBME\u00a0433.  Advanced Topics for Physiological Systems Analysis.  4 Units.",
+        "desc":"Mathematical modeling and simulation of cellular, tissue, and organ systems: respiratory, renal, liver, cardiovascular, neural, and muscular. Dynamic mass transport and reaction processes. Cellular metabolism. Cardiac electrophysiology and regulation. Excitable cells and tissue. Neural system integration, feedback, and control. Multi-cellular dynamics, bone regeneration, cellular-biomaterial interactions, tracer kinetics, isotope analysis, biomechanical modeling of the heart, metabolic modeling, neural-muscular control, brain circuitry.\nRecommended Preparation: differential equations, linear algebra, MATLAB."
+    },
+    {
+        "title":"EBME\u00a0434.  Methodologies for Modeling Physiological Systems.  2 Units.",
+        "desc":"This course focuses on mathematical modeling of biomedical systems with applications, such as drug delivery and imaging. Techniques for modeling and solving such problems include ordinary and partial differential equations, numerical integration and approximation methods, compartment modeling, parameter estimation, and stochastic models.  Recommended Preparation: differential equations, linear algebra, MATLAB.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0435.  Advanced Topics of Compartmental Modeling.  1 Unit.",
+        "desc":"Compartment modeling and simulation of cellular, tissue, and organ systems including dynamic mass transport and reaction processes, cellular metabolism, tracer analysis. Advanced topics on applications of compartmental modeling in biomedical research, including drug delivery, dynamic contrast imaging, tracer kinetics in metabolic research. Recommended Preparation: differential equations, linear algebra, MATLAB.\nPrereq:EBME\u00a0434."
+    },
+    {
+        "title":"EBME\u00a0436.  Neuromuscular Physiology and Analysis.  1 Unit.",
+        "desc":"In biomedical engineering, it is important to understand both the anatomy and physiology of various critical systems. In addition, we can better develop advanced technology, as well as, gain a more complete insight and prediction about physiologic systems by developing and analyzing mathematical models about these systems. In this course focus will be applied to the neural and motor systems. The systems will be described from the perspective of the neural system and a message processing system. There are four main sections: 1) The fundamental principles of bioelectric cells; 2) The \"inputs\" or sensory systems; 3) The outputs or the muscular system; and 4) The processing system, including the autonomic system, central nervous system, and enteric nervous system. In each section representative mathematical models will be introduced. The course ranges for philosophical considerations to details models of somatosensory neuromuscular physiology.\nPrereq:EBME\u00a0434."
+    },
+    {
+        "title":"EBME\u00a0440.  Translational Research for Biomedical Engineers.  3 Units.",
+        "desc":"Translational Research (TR) in the Biomedical Engineering context means translating laboratory discoveries or developments into improved health care.  Topics and activities include: Interdisciplinary teamwork and  communication; Research ethics and human subjects protection; Regulation and oversight of human subjects and animal research; Clinical validation study design and biostatistics; Intellectual property, technology transfer and commercialization; Physician shadowing; Attending Grand Rounds and Morbidity-Mortality conferences; Preparing IRB and IACUC protocols; Final integrative project.\nPrereq: Graduate standing or Undergraduate with Junior or Senior standing and a cumulative GPA of 3.2 or above."
+    },
+    {
+        "title":"EBME\u00a0446.  Introduction to Regulatory Affairs.  3 Units.",
+        "desc":"This introductory course explores government oversight of devices and drugs, and the laws and regulations that apply to their development, testing and production. This course also examines the context in which regulations evolved; the structure of the FDA and its relationship with other regulatory agencies.  Class topics will include preclinical, clinical, regulatory, and marketing factors which influence commercialization of new medical products. Through lectures and class discussions, students will gain insight on clearance pathways for medical devices, drugs, and combination products, the understanding of which leads to the delivery of safe and effective healthcare products, including post-marketing surveillance.  It is expected that the knowledge gained from the course will be useful in allowing students to position various individual research projects into the broader context of product development, regulatory approval and eventual market access.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0450.  Biomedical Engineering Entrepreneurship.  3 Units.",
+        "desc":"Biomedical engineering entrepreneurship is a unique in its interdisciplinary and multidisciplinary scope. In this course we examine medical technology innovations in the context of (A) identifying unmet clinical needs, (B) the process of conducting an opportunity analysis for an investable concept, and (C) subsequent translation of these advances into the market This course will emphasize and explore a variety of issues related to innovation and entrepreneurship, demonstrating that there are not many \"absolute truths,\" but there are numerous best practices and processes that create value.  Successful students will conclude this course with new knowledge and insight on biomedical technology and innovation, as well as having demonstrated measurable improvement in their critical thinking skills.\nPrereq: Graduate student standing."
+    },
+    {
+        "title":"EBME\u00a0451.  Molecular and Cellular Physiology.  3 Units.",
+        "desc":"This course covers cellular and molecular basics for graduate students with little or no prior biology background.  The emphasis ofEBME\u00a0451is on the molecular and cellular mechanisms underlying physiological processes.  Structure-function relationship will be addressed throughout the course.  The primary goal of the course is to develop understanding of the principles of the physiological processes at molecular and cellular level and to promote independent thinking and ability to solve unfamiliar problems.  This course is no longer a core course of the Biomedical Engineering graduate curriculum but serves as a fundamentals course to prepare students for the graduate cellular and molecular physiology core.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0454.  Introduction to Grant and Fellowship Writing.  1 Unit.",
+        "desc":"This course is intended for first and possibly second year graduate students to learn how to write proposals, such as NSF Graduate Fellowship proposals.  Students will be instructed on how to plan their proposal, will go through a mentored proposal writing exercise, and will participate in peer review of their proposals.\nThe course will take place only in the first half of the semester, at twice the normal frequency, since proposals are due in mid-semester (e.g. October).\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0456.  Micro-Electro-Mechanical Systems in Biology and Medicine (BioMEMS).  3 Units.",
+        "desc":"Microscale technologies have enabled advanced capabilities for researchers in unexplored territories of cells in biology and medicine. Biological (or Biomedical) Micro-Electro-Mechanical Systems (MEMS) and Biomanufacturing involve the fundamentals of mechanics, electronics and advanced microfabrication technologies with specific emphasis on biological applications. MEMS is an interdisciplinary research area which brings together multiple disciplines including, mechanical engineering, biomedical engineering, chemical engineering, materials science, electrical engineering, clinical sciences, medicine, and biology. MEMS based technologies have found real world applications in tissue engineering, implantable microdevices, proteomics, genomics, molecular biology, biosensing, and point-of-care diagnostic platforms. This course aims to: (1) introduce the need for miniaturized systems in biology and medicine and the fundamental design and microfabrication concepts, (2) introduce the basics of microscale manipulation of cells, biological agents, and biomanufacturing, employing the fundamentals of microscale behaviors of fluids and mechanical systems, (3) expose the students to applications of MEMS, biosensing, and on-chip technologies in biology and medicine.\nOffered asEBME\u00a0456andEMAE\u00a0456."
+    },
+    {
+        "title":"EBME\u00a0460.  Advanced Topics in NMR Imaging.  3 Units.",
+        "desc":"Frontier issues in understanding the practical aspects of NMR imaging.  Theoretical descriptions are accompanied by specific examples of pulse sequences, and basic engineering considerations in MRI system design.  Emphasis is placed on implications and trade-offs in MRI pulse sequence design from real-world versus theoretical perspectives. Recommended preparation:EBME\u00a0431orPHYS\u00a0431.\nOffered asEBME\u00a0460andPHYS\u00a0460.\nPrereq: Graduate standing or Undergraduate with Junior or Senior standing and a cumulative GPA of 3.2 or above."
+    },
+    {
+        "title":"EBME\u00a0461.  Biomedical Image Processing and Analysis.  3 Units.",
+        "desc":"Principles of image processing and analysis with applications to clinical and biomedical research.  Topics include image filtering, registration, morphological processing, segmentation, classification, and 3D image visualization.  There will be interesting, realistic computer projects in Matlab.   \nOffered asCSDS\u00a0361,CSDS\u00a0461,EBME\u00a0361, andEBME\u00a0461.\nPrereq: EBME 401."
+    },
+    {
+        "title":"EBME\u00a0463.  AI in Medical Imaging.  3 Units.",
+        "desc":"AI in medical imaging is experiencing tremendous growth all over the world. Biomedical imaging and its analysis are fundamental to understanding, visualizing, and quantifying medical images in clinical applications. With the help of automated and quantitative image analysis techniques, disease diagnosis will be easier\/faster, and more accurate, leading to significant development in medicine in general. This course aims to help students develop skills in artificial intelligence and machine learning techniques applied to biomedical image analysis. With an emphasis on the machine\/deep learning approach, students will learn: 1) Fundamentals of radiological image modalities and their clinical use 2) Introduction to Medical Image Computing and Machine Learning 3) Medical Image Registration, Segmentation, Visualization 4) Machine Learning\/Deep Learning Prediction of Disease and Staging. The course includes significant hands-on processing. Students will enhance their AI, medical image analysis, and programming skills. They will solve realistic biomedical imaging problems in interesting computer projects.\nOffered asCSDS\u00a0466andEBME\u00a0463."
+    },
+    {
+        "title":"EBME\u00a0465.  Biomedical Optical Imaging.  3 Units.",
+        "desc":"Fundamentals of biomedical optics (biophotonics) with a focus on concepts and instrumentation behind light-based imaging of biological tissues. Topics include: essentials of optics and photonics, light-tissue interactions, optical imaging, conventional and advanced microscopies, optical coherence tomography. Course will include hands-on labs and demonstrations.\nPrereq:EBME\u00a0308and (Graduate standing or Undergraduate with Junior or Senior standing and a cumulative GPA of 3.2 or above) or Requisites Not Met permission."
+    },
+    {
+        "title":"EBME\u00a0467.  Commercialization and Intellectual Property Management.  3 Units.",
+        "desc":"This interdisciplinary course covers a variety of topics, including principles of intellectual property and intellectual property management, business strategies and modeling relevant to the creation of start-up companies and exploitation of IP rights as they relate to biomedical-related inventions.  The goal of this course is to address issues relating to the commercialization of biomedical-related inventions by exposing law students, MBA students, and Ph.D. candidates (in genetics and proteomics) to the challenges and opportunities encountered when attempting to develop biomedical intellectual property from the point of early discovery to the clinic and market.  Specifically, this course seeks to provide students with the ability to value a given technological advance or invention holistically, focusing on issues that extend beyond scientific efficacy and include patient and practitioner value propositions, legal and intellectual property protection, business modeling, potential market impacts, market competition, and ethical, social, and healthcare practitioner acceptance.  During this course, law students, MBA students, and Ph.D. candidates in genomics and proteomics will work in teams of five (two laws students, two MBA students and one Ph.D. candidate), focusing on issues of commercialization and IP management of biomedical-related inventions.  The instructors will be drawn from the law school, business school, and technology-transfer office.  Please visit the following website for more information: fusioninnovate.com.\nOffered asEBME\u00a0467,ECSE\u00a0467,GENE\u00a0367,GENE\u00a0467,LAWS\u00a05341,MGMT\u00a0467, andRGME\u00a0467."
+    },
+    {
+        "title":"EBME\u00a0471.  Principles of Medical Device Design and Innovation.  3 Units.",
+        "desc":"Translational research leading to medical device innovation is highly interdisciplinary, requiring a systematic, structured approach to bringing new  medical technologies to market. This course provides the fundamental principles of the Biodesign innovation process, providing the student the essential tools to (A) identify unmet clinical needs, (B) create innovative medical device concepts that respond to a primary unmet need, and (C) understand the process for translating these concepts into the market. In short, the student learns the fundamental principles for the process of  identify, invent, implement in the field of Biodesign.  Students takingEBME\u00a0471(distance learning) cannot register forEBME\u00a0472BioDesign (on-site) as the core content is substantially similar."
+    },
+    {
+        "title":"EBME\u00a0472.  BioDesign.  3 Units.",
+        "desc":"Medical device innovations that would have been considered science fiction a decade ago are already producing new standards of patient care.  Innovation leading to lower cost of care, minimally invasive procedures and shorter recovery times is equally important to healthcare business leaders, educators, clinicians, and policy-makers.  Innovation is a driver of regional economic development and wealth creation in organizational units ranging in size from the start-up to the Fortune 500 companies.  In a broader context, the pace of translational research leading to product and service innovation is highly interdisciplinary, thus, new products and services result from team efforts, marked by a systematic, structured approach to bringing new medical technologies to market and impacting patient care.  In this course we examine medical technology innovations in the context of (A) addressing unmet clinical needs, (B) the process of inventing new medical devices and instruments, and (C) subsequent implementation of these advances in patient care.  In short, the student learns the process of \"identify, invent, implement\" in the field of BioDesign.\nOffered asEBME\u00a0472,MGTE\u00a0472, andSYBB\u00a0472."
+    },
+    {
+        "title":"EBME\u00a0473.  Fundamentals of Clinical Information Systems.  3 Units.",
+        "desc":"Technology has played a significant role in the evolution of medical science and treatment.  While we often think about progress in terms of the practical application of, say, imaging to the diagnosis and monitoring of disease, technology is increasingly expected to improve the organization and delivery of healthcare services, too.  Information technology plays a key role in the transformation of administrative support systems (finance and administration), clinical information systems (information to support patient care), and decision support systems (managerial decision-making).  This introductory graduate course provides the student with the opportunity to gain insight and situational experience with clinical information systems (CIS).  Often considered synonymous with electronic medical records, the \"art\" of CIS more fundamentally examines the effective use of data and information technology to assist in the migration away from paper-based systems and improve organizational performance.  In this course we examine clinical information systems in the context of (A) operational and strategic information needs, (B) information technology and analytic tools for workflow design, and (C) subsequent implementation of clinical information systems in patient care.  Legal and ethical issues are explored.  The student learns the process of \"plan, design, implement\" through hands-on applications to select CIS problems, while at the same time gaining insights and understanding of the impacts placed on patients and health care providers.\nOffered asEBME\u00a0473,MGTE\u00a0473, andSYBB\u00a0421."
+    },
+    {
+        "title":"EBME\u00a0474.  Biotransport Processes.  3 Units.",
+        "desc":"Biomedical mass transport and chemical reaction processes.  Basic mechanisms and mathematical models based on thermodynamics, mass and momentum conservation.  Analytical and numerical methods to simulate in vivo processes as well as to develop diagnostic and therapeutic methods.  Applications include transport across membranes, transport in blood, tumor processes, bioreactors, cell differentiation, chemotaxis, drug delivery systems, tissue engineering processes.  Recommended preparation:EBME\u00a0350or equivalent.\nOffered asEBME\u00a0474andECHE\u00a0474."
+    },
+    {
+        "title":"EBME\u00a0478.  Computational Neuroscience.  3 Units.",
+        "desc":"Computer simulations and mathematical analysis of neurons and neural circuits, and the computational properties of nervous systems.  Students are taught a range of models for neurons and neural circuits, and are asked to implement and explore the computational and dynamic properties of these models.  The course introduces students to dynamical systems theory for the analysis of neurons and neural learning, models of brain systems, and their relationship to artificial and neural networks.  Term project required.  Students enrolled inMATH\u00a0478will make arrangements with the instructor to attend additional lectures and complete additional assignments addressing mathematical topics related to the course.   Recommended preparation:MATH\u00a0223andMATH\u00a0224orBIOL\u00a0300andBIOL\u00a0306.\nOffered asBIOL\u00a0378,COGS\u00a0378,MATH\u00a0378,BIOL\u00a0478,CSDS\u00a0478,EBME\u00a0478,ECSE\u00a0478,MATH\u00a0478andNEUR\u00a0478."
+    },
+    {
+        "title":"EBME\u00a0480D.  The Health Care Delivery Ecosystem.  3 Units.",
+        "desc":"Health care delivery across the continuum of care in the United States, including health policy and reform, financing of care, comparative health systems, population health, public health, access to care, care models, cost and value, comparative effectiveness, governance, management, accountability, workforce, and the future.  Discussions of opportunities and challenges for wireless health, integrated into the foregoing topics.  Perspective on health care delivery in other countries.\nOffered asECSE\u00a0480DandEBME\u00a0480D."
+    },
+    {
+        "title":"EBME\u00a0480F.  Physicians, Hospitals and Clinics.  3 Units.",
+        "desc":"Rotation through one or more health care provider facilities for a first-hand understanding of care delivery practice, coordination, and management issues.  First-hand exposure to clinical personnel, patients, medical devices and instruments, and organizational workflow.  Familiarity with provider protocols, physician referral practices, electronic records, clinical decision support systems, acute and chronic care, and inpatient and ambulatory care.\nOffered asECSE\u00a0480FandEBME\u00a0480F."
+    },
+    {
+        "title":"EBME\u00a0480S.  Wireless Health Product Development.  3 Units.",
+        "desc":"Integrating application requirements, market data, concept formulation, design innovation, and manufacturing resources for creating differentiated wireless health products that delight the user.  Learning user-centric product development best practices, safety, security and privacy considerations, and risk management planning.  Understanding the regulatory process.  Identifying and managing product development tradeoffs.\nOffered asECSE\u00a0480SandEBME\u00a0480S.\nPrereq: EBME 480R."
+    },
+    {
+        "title":"EBME\u00a0491.  Introduction to Translational Health Technology.  2 Units.",
+        "desc":"Introduction to Translational Health Technology serves to orient students to the field of translational health and highlight specific product development philosophy, projects, and careers in the field.  This course of study is particularly helpful for those students enrolled in lock-step translational health specialty degree programs, so they are adequately coached and prepared for the \"road ahead\" in the translation of leading-edge research into patient care.  In addition to providing specific instructional elements, this course also helps students frame the type of capstone project they may wish to pursue as part of their degree program.  The course of study includes invited presentations by the existing graduate students to enable: (A) graduate students a chance to reflect on their research and project work and, (B) for new students to develop first-hand experience with the process of inquiry and debate relating to the field of translational health technology."
+    },
+    {
+        "title":"EBME\u00a0500T.  Graduate Teaching II.  0 Unit.",
+        "desc":"This course will provide the Ph.D. candidate with experience in teaching undergraduate or graduate students. The experience is expected to consist of direct student contact, but will be based upon the specific departmental needs and teaching obligations. This teaching experience will be conducted under the supervision of the faculty member who is responsible for the course, but the academic advisor will the assess the educational plan to ensure that it provides an educational opportunity for the students. Recommended preparation:EBME\u00a0400T, BME Ph.D. student."
+    },
+    {
+        "title":"EBME\u00a0515.  Grant Writing II.  2 Units.",
+        "desc":"This course introduces students to writing research proposals.  Students will be asked to write a short, concise proposal written according to this funding mechanism is thus appropriate for a student in the formative stages of his or her research project to acquire the skills for conceiving and writing a research proposal.  The research proposal can be hypothesis-driven or design-driven. It should include specific aims, Background and Significance (Narrative and Innovation), Approach (Research Strategy and Preliminary Results) and References.  The intent for the written proposal is to prepare students for the department's requirement of a written and associated oral presentation and defense to evaluate the ability of the student to formulate a research problem, to state hypotheses or outline design objectives, to propose a research plan using feasible design, experiment and analysis techniques to either test those hypotheses or achieve the design objectives, and to interpret data. While this proposal will often represent the research ultimately pursued by the student, it is recognized that the details of the proposal and even its goals may evolve significantly over time. Students who have or are writing fellowship proposals are encouraged to use the same concepts in this research proposal, but they should convert the material into the NIH R21 format and should include all of the required components.\nPrereq:EBME\u00a0454andEBME\u00a0570."
+    },
+    {
+        "title":"EBME\u00a0570.  Graduate Professional Development for Biomedical Engineers.  1 Unit.",
+        "desc":"Students will be trained in topics including public speaking, grant writing, notebook management, professionalism, etc.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0600T.  Graduate Teaching III.  0 Unit.",
+        "desc":"This course will provide the Ph.D. candidate with experience in teaching undergraduate or graduate students. The experience is expected to consist of direct student contact, but will be based upon the specific departmental needs and teaching obligations. This teaching experience will be conducted under the supervision of the faculty member who is responsible for the course, but the academic advisor will the assess the educational plan to ensure that it provides an educational opportunity for the students. Recommended preparation:EBME\u00a0500T, BME Ph.D. student."
+    },
+    {
+        "title":"EBME\u00a0601.  Pre-candidacy Ph.D. Research.  1 - 18 Units.",
+        "desc":"Credit as arranged."
+    },
+    {
+        "title":"EBME\u00a0602.  Special Topics.  1 - 18 Units.",
+        "desc":"Credit as arranged."
+    },
+    {
+        "title":"EBME\u00a0611.  BME Departmental Seminar I.  .5 Unit.",
+        "desc":"Lectures by invited speakers on subjects of current interest in biomedical engineering.  Students will be evaluated on reading and preparation of questions for select speakers, as well as weekly participation.  Between this course andEBME\u00a0612students must earn a minimum of 1 credit (two semesters) and can take up to 4 credits over eight different semesters."
+    },
+    {
+        "title":"EBME\u00a0612.  BME Departmental Seminar II.  .5 Unit.",
+        "desc":"Lectures by invited speakers on subjects of current interest in biomedical engineering.  Students will be evaluated on reading and preparation of questions for select speakers, as well as weekly participation.  Between this course andEBME\u00a0611students must earn a minimum of 1 credit (two semesters) and can take up to 4 credits over eight different semesters."
+    },
+    {
+        "title":"EBME\u00a0613.  Topic Seminars for NeuroEngineering Students.  .5 Unit.",
+        "desc":"Lectures by students in the seminar series on subjects of current interest to biomedical engineering students in NeuroEngineering.  Students will be evaluated on presentation preparation and performance, as well as weekly participation.  Between this course andEBME\u00a0614students must earn a minimum of 1 credit (two semesters) and can take up to 4 credits over eight different semesters.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0614.  Topic Seminars for NeuroEngineering Students.  .5 Unit.",
+        "desc":"Lectures by students in the seminar series on subjects of current interest to biomedical engineering students in NeuroEngineering.  Students will be evaluated on presentation preparation and performance, as well as weekly participation.  Between this course andEBME\u00a0613students must earn a minimum of 1 credit (two semesters) and can take up to 4 credits over eight different semesters.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0615.  Topic Seminars for Imaging Students.  .5 Unit.",
+        "desc":"Lectures by students in the seminar series on subjects of current interest to biomedical engineering students in Imaging.  Students will be evaluated on presentation preparation and performance, as well as weekly participation.  Between this course andEBME\u00a0616students must earn a minimum of 1 credit (two semesters) and can take up to 4 credits over eight different semesters.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0616.  Topic Seminars for Imaging Students.  .5 Unit.",
+        "desc":"Lectures by students in the seminar series on subjects of current interest to biomedical engineering students in Imaging.  Students will be evaluated on presentation preparation and performance, as well as weekly participation.  Between this course andEBME\u00a0615students must earn a minimum of 1 credit (2 semesters) and can take up to 4 credits over eight different semesters.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0617.  Topic Seminars for Biomaterials Students.  .5 Unit.",
+        "desc":"Lectures by students in the seminar series on subjects of current interest to biomedical engineering students in Biomaterials.  Students will be evaluated on presentation preparation and performance, as well as weekly participation.  Between this course andEBME\u00a0618students must earn a minimum of 1 credit (two semesters) and can take up to 4 credits over eight different semesters.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0618.  Topic Seminars for Biomaterials Students.  .5 Unit.",
+        "desc":"Lectures by students in the seminar series on subjects of current interest to biomedical engineering students in Biomaterials.  Students will be evaluated on presentation preparation and performance, as well as weekly participation.  Between this course andEBME\u00a0617students must earn a minimum of 1 credit (two semesters) and can take up to 4 credits over eight different semesters.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0619.  Topic Seminars for Miscellaneous Biomedical Engineering Students.  .5 Unit.",
+        "desc":"Lectures by students in the seminar series on subjects of current interest to biomedical engineering students in outside of NeuroEngineering, Imaging, and Biomaterials.  Students will be evaluated on presentation preparation and performance, as well as weekly participation.  Between this course andEBME\u00a0620students must earn a minimum of 1 credit (two semesters) and can take up to 4 credits over eight different semesters.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0620.  Topic Seminars for Miscellaneous Biomedical Engineering Students.  .5 Unit.",
+        "desc":"Lectures by students in the seminar series on subjects of current interest to biomedical engineering students on topics outside of NeuroEngineering, Imaging, and Biomaterials.  Students will be evaluated on presentation preparation and performance, as well as weekly participation.  Between this course andEBME\u00a0619students must earn a minimum of 1 credit (2 semesters) and can take up to 4 credits over eight different semesters.\nPrereq: Graduate standing."
+    },
+    {
+        "title":"EBME\u00a0651.  Thesis M.S..  1 - 18 Units.",
+        "desc":"(Credit as arranged.)"
+    },
+    {
+        "title":"EBME\u00a0695.  Project M.S..  1 - 9 Units.",
+        "desc":"Research course taken by Plan B M.S. students.\nPrereq: Enrolled in the EBME Plan B MS Program."
+    },
+    {
+        "title":"EBME\u00a0700.  Oral Qualifying Exam for Ph.D. Candidates.  0 Unit.",
+        "desc":"The objective of this course is to track: 1) the eligibility of students to take the exam, 2) the students' registration to take the exam, and 3) their results on the exam.\nPrereq:EBME\u00a0401DandEBME\u00a0433with B or higher."
+    },
+    {
+        "title":"EBME\u00a0701.  Dissertation Ph.D..  1 - 9 Units.",
+        "desc":"Ph.D. candidates only.\nPrereq: Predoctoral research consent or advanced to Ph.D. candidacy milestone."
+    },
+    {
+        "title":"EBME\u00a0702.  Research Competency: Research Proposal and Defense.  0 Unit.",
+        "desc":"The objective of this course is to track: 1) the eligibility of students to take the exam, 2) the students' registration to take the exam, and 3) their results on the exam.\nPrereq:EBME\u00a0700."
+    }
+]
