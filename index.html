@@ -14,10 +14,16 @@
             background-color: #f4f4f4;
         }
         .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 400px;
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            align-items: center;
         }
         input, button {
             margin-top: 10px;
@@ -25,6 +31,7 @@
             width: 100%;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -32,7 +39,7 @@
     <div class="container">
         <h2>Enter Your Question</h2>
         <form action="return.html" method="GET">
-            <input type="text" name="username" placeholder="Your Name" required>
+            <input type="text" name="username" placeholder="Put Question Here" required>
             <button type="submit">Submit</button>
         </form>
     </div>
