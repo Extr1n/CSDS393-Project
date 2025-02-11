@@ -11,8 +11,8 @@ with open('course.json') as f:
 
 # Connect to your MongoDB database
 client = MongoClient(os.getenv('DB_key'))
-db = client['test_db']
-collection = db['test_collection']
+db = client['Testing']
+collection = db['Testing']
 
 # Insert the contents of allcourse.json into the database
 collection.insert_many(data)
