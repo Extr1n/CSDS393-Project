@@ -15,4 +15,3 @@ loader = MongodbLoader(
 docs = loader.load()
 
 print(len(docs))
-docs[0]
