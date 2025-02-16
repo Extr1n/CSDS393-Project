@@ -6,11 +6,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load the contents of allcourse.json
-with open('course.json') as f:
+with open('./scrape/course.json') as f:
     data = json.load(f)
 
 # Connect to your MongoDB database
-client = MongoClient(os.getenv('DB_key'))
+client = MongoClient(os.getenv('MONGODB_URI'))
 db = client['Testing']
 collection = db['Testing']
 
