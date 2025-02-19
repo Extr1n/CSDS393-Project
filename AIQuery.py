@@ -56,3 +56,25 @@ chat_completion = client.chat.completions.create(
 
 # Print the completion returned by the LLM.
 print(chat_completion.choices[0].message.content)
+
+def get_response(prompt, document):
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are an advisor for Case Western Reserve University. You may use the following document to answer the user's query: \n\n" + document
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+        temperature=0.5,
+        max_completion_tokens=1024,
+        top_p=1,
+        stop=None,
+        stream=False,
+    )
+    
+    return chat_completion.choices[0].message.content
