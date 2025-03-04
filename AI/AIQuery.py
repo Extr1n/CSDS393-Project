@@ -58,6 +58,7 @@ chat_completion = client.chat.completions.create(
 print(chat_completion.choices[0].message.content)
 
 def get_response(prompt, document):
+    load_dotenv()
     chat_completion = client.chat.completions.create(
         messages=[
             {
