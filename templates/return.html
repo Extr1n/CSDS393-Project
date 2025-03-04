@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result Page</title>
+</head>
+<body>
+    <h1>Submitted Information</h1>
+    {% if user_input %}
+        <p>You entered: {{ user_input }}</p>
+    {% else %}
+        <p>No input received</p>
+    {% endif %}
+</body>
+</html>
