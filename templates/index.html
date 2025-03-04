@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Page</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            align-items: center;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enter Your Information</h1>
-    <form method="POST" action="/process">
-        <input type="text" name="user_input" required>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h2>Enter Your Information</h2>
+        <form method="POST" action="/process">
+            <input type="text" name="user_input" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
