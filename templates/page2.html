@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Advisor Help</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span id="userName">Loading...</span>!</h1>
+        <h1>How can the AI advisor help you?</h1>
+        <form action="{{ url_for('process') }}" method="POST">
+            <input type="text" name="question" placeholder="Enter your question" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        try {
+            // Extract URL parameters safely
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const name = urlParams.get("name") || "Unknown";
+
+            // Update page content
+            document.getElementById("userName").textContent = name;
+        } catch (error) {
+            console.error("Error loading page data:", error);
+        }
+    </script>
+</body>
+</html>

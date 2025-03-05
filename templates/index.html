@@ -37,10 +37,12 @@
 </head>
 <body>
     <div class="container">
-        <h2>How can the AI advisor help?</h2>
-        <form method="POST" action="/process">
-            <input type="text" name="user_input" required>
-            <button type="submit">Submit</button>
+        <h2>Please enter your details</h2>
+        <form action="{{ url_for('page2') }}" method="GET">
+        <input type="text" name="name" placeholder="Enter your name" required>
+            <input type="text" name="caseid" placeholder="Enter your Case ID" required>
+            <input type="text" name="major" placeholder="Enter your Major" required>
+            <button type="submit">Next</button>
         </form>
     </div>
 </body>

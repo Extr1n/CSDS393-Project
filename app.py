@@ -10,22 +10,34 @@ def index():
 
 @app.route('/process', methods=['POST'])
 def process():
-    # Get user input from form
-    user_input = request.form.get('user_input')
-    
-    # Store in session
-    session['user_input'] = user_input
+    user_input = request.form.get('question')  # Ensure it matches the form field name
 
-    session['chat_completion'] = get_response(user_input, "")
+    print("Received user input:", user_input)  # Debugging output
+
+    if not user_input or user_input.strip() == "":  # Handle empty input
+        return redirect(url_for('index'))  # Redirect back to input page
+
+    session['user_input'] = user_input
     
-    # Redirect to result page
+    # Debugging output before calling get_response()
+    print("Calling get_response with input:", user_input)
+
+    try:
+        session['chat_completion'] = get_response(user_input, "")
+    except Exception as e:
+        print("Error calling get_response:", str(e))
+        session['chat_completion'] = "An error occurred while processing your request."
+
     return redirect(url_for('result'))
+
+@app.route('/page2')
+def page2():
+    return render_template('page2.html')
 
 @app.route('/result')
 def result():
     # Retrieve user input from session
     user_input = session.get('user_input', None)
-    
     chat = session.get('chat_completion')
 
     # Pass to template
