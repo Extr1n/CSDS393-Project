@@ -29,7 +29,7 @@ def result():
     chat = session.get('chat_completion')
 
     # Pass to template
-    return render_template('return.html', user_input=chat)
+    return render_template('return.html', user_input=user_input, chat_completion=chat)
 
 if __name__ == '__main__':
     app.run(debug=True)

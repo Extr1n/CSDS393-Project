@@ -34,12 +34,18 @@
 <body>
   <div class="container">
     <h1>AI Advisor Response</h1>
+    <h3>Your Question</h3>
     {% if user_input %}
         <p>{{ user_input }}</p>
     {% else %}
         <p>No input received</p>
     {% endif %}
-
+    <h3>Advisor Answer</h3>
+    {% if chat_completion  %}
+        <p>{{ chat_completion }}</p>
+    {% else %}
+        <p>No answer recieved</p>
+    {% endif %}
     <a href="{{ url_for('index') }}" class="btn btn-primary">Go Back</a>
   </div>
 </body>
