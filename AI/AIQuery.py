@@ -54,9 +54,6 @@ chat_completion = client.chat.completions.create(
     stream=False,
 )
 
-# Print the completion returned by the LLM.
-print(chat_completion.choices[0].message.content)
-
 def get_response(prompt, document):
     load_dotenv()
     chat_completion = client.chat.completions.create(
@@ -79,3 +76,9 @@ def get_response(prompt, document):
     )
     
     return chat_completion.choices[0].message.content
+
+def get_relevant_document(prompt):
+
+
+    return prompt
+
