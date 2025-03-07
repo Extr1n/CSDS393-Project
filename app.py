@@ -30,9 +30,9 @@ def process():
 
     return redirect(url_for('result'))
 
-@app.route('/page2')
-def page2():
-    return render_template('page2.html')
+@app.route('/chat')
+def chat():
+    return render_template('chat.html')
 
 @app.route('/result')
 def result():

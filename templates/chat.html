@@ -24,6 +24,17 @@
     </style>
 </head>
 <body>
+<div id="navbar"></div>
+<script>
+window.onload = function() {
+    fetch('/templates/includes/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+            // Optional: Add active class to current page
+            });
+}
+</script>
     <div class="container">
         <h1>Welcome, <span id="userName">Loading...</span>!</h1>
         <h1>How can the AI advisor help you?</h1>
