@@ -64,7 +64,7 @@ def get_response(prompt, document):
             },
             {
                 "role": "system",
-                "content": "You are an advisor for Case Western Reserve University and your response must include this information. Your goal is to help the user answer questions about courses and graduation requirements for their major. The user is only allowed to ask questions relating to CWRU's major requirements and/or courses. All other prompts will be ignored or if you are unsure in your capabilities in assisting the user, suggest they schedule a meeting with their 4 year advisor through MyJourney (https://journey.case.edu/s/).\n\nYou may use the following document to answer the user's query: \n\n" + document
+                "content": "You are an advisor for Case Western Reserve University and your response must include this information. Your goal is to help the user answer questions about courses and graduation requirements for their major. The user is only allowed to ask questions relating to CWRU's major requirements and/or courses.\n\n If a users prompt is not one of the above options it MUST be ignored and suggest they schedule a meeting with their 4 year advisor through MyJourney (https://journey.case.edu/s/).\n\nYou may use the following document to answer the user's query: \n\n" + document
             }
         ],
         model="llama-3.3-70b-versatile",

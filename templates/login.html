@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +50,7 @@
 <body>
     <div class="container">
         <h2>Please enter your details</h2>
-        <form action="{{ url_for('chat') }}" method="GET">
+        <form action="/login" method="POST">
         <input type="text" name="name" placeholder="Enter your name" required>
             <input type="text" name="caseid" placeholder="Enter your Case ID" required>
             <input type="text" name="major" placeholder="Enter your Major" required>

@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome, <span id="userName">Loading...</span>!</h1>
+      <h1>Welcome, {{ session.name }}!</h1>
         <h1>How can the AI advisor help you?</h1>
         <form action="{{ url_for('process') }}" method="POST">
             <input type="text" name="question" placeholder="Enter your question" required>
