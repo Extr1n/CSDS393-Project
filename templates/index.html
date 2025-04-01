@@ -1,61 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-signin-client_id" content="324332786368-5f7j3uvt1o4po1ii3ns7nd3ccc3d3n9f.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script>
-      function onSignIn(googleUser) {
-        // var profile = googleUser.getBasicProfile();
-        // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        // console.log('Name: ' + profile.getName());
-        // console.log('Image URL: ' + profile.getImageUrl());
-        // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      }
-    </script>
-    <title>Input Page</title>
-    <style>
-        body {
-            font-family: Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            width: 400px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            justify-content: center;
-            align-items: center;
-        }
-        input, button {
-            margin-top: 10px;
-            padding: 10px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-    </style>
-</head>
-<body>
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="body">
     <div class="container">
-        <h2>Please enter your details</h2>
-        <form action="{{ url_for('chat') }}" method="GET">
-        <input type="text" name="name" placeholder="Enter your name" required>
-            <input type="text" name="caseid" placeholder="Enter your Case ID" required>
-            <input type="text" name="major" placeholder="Enter your Major" required>
-            <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
-            <button type="submit">Next</button>
-        </form>
+      <h1>Welcome, {{ session.name }}!</h1>
+        <h1>How can the AI advisor help you?</h1>
     </div>
-</body>
-</html>
+    </div>
+{% endblock %}

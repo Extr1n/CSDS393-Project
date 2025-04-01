@@ -18,15 +18,13 @@ client = MongoClient('localhost', 27017)
 
 db = client.flask_db
 
-print(db)
-
 threading.Timer(1.25, lambda: webbrowser.open(url) ).start()
 
 @app.route('/')
 def index():
     if not session.get("name"):
         return redirect("/login")
-    return render_template('chat.html')
+    return render_template('index.html')
 
 @app.route('/process', methods=['POST'])
 def process():
@@ -58,6 +56,11 @@ def login():
         session["major"] = request.form.get("major")
         return redirect("/")
     return render_template("login.html")
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect("/")
 
 @app.route('/chat')
 def chat():
