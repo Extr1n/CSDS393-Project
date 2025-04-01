@@ -52,10 +52,10 @@ def process():
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
-    print("running login")
     if request.method == "POST":
         session["name"] = request.form.get("name")
-        print(session["name"])
+        session["caseid"] = request.form.get("caseid")
+        session["major"] = request.form.get("major")
         return redirect("/")
     return render_template("login.html")
 
