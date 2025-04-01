@@ -1,8 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from pymongo import MongoClient
 from AI.AIQuery import get_response
+import random, threading, webbrowser
+
+port = 5000 
+url = "http://127.0.0.1:{0}".format(port)
 
 app = Flask(__name__)
 app.secret_key = b'hello'
+
+client = MongoClient('localhost', 27017)
+
+db = client.flask_db
+
+threading.Timer(1.25, lambda: webbrowser.open(url) ).start()
 
 @app.route('/')
 def index():
@@ -44,4 +55,4 @@ def result():
     return render_template('return.html', user_input=user_input, chat_completion=chat)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5000, debug=True)
