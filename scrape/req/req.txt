@@ -1,0 +1,2 @@
+scrapeall.py contains script for running through all academic programs, uses scrapereq.py which contains function to scrape a given program, 
+scrapeall.py creates .json file storing all requirements

@@ -1,0 +1,2077 @@
+[
+    {
+        "title": [
+            "Accountancy, MAcc"
+        ],
+        "credit hours": [
+            "30"
+        ],
+        "necessary": [
+            [
+                "ACCT404"
+            ],
+            [
+                "ACCT405"
+            ],
+            [
+                "ACCT414"
+            ],
+            [
+                "ACCT431"
+            ],
+            [
+                "ACCT444"
+            ],
+            [
+                "ACCT520"
+            ],
+            [
+                "BTEC420"
+            ],
+            [
+                "BUAI433"
+            ],
+            [
+                "Track Elective (Professional or STEM) 3"
+            ],
+            [
+                "Track Elective  (Professional or STEM) 3"
+            ]
+        ],
+        "groups": [],
+        "electives": [
+            "ACCT100",
+            "ACCT200",
+            "ACCT300",
+            "ACCT301",
+            "ACCT305",
+            "ACCT314",
+            "BLAW331"
+        ]
+    },
+    {
+        "title": [
+            "Accounting, BS"
+        ],
+        "credit hours": [
+            "24",
+            "30"
+        ],
+        "necessary": [
+            [
+                "ACCT106"
+            ],
+            [
+                "ACCT300"
+            ],
+            [
+                "ACCT301"
+            ],
+            [
+                "ACCT301L"
+            ],
+            [
+                "ACCT305"
+            ],
+            [
+                "ACCT306"
+            ],
+            [
+                "ACCT307"
+            ],
+            [
+                "ACCT307L"
+            ],
+            [
+                "ACCT314"
+            ],
+            [
+                "BLAW331"
+            ],
+            [
+                "ACCT100"
+            ],
+            [
+                "ACCT106"
+            ],
+            [
+                "ACCT200"
+            ],
+            [
+                "ACCT300"
+            ],
+            [
+                "ACCT301"
+            ],
+            [
+                "ACCT301L"
+            ],
+            [
+                "ACCT305"
+            ],
+            [
+                "ACCT306"
+            ],
+            [
+                "ACCT307"
+            ],
+            [
+                "ACCT307L"
+            ],
+            [
+                "ACCT314"
+            ],
+            [
+                "BLAW331"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose one of the following:",
+                [
+                    "DESN210",
+                    "CSDS132",
+                    "ENGR131",
+                    "MATH122"
+                ]
+            ]
+        ],
+        "electives": [
+            "MATH125",
+            "orMATH\u00a0121",
+            "ACCT100",
+            "ACCT200",
+            "ECON102",
+            "ECON103",
+            "OPRE207",
+            "BAFI355",
+            "MGMT201",
+            "MGMT395",
+            "MKMR201",
+            "OPRE301",
+            "ORBH250",
+            "Total Credit Hours"
+        ]
+    },
+    {
+        "title": [
+            "Accounting, Minor"
+        ],
+        "credit hours": [
+            "15"
+        ],
+        "necessary": [
+            [
+                "ACCT100"
+            ],
+            [
+                "ACCT200"
+            ],
+            [
+                "ACCT305"
+            ],
+            [
+                "300-level accounting courses 6"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Advanced Education in General Dentistry, Professional Certification"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Advanced Quantitative Methodologies, Graduate Certificate"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": [
+            "MGMT571",
+            "MGMT573",
+            "EDMP643",
+            "EDMP646",
+            "EDMP649",
+            "NURS630",
+            "NURS631",
+            "NURS632",
+            "SASS618",
+            "PQHS435",
+            "PQHS500",
+            "SOCI525"
+        ]
+    },
+    {
+        "title": [
+            "Aerospace Engineering, BSE"
+        ],
+        "credit hours": [],
+        "necessary": [
+            [
+                "MATH121"
+            ],
+            [
+                "MATH122",
+                "MATH124"
+            ],
+            [
+                "MATH223",
+                "MATH227"
+            ],
+            [
+                "MATH224",
+                "MATH228"
+            ],
+            [
+                "PHYS121",
+                "PHYS123"
+            ],
+            [
+                "PHYS122",
+                "PHYS124"
+            ],
+            [
+                "CHEM111"
+            ],
+            [
+                "ENGR130"
+            ],
+            [
+                "ENGR145"
+            ],
+            [
+                "ENGR200"
+            ],
+            [
+                "ENGR210"
+            ],
+            [
+                "ENGR399"
+            ]
+        ],
+        "groups": [],
+        "electives": [
+            "EMAE160",
+            "EMAE181",
+            "EMAE250",
+            "EMAE251",
+            "EMAE252",
+            "EMAE285",
+            "ECIV310",
+            "EMAE350",
+            "EMAE351",
+            "EMAE353",
+            "EMAE355",
+            "EMAE359",
+            "EMAE376",
+            "EMAE383",
+            "EMAE384",
+            "EMAE356",
+            "EMAE382",
+            "EMAE398",
+            "PHYS221",
+            "Technical Electivea",
+            "Total Credit Hours"
+        ]
+    },
+    {
+        "title": [
+            "Aerospace Engineering, MS"
+        ],
+        "credit hours": [],
+        "necessary": [
+            [
+                "EMAE453"
+            ],
+            [
+                "EMAE482"
+            ],
+            [
+                "EMAE483"
+            ],
+            [
+                "EMAE454"
+            ],
+            [
+                "EMAE457"
+            ],
+            [
+                "EMAE471"
+            ],
+            [
+                "EMAE407"
+            ],
+            [
+                "EMAE415"
+            ],
+            [
+                "EMAE456"
+            ],
+            [
+                "EBME427"
+            ],
+            [
+                "EBME474"
+            ],
+            [
+                "EMAE480"
+            ],
+            [
+                "EMAE481"
+            ],
+            [
+                "EMAE489"
+            ],
+            [
+                "EMAE487",
+                "EMAE560"
+            ],
+            [
+                "EMAE479"
+            ],
+            [
+                "EMAE540"
+            ],
+            [
+                "CSDS473"
+            ],
+            [
+                "CSDS491"
+            ],
+            [
+                "EMAE453"
+            ],
+            [
+                "EMAE455"
+            ],
+            [
+                "EMAE459"
+            ],
+            [
+                "EMAE454"
+            ],
+            [
+                "EMAE457"
+            ],
+            [
+                "EMAE460"
+            ],
+            [
+                "EMAE461"
+            ],
+            [
+                "EMAE463"
+            ],
+            [
+                "EMAE471"
+            ],
+            [
+                "EMAE494"
+            ],
+            [
+                "EMAE554"
+            ],
+            [
+                "EMAE557"
+            ],
+            [
+                "EMAE559"
+            ],
+            [
+                "EMAE401"
+            ],
+            [
+                "ECIV435"
+            ],
+            [
+                "EMAE475"
+            ],
+            [
+                "EMSE421"
+            ],
+            [
+                "EMAE450"
+            ],
+            [
+                "EMAE480"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Aerospace Engineering, PhD"
+        ],
+        "credit hours": [],
+        "necessary": [
+            [
+                "EMAE453"
+            ],
+            [
+                "EMAE482"
+            ],
+            [
+                "EMAE483"
+            ],
+            [
+                "EMAE454"
+            ],
+            [
+                "EMAE457"
+            ],
+            [
+                "EMAE471"
+            ],
+            [
+                "EMAE407"
+            ],
+            [
+                "EMAE415"
+            ],
+            [
+                "EMAE456"
+            ],
+            [
+                "EBME427"
+            ],
+            [
+                "EBME474"
+            ],
+            [
+                "EMAE480"
+            ],
+            [
+                "EMAE481"
+            ],
+            [
+                "EMAE489"
+            ],
+            [
+                "EMAE487",
+                "EMAE560"
+            ],
+            [
+                "EMAE479"
+            ],
+            [
+                "EMAE540"
+            ],
+            [
+                "CSDS473"
+            ],
+            [
+                "CSDS491"
+            ],
+            [
+                "EMAE453"
+            ],
+            [
+                "EMAE455"
+            ],
+            [
+                "EMAE459"
+            ],
+            [
+                "EMAE454"
+            ],
+            [
+                "EMAE457"
+            ],
+            [
+                "EMAE460"
+            ],
+            [
+                "EMAE461"
+            ],
+            [
+                "EMAE463"
+            ],
+            [
+                "EMAE471"
+            ],
+            [
+                "EMAE494"
+            ],
+            [
+                "EMAE554"
+            ],
+            [
+                "EMAE557"
+            ],
+            [
+                "EMAE559"
+            ],
+            [
+                "EMAE401"
+            ],
+            [
+                "ECIV435"
+            ],
+            [
+                "EMAE475"
+            ],
+            [
+                "EMSE421"
+            ],
+            [
+                "EMAE450"
+            ],
+            [
+                "EMAE480"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Aerospace Physiology, Graduate Certificate"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Aerospace Physiology, Graduate Certificate (Online)"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Aerospace Physiology, MS"
+        ],
+        "credit hours": [],
+        "necessary": [
+            [
+                "PHOL421"
+            ],
+            [
+                "PHOL422"
+            ],
+            [
+                "PHOL423"
+            ],
+            [
+                "PHOL426"
+            ],
+            [
+                "PHOL427"
+            ],
+            [
+                "PHOL486"
+            ],
+            [
+                "PHOL614"
+            ],
+            [
+                "NTRN460"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Aerospace Physiology, MS (Online)"
+        ],
+        "credit hours": [],
+        "necessary": [
+            [
+                "PHOL421"
+            ],
+            [
+                "PHOL422"
+            ],
+            [
+                "PHOL423"
+            ],
+            [
+                "PHOL426"
+            ],
+            [
+                "PHOL427"
+            ],
+            [
+                "PHOL486"
+            ],
+            [
+                "PHOL614"
+            ],
+            [
+                "NTRN460"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Africana Studies, Minor"
+        ],
+        "credit hours": [
+            "15"
+        ],
+        "necessary": [],
+        "groups": [
+            [
+                "Choose one of the following:",
+                [
+                    "HSTY135",
+                    "HSTY318",
+                    "HSTY393",
+                    "HSTY395"
+                ]
+            ],
+            [
+                "Choose one of the following:",
+                [
+                    "ENGL365N",
+                    "ETHS295",
+                    "MUGN212",
+                    "MUHI315",
+                    "RLGN151",
+                    "RLGN302"
+                ]
+            ],
+            [
+                "Choose one of the following:",
+                [
+                    "POSC369",
+                    "SOCI202",
+                    "SOCI328",
+                    "SOCI366",
+                    "Elecivea"
+                ]
+            ]
+        ],
+        "electives": [
+            "HSTY252A"
+        ]
+    },
+    {
+        "title": [
+            "Anatomical Sciences, Minor"
+        ],
+        "credit hours": [
+            "15"
+        ],
+        "necessary": [
+            [
+                "ANAT301"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose one of the following:",
+                [
+                    "ANAT399",
+                    "ANAT302",
+                    "ANAT411"
+                ]
+            ],
+            [
+                "Choose one of the following:",
+                [
+                    "ANAT303",
+                    "ANAT312",
+                    "Elecivesb",
+                    "ANAT391",
+                    "ANAT345",
+                    "ANAT414"
+                ]
+            ]
+        ],
+        "electives": []
+    },
+    {
+        "title": [
+            "Ancient Near Eastern and Egyptian Studies, BA"
+        ],
+        "credit hours": [
+            "30"
+        ],
+        "necessary": [
+            [
+                "ANEEHSTY 107"
+            ],
+            [
+                "Two 300-level AKKD, ANEE or HIER Courses 6"
+            ],
+            [
+                "Seven AKKD, ANEE or HIER Coursesa 21"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Ancient Near Eastern and Egyptian Studies, Minor"
+        ],
+        "credit hours": [
+            "15"
+        ],
+        "necessary": [
+            [
+                "ANEE107"
+            ],
+            [
+                "ANEE, AKKD or HIER Coursesa 9"
+            ],
+            [
+                "300-level ANEE, AKKD or HIER Course 3"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anesthesia, MSA"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, BA"
+        ],
+        "credit hours": [
+            "30",
+            "30",
+            "30"
+        ],
+        "necessary": [
+            [
+                "ANTH102"
+            ],
+            [
+                "ANTH103"
+            ],
+            [
+                "ANTH319"
+            ],
+            [
+                "ANTH102"
+            ],
+            [
+                "ANTH103"
+            ],
+            [
+                "ANTH319"
+            ],
+            [
+                "ANTH339"
+            ],
+            [
+                "Approved Anthropology Electives: any 100-, 200-, 300-level ANTH course 18"
+            ],
+            [
+                "ANTH102"
+            ],
+            [
+                "ANTH103"
+            ],
+            [
+                "ANTH215"
+            ],
+            [
+                "ANTH319"
+            ],
+            [
+                "ANTH339"
+            ],
+            [
+                "ANTH102"
+            ],
+            [
+                "ANTH103"
+            ],
+            [
+                "ANTH107"
+            ],
+            [
+                "ANTH319"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose three of the following health and illness related courses:",
+                [
+                    "ANTH300",
+                    "ANTH302",
+                    "ANTH303",
+                    "ANTH316",
+                    "ANTH328",
+                    "ANTH329",
+                    "ANTH335",
+                    "ANTH345",
+                    "ANTH354",
+                    "ANTH359",
+                    "ANTH360",
+                    "ANTH369D",
+                    "ANTH371",
+                    "ANTH376",
+                    "Apprved Anthropology Electives: any 100-, 200-, 300-level ANTH course"
+                ]
+            ],
+            [
+                "Choose three of the following archeaology courses:",
+                [
+                    "ANTH331",
+                    "ANTH333",
+                    "ANTH344",
+                    "ANTH399",
+                    "Apprved anthropology electives any 100-, 200-, 300-level ANTH course"
+                ]
+            ]
+        ],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, MA"
+        ],
+        "credit hours": [
+            "30"
+        ],
+        "necessary": [
+            [
+                "ANTH439"
+            ],
+            [
+                "ANTH462"
+            ],
+            [
+                "ANTH480"
+            ],
+            [
+                "ANTH481"
+            ],
+            [
+                "Approved statistics course 3"
+            ],
+            [
+                "Approved anthropology electivesa 15"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, MA/Medicine, MD"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, MA/Nursing, MSN"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, MA/Public Health, MPH"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, Minor"
+        ],
+        "credit hours": [
+            "15",
+            "15"
+        ],
+        "necessary": [
+            [
+                "ANTH102"
+            ],
+            [
+                "ANTH103"
+            ],
+            [
+                "ANTH339"
+            ],
+            [
+                "ANTH102"
+            ],
+            [
+                "ANTH103"
+            ],
+            [
+                "ANTH215"
+            ],
+            [
+                "ANTH300"
+            ],
+            [
+                "ANTH302"
+            ],
+            [
+                "ANTH303"
+            ],
+            [
+                "ANTH316"
+            ],
+            [
+                "ANTH328"
+            ],
+            [
+                "ANTH329"
+            ],
+            [
+                "ANTH335"
+            ],
+            [
+                "ANTH345"
+            ],
+            [
+                "ANTH354"
+            ],
+            [
+                "ANTH359"
+            ],
+            [
+                "ANTH360"
+            ],
+            [
+                "ANTH369D"
+            ],
+            [
+                "ANTH371"
+            ],
+            [
+                "ANTH376"
+            ],
+            [
+                "ANTH102"
+            ],
+            [
+                "ANTH103"
+            ],
+            [
+                "ANTH107"
+            ],
+            [
+                "ANTH331"
+            ],
+            [
+                "ANTH333"
+            ],
+            [
+                "ANTH344"
+            ],
+            [
+                "ANTH399"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, PhD"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, PhD/Medicine, MD"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Anthropology, PhD/Public Health, MPH"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Applied Anatomy, MS"
+        ],
+        "credit hours": [
+            "17"
+        ],
+        "necessary": [
+            [
+                "ANAT411"
+            ],
+            [
+                "ANAT412"
+            ],
+            [
+                "ANAT414"
+            ],
+            [
+                "ANAT491"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Applied Anatomy, MS/Medicine, MD"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Applied Data Science, Graduate Certificate"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [
+            [
+                "Choose five of the following:",
+                [
+                    "EPOM405",
+                    "DSCI432",
+                    "DSCI451",
+                    "DSCI452",
+                    "DSCI453",
+                    "DSCI454"
+                ]
+            ]
+        ],
+        "electives": []
+    },
+    {
+        "title": [
+            "Applied Data Science, Minor"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": [
+            "DSCI330",
+            "DSCI332/432",
+            "DSCI352/352M/452",
+            "DSCI354/354M/454",
+            "SYBB387",
+            "ASTR306",
+            "BAFI361",
+            "DSCI353/353M/453",
+            "ECON327",
+            "MKMR310",
+            "SYBB311A/311B/311C",
+            "SYBB421",
+            "SYBB459",
+            "DSCI351/351M/451",
+            "SYBB412",
+            "OPRE207",
+            "PQHS431",
+            "STAT312R",
+            "STAT312",
+            "STAT313",
+            "CSDS132",
+            "CSDS133",
+            "DESN210",
+            "ENGR131"
+        ]
+    },
+    {
+        "title": [
+            "Applied Mathematics, BS"
+        ],
+        "credit hours": [
+            "79"
+        ],
+        "necessary": [
+            [
+                "MATH121"
+            ],
+            [
+                "MATH122",
+                "MATH124"
+            ],
+            [
+                "MATH223",
+                "MATH227"
+            ],
+            [
+                "MATH224",
+                "MATH228"
+            ],
+            [
+                "MATH307"
+            ],
+            [
+                "MATH321"
+            ],
+            [
+                "MATH322"
+            ],
+            [
+                "MATH330"
+            ],
+            [
+                "PHYS121"
+            ],
+            [
+                "PHYS122"
+            ],
+            [
+                "PHYS221"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose one of the following:",
+                [
+                    "MATH324",
+                    "MATH425",
+                    "Mathmatics Electivesa",
+                    "Profssional Core Requirement Coursesb"
+                ]
+            ],
+            [
+                "Choose one of the following sequences:",
+                [
+                    "ASTR101&ASTR\u00a0103",
+                    "CHEM105&CHEM\u00a0106",
+                    "CHEM111&ENGR\u00a0145",
+                    "EEPS110&EEPS\u00a0115",
+                    "EEPS110&EEPS\u00a0210"
+                ]
+            ]
+        ],
+        "electives": []
+    },
+    {
+        "title": [
+            "Applied Mathematics, MS"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": [
+            "MATH405",
+            "MATH423",
+            "MATH425",
+            "MATH428",
+            "MATH419",
+            "MATH439",
+            "MATH482",
+            "MATH431",
+            "MATH432",
+            "MATH433",
+            "MATH435",
+            "MATH445",
+            "MATH449",
+            "MATH439",
+            "MATH440",
+            "MATH473",
+            "MATH406",
+            "MATH408",
+            "MATH419",
+            "MATH441",
+            "MATH449",
+            "MATH478",
+            "MATH424",
+            "MATH425",
+            "MATH427",
+            "MATH444",
+            "MATH492"
+        ]
+    },
+    {
+        "title": [
+            "Applied Mathematics, PhD"
+        ],
+        "credit hours": [
+            "36"
+        ],
+        "necessary": [
+            [
+                "MATH431"
+            ],
+            [
+                "MATH441"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose one of the following:",
+                [
+                    "MATH432",
+                    "MATH433"
+                ]
+            ],
+            [
+                "Choose one of the following:",
+                [
+                    "MATH435",
+                    "MATH445",
+                    "Apprved Coursesa"
+                ]
+            ]
+        ],
+        "electives": [
+            "MATH431",
+            "MATH432",
+            "MATH433",
+            "MATH439",
+            "orMATH\u00a0440",
+            "MATH441",
+            "MATH445",
+            "MATH449",
+            "orMATH\u00a0478",
+            "Application area",
+            "EBME410",
+            "MATH431",
+            "MATH432",
+            "MATH433",
+            "MATH439",
+            "orMATH\u00a0440",
+            "MATH441",
+            "MATH444",
+            "MATH445",
+            "MATH473",
+            "PHYS431",
+            "PHYS460",
+            "MATH419",
+            "MATH431",
+            "MATH432",
+            "MATH433",
+            "MATH439",
+            "MATH440",
+            "MATH441",
+            "MATH445",
+            "MATH449",
+            "MATH478",
+            "Application area",
+            "MATH419",
+            "MATH423",
+            "MATH424",
+            "MATH431",
+            "MATH441",
+            "MATH491",
+            "MATH492",
+            "Application area"
+        ]
+    },
+    {
+        "title": [
+            "Art History and Museum Studies, MA"
+        ],
+        "credit hours": [
+            "31"
+        ],
+        "necessary": [
+            [
+                "ARTH495"
+            ],
+            [
+                "ARTH490A"
+            ],
+            [
+                "ARTH490B"
+            ],
+            [
+                "ARTH491A"
+            ],
+            [
+                "ARTH491B"
+            ],
+            [
+                "400-level or above coursesa 18"
+            ],
+            [
+                "A reading knowledge of one foreign language (normally French, German, or Italian) "
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Art History and Museum Studies, MA/Law, JD"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": [
+            "LAWS1201",
+            "LAWS1101",
+            "LAWS1102",
+            "LAWS1103",
+            "LAWS1204",
+            "LAWS1203",
+            "LAWS1801",
+            "LAWS1802",
+            "LAWS2001",
+            "LAWS2002",
+            "LAWS2803",
+            "ARTH490A",
+            "ARTH490B",
+            "ARTH491A",
+            "ARTH491B",
+            "ARTH495",
+            "One course in each of the three following areas:a",
+            "Pre-Modern (pre-1800)",
+            "Modern (post-1800)",
+            "Non-Western",
+            "Relevant Law School coursesa"
+        ]
+    },
+    {
+        "title": [
+            "Art History, BA"
+        ],
+        "credit hours": [
+            "36"
+        ],
+        "necessary": [
+            [
+                "ARTH101"
+            ],
+            [
+                "ARTH102"
+            ],
+            [
+                "ARTH396"
+            ],
+            [
+                "ARTH 200-level courses 3-6"
+            ],
+            [
+                "ARTH 300-level courses 15-18"
+            ],
+            [
+                "ARTS courses 3-6"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Art History, MA"
+        ],
+        "credit hours": [
+            "31"
+        ],
+        "necessary": [
+            [
+                "ARTH495"
+            ],
+            [
+                "ARTH489A"
+            ],
+            [
+                "ARTH489B"
+            ],
+            [
+                "400-level or above coursesa 24"
+            ],
+            [
+                "A reading knowledge of one foreign language (normally French, German, or Italian) "
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Art History, Minor"
+        ],
+        "credit hours": [
+            "18"
+        ],
+        "necessary": [
+            [
+                "ARTH101"
+            ],
+            [
+                "ARTH102"
+            ],
+            [
+                "Art History Electivesa 12"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Art History, PhD"
+        ],
+        "credit hours": [
+            "60"
+        ],
+        "necessary": [
+            [
+                "ARTH495"
+            ],
+            [
+                "ARTH496"
+            ],
+            [
+                "ARTH610A"
+            ],
+            [
+                "ARTH610B"
+            ],
+            [
+                "ARTH701"
+            ],
+            [
+                "Six courses at the 400-level or above 18"
+            ],
+            [
+                "Four seminars at the 500-levela 12"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Art Studio, Minor"
+        ],
+        "credit hours": [
+            "18"
+        ],
+        "necessary": [
+            [
+                "ARTS101"
+            ],
+            [
+                "ARTS106"
+            ],
+            [
+                "Art Studio Coursesa 12"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Artificial Intelligence, Minor"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Asian Studies, BA"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": [
+            "CHIN101",
+            "CHIN102",
+            "CHIN201",
+            "CHIN202",
+            "CHIN301",
+            "CHIN302",
+            "CHIN320",
+            "CHIN330",
+            "CHIN350",
+            "CHIN350D",
+            "CHIN381",
+            "CHIN399",
+            "JAPN101",
+            "JAPN102",
+            "JAPN201",
+            "JAPN202",
+            "JAPN215",
+            "JAPN225",
+            "JAPN235",
+            "JAPN245",
+            "JAPN255",
+            "JAPN265",
+            "JAPN301",
+            "JAPN302",
+            "JAPN315",
+            "JAPN335",
+            "JAPN337",
+            "JAPN350",
+            "JAPN351",
+            "JAPN355",
+            "JAPN397",
+            "JAPN398",
+            "JAPN399",
+            "ANTH312",
+            "ANTH331",
+            "ANTH333",
+            "ANTH353",
+            "ANTH354",
+            "ASIA132",
+            "ASIA288",
+            "ASIA289",
+            "ASIA320",
+            "ASIA330",
+            "ASIA398",
+            "ASIA399",
+            "ARTH203",
+            "ARTH302",
+            "ARTH341",
+            "ARTH398",
+            "HSTY132",
+            "HSTY137",
+            "HSTY157",
+            "HSTY288",
+            "HSTY289",
+            "POSC353",
+            "POSC370D",
+            "PHIL253",
+            "RLGN108",
+            "RLGN153",
+            "RLGN154",
+            "RLGN216",
+            "RLGN217",
+            "RLGN221",
+            "RLGN228",
+            "RLGN243",
+            "RLGN253",
+            "RLGN348",
+            "RLGN353"
+        ]
+    },
+    {
+        "title": [
+            "Asian Studies, Minor"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Astronomy, BA"
+        ],
+        "credit hours": [
+            "67"
+        ],
+        "necessary": [
+            [
+                "ASTR221"
+            ],
+            [
+                "ASTR222"
+            ],
+            [
+                "MATH121"
+            ],
+            [
+                "MATH122",
+                "MATH124"
+            ],
+            [
+                "MATH223",
+                "MATH227"
+            ],
+            [
+                "MATH224",
+                "MATH228"
+            ],
+            [
+                "PHYS121",
+                "PHYS123"
+            ],
+            [
+                "PHYS122",
+                "PHYS124"
+            ],
+            [
+                "PHYS221"
+            ],
+            [
+                "PHYS250"
+            ],
+            [
+                "PHYS310"
+            ],
+            [
+                "PHYS313"
+            ],
+            [
+                "PHYS324"
+            ],
+            [
+                "PHYS331"
+            ],
+            [
+                "ENGR131"
+            ],
+            [
+                "ASTR333"
+            ],
+            [
+                "DSCI351"
+            ],
+            [
+                "EEPS345"
+            ],
+            [
+                "HSTY209"
+            ],
+            [
+                "MATH201"
+            ],
+            [
+                "PHIL203"
+            ],
+            [
+                "PHYS203"
+            ],
+            [
+                "PHYS316"
+            ],
+            [
+                "PHYS325"
+            ],
+            [
+                "PHYS326"
+            ],
+            [
+                "PHYS332"
+            ],
+            [
+                "PHYS349"
+            ],
+            [
+                "STAT312R"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose three of the following:",
+                [
+                    "ASTR306",
+                    "ASTR311",
+                    "ASTR323",
+                    "ASTR328"
+                ]
+            ]
+        ],
+        "electives": []
+    },
+    {
+        "title": [
+            "Astronomy, BS"
+        ],
+        "credit hours": [],
+        "necessary": [
+            [
+                "ASTR221"
+            ],
+            [
+                "ASTR222"
+            ],
+            [
+                "ASTR306"
+            ],
+            [
+                "ASTR311"
+            ],
+            [
+                "ASTR323"
+            ],
+            [
+                "ASTR328"
+            ],
+            [
+                "ENGR131"
+            ],
+            [
+                "MATH121"
+            ],
+            [
+                "MATH122",
+                "MATH124"
+            ],
+            [
+                "MATH223",
+                "MATH227"
+            ],
+            [
+                "MATH224",
+                "MATH228"
+            ],
+            [
+                "PHYS121",
+                "PHYS123"
+            ],
+            [
+                "PHYS122",
+                "PHYS124"
+            ],
+            [
+                "PHYS203"
+            ],
+            [
+                "PHYS204"
+            ],
+            [
+                "PHYS221"
+            ],
+            [
+                "PHYS250"
+            ],
+            [
+                "PHYS310"
+            ],
+            [
+                "PHYS313"
+            ],
+            [
+                "PHYS324"
+            ],
+            [
+                "PHYS325"
+            ],
+            [
+                "PHYS331"
+            ],
+            [
+                "PHYS332"
+            ],
+            [
+                "ASTR333"
+            ],
+            [
+                "EEPS345"
+            ],
+            [
+                "HSTY209"
+            ],
+            [
+                "MATH201"
+            ],
+            [
+                "PHIL203"
+            ],
+            [
+                "PHYS301"
+            ],
+            [
+                "PHYS316"
+            ],
+            [
+                "PHYS326"
+            ],
+            [
+                "PHYS349"
+            ],
+            [
+                "STAT312R"
+            ]
+        ],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Astronomy, Minor"
+        ],
+        "credit hours": [
+            "17"
+        ],
+        "necessary": [
+            [
+                "ASTR221"
+            ],
+            [
+                "ASTR222"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose one of the following:",
+                [
+                    "PHYS115",
+                    "PHYS121",
+                    "PHYS123"
+                ]
+            ],
+            [
+                "Choose one of the following:",
+                [
+                    "PHYS116",
+                    "PHYS122",
+                    "PHYS124"
+                ]
+            ],
+            [
+                "Choose one of the following:",
+                [
+                    "ASTR306",
+                    "ASTR311",
+                    "ASTR323",
+                    "ASTR328",
+                    "ASTR333"
+                ]
+            ]
+        ],
+        "electives": []
+    },
+    {
+        "title": [
+            "Astronomy, PhD"
+        ],
+        "credit hours": [],
+        "necessary": [],
+        "groups": [],
+        "electives": []
+    },
+    {
+        "title": [
+            "Biochemistry, BA"
+        ],
+        "credit hours": [
+            "78-81",
+            "9"
+        ],
+        "necessary": [
+            [
+                "BIOC101"
+            ],
+            [
+                "BIOC307"
+            ],
+            [
+                "BIOC308"
+            ],
+            [
+                "BIOC373"
+            ],
+            [
+                "BIOC391"
+            ],
+            [
+                "BIOC393",
+                "BIOC393H"
+            ],
+            [
+                "BIOL214"
+            ],
+            [
+                "BIOL215"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose two of the following:",
+                [
+                    "BIOC312",
+                    "BIOC334",
+                    "BIOC350",
+                    "Two IOC Technical Electives"
+                ]
+            ],
+            [
+                "Choose two of the following:",
+                [
+                    "BIOL214L",
+                    "BIOL215L",
+                    "BIOL216L",
+                    "BIOL222L",
+                    "CHEM105",
+                    "orCHM\u00a0111",
+                    "CHEM106",
+                    "orENR\u00a0145",
+                    "CHEM113",
+                    "CHEM223",
+                    "orCHM\u00a0323",
+                    "CHEM224",
+                    "orCHM\u00a0324",
+                    "CHEM233",
+                    "CHEM234",
+                    "CSDS132",
+                    "orENR\u00a0131",
+                    "MATH125",
+                    "orMAH\u00a0121",
+                    "MATH126",
+                    "orMAH\u00a0122",
+                    "orMAH\u00a0124",
+                    "PHYS115",
+                    "orPHS\u00a0121",
+                    "orPHS\u00a0123",
+                    "PHYS116",
+                    "orPHS\u00a0122",
+                    "orPHS\u00a0124",
+                    "STAT201",
+                    "orSTT\u00a0312",
+                    "orSTT\u00a0312R",
+                    "orSTT\u00a0313"
+                ]
+            ],
+            [
+                "Choose two of the following:",
+                [
+                    "BIOC315",
+                    "BIOC344",
+                    "BIOC345"
+                ]
+            ]
+        ],
+        "electives": [
+            "BIOC350",
+            "BIOC353",
+            "BIOC360",
+            "Total Credit Hours",
+            "BIOC310",
+            "BIOC311",
+            "BIOC334",
+            "Total Credit Hours",
+            "BIOC312",
+            "BIOC334",
+            "PQHS431",
+            "PQHS457",
+            "Total Credit Hours",
+            "BIOC285",
+            "BIOC391",
+            "BIOC393H",
+            "Total Credit Hours"
+        ]
+    },
+    {
+        "title": [
+            "Biochemistry, BS"
+        ],
+        "credit hours": [
+            "81-82",
+            "9"
+        ],
+        "necessary": [
+            [
+                "BIOC101"
+            ],
+            [
+                "BIOC307"
+            ],
+            [
+                "BIOC308"
+            ],
+            [
+                "BIOC373"
+            ],
+            [
+                "BIOC391"
+            ],
+            [
+                "BIOC393",
+                "BIOC393H"
+            ]
+        ],
+        "groups": [
+            [
+                "Choose two of the following:",
+                [
+                    "BIOC312",
+                    "BIOC334",
+                    "BIOC350",
+                    "Thre BIOC technical electives",
+                    "BIOL214",
+                    "BIOL215"
+                ]
+            ],
+            [
+                "Choose two of the following:",
+                [
+                    "BIOL214L",
+                    "BIOL215L",
+                    "BIOL216L",
+                    "BIOL222L",
+                    "CHEM105",
+                    "orCHM\u00a0111",
+                    "CHEM106",
+                    "orENR\u00a0145",
+                    "CHEM113",
+                    "CHEM223",
+                    "orCHM\u00a0323",
+                    "CHEM224",
+                    "orCHM\u00a0324",
+                    "CHEM233",
+                    "CHEM234",
+                    "MATH121",
+                    "MATH122",
+                    "orMAH\u00a0124",
+                    "PHYS121",
+                    "orPHS\u00a0123",
+                    "PHYS122",
+                    "orPHS\u00a0124",
+                    "STAT312R",
+                    "orSTT\u00a0312",
+                    "orSTT\u00a0313",
+                    "ENGR131",
+                    "orCSS\u00a0132"
+                ]
+            ],
+            [
+                "Choose two of the following:",
+                [
+                    "BIOC315",
+                    "BIOC344",
+                    "BIOC345"
+                ]
+            ]
+        ],
+        "electives": [
+            "BIOC350",
+            "BIOC353",
+            "BIOC360",
+            "Total Credit Hours",
+            "BIOC310",
+            "BIOC311",
+            "BIOC334",
+            "Total Credit Hours",
+            "BIOC312",
+            "BIOC334",
+            "PQHS431",
+            "PQHS457",
+            "Total Credit Hours",
+            "BIOC285",
+            "BIOC391",
+            "BIOC393H",
+            "Total Credit Hours"
+        ]
+    }
+]
