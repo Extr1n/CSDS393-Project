@@ -81,4 +81,3 @@ def get_relevant_document(prompt):
 
 
     return prompt
-
