@@ -2,9 +2,14 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+import logging
 import unittest
 from unittest.mock import MagicMock, patch
 from AI import AIQuery
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 class Test_AIQuery(unittest.TestCase):
 
@@ -26,6 +31,11 @@ class Test_AIQuery(unittest.TestCase):
         prompt = "Some prompt"
         result = AIQuery.get_relevant_document(prompt)
         self.assertEqual(result, prompt)
+
+    @classmethod
+    def tearDownClass(cls):
+        # This will run after all tests in this class have run.
+        logger.info("All tests in TestCourseParse have passed.")
 
 if __name__ == '__main__':
     unittest.main()
