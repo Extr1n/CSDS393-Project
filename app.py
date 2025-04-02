@@ -58,6 +58,9 @@ def process():
     
     print("Calling get_response with input:", user_input)
 
+
+    print(get_embedding(user_input))
+
     results = db.Courses.aggregate([
     {
         "$vectorSearch": {
@@ -65,9 +68,16 @@ def process():
         "path": "description",
         "queryVector": get_embedding(user_input),
         "limit": 3
-    }
+        }
     }
     ])
+    
+    results = list(results)
+    
+    print(results)
+
+    for doc in results: 
+        print(doc)
     
     try:
         session['chat_completion'] = get_response(user_input, "")
@@ -142,7 +152,7 @@ def search_courses():
             },
             {"_id": 0}  # Exclude MongoDB _id field
         ).limit(10))  # Limit results to 10 courses
-        print(courses)  # Debug log
+        # print(courses)  # Debug log
         
        
         
