@@ -1,0 +1,308 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>My Courses</h1>
+    
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search courses by code or title..." class="search-input">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- User's Courses Section -->
+    <div class="course-grid">
+        {% for course in user_courses %}
+        <div class="course-box {{ course.status.lower() }}" onclick="toggleDeleteButton(this)">
+            <h3>{{ course.code }}</h3>
+            <p>{{ course.title }}</p>
+            <p>Credits: {{ course.credits }}</p>
+            <p>Status: {{ course.status }}</p>
+            <button class="delete-btn" onclick="deleteCourse(event, '{{ course.code }}')">Delete</button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .search-section {
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .search-container {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    .search-input:focus {
+        border-color: #007bff;
+    }
+
+    .search-results {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        max-height: 300px;
+        overflow-y: auto;
+        display: none;
+    }
+
+    .search-result {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search-result:hover {
+        background-color: #f8f9fa;
+    }
+
+    .search-result button {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .search-result button:hover {
+        background-color: #0056b3;
+    }
+
+    .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .course-box {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .course-box:hover {
+        transform: translateY(-5px);
+    }
+
+    .course-box h3 {
+        margin: 0 0 10px 0;
+        color: #333;
+    }
+
+    .course-box p {
+        margin: 5px 0;
+        color: #666;
+    }
+
+    .error {
+        color: #dc3545;
+        padding: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    /* Status colors */
+    .course-box.planned {
+        border-left: 4px solid #4CAF50;
+    }
+
+    .course-box.in_progress {
+        border-left: 4px solid #FFC107;
+    }
+
+    .course-box.completed {
+        border-left: 4px solid #2196F3;
+    }
+
+    .delete-btn {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .delete-btn:hover {
+        background-color: #c82333;
+    }
+
+    .course-box:hover .delete-btn {
+        display: block;
+    }
+</style>
+
+<script>
+    let searchTimeout;
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        const query = this.value.trim();
+        
+        if (query.length < 2) {
+            searchResults.style.display = 'none';
+            return;
+        }
+
+        searchTimeout = setTimeout(() => {
+            fetch(`/search_courses?query=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(courses => {
+                    searchResults.innerHTML = '';
+                    if (courses.length === 0) {
+                        searchResults.innerHTML = '<div class="search-result">No courses found</div>';
+                    } else {
+                        courses.forEach(course => {
+                            const div = document.createElement('div');
+                            div.className = 'search-result';
+                            div.innerHTML = `
+                                <span>${course.code} - ${course.title}</span>
+                                <button onclick='addCourse(${JSON.stringify(course).replace(/'/g, "\\'")})'>Add</button>
+                            `;
+                            searchResults.appendChild(div);
+                        });
+                    }
+                    searchResults.style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error searching courses:', error);
+                    searchResults.innerHTML = '<div class="error">Error searching courses</div>';
+                    searchResults.style.display = 'block';
+                });
+        }, 300);
+    });
+
+    function addCourse(course) {
+        console.log('Adding course:', course);  // Debug log
+        
+        // Ensure course has all required fields
+        if (!course.code || !course.title || !course.credits) {
+            console.error('Missing required course fields:', course);
+            return;
+        }
+
+        // Convert course object to string and back to ensure proper JSON formatting
+        const courseData = JSON.parse(JSON.stringify(course));
+
+        fetch('/add_course', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(courseData)
+        })
+        .then(response => {
+            console.log('Response status:', response.status);  // Debug log
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Response data:', data);  // Debug log
+            if (data.error) {
+                console.error('Error from server:', data.error);  // Debug log
+                return;
+            }
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error adding course:', error);
+        });
+    }
+
+    // Close search results when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.style.display = 'none';
+        }
+    });
+
+    function toggleDeleteButton(courseBox) {
+        const deleteBtn = courseBox.querySelector('.delete-btn');
+        deleteBtn.style.display = deleteBtn.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function deleteCourse(event, courseCode) {
+        event.stopPropagation(); // Prevent the click from triggering the parent's onclick
+        
+        if (!confirm('Are you sure you want to delete this course?')) {
+            return;
+        }
+
+        fetch('/delete_course', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ code: courseCode })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                console.error('Error from server:', data.error);
+                return;
+            }
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error deleting course:', error);
+        });
+    }
+</script>
+{% endblock %} 
