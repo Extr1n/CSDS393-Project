@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 from flask_session import Session
 from pymongo import MongoClient
 from AI.AIQuery import get_response
+from AI.Embeddings import get_embedding
 import random, threading, webbrowser
 import os
 from dotenv import load_dotenv
@@ -57,6 +58,17 @@ def process():
     
     print("Calling get_response with input:", user_input)
 
+    results = db.Courses.aggregate([
+    {
+        "$vectorSearch": {
+        "index": "vector_index",
+        "path": "description",
+        "queryVector": get_embedding(user_input),
+        "limit": 3
+    }
+    }
+    ])
+    
     try:
         session['chat_completion'] = get_response(user_input, "")
     except Exception as e:
