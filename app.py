@@ -19,7 +19,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # MongoDB connection
-client = MongoClient(os.getenv('DB_key'))
+client = MongoClient(os.getenv('MONGODB_URI'))
 db = client.cluster0
 courses_collection = db["Documents.Courses"]
 user_courses_collection = db.user_courses
