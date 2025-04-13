@@ -58,27 +58,36 @@ def process():
     
     print("Calling get_response with input:", user_input)
 
-
-    print(get_embedding(user_input))
-
-    results = db.Courses.aggregate([
-    {
-        "$vectorSearch": {
-        "index": "vector_index",
-        "path": "description",
-        "queryVector": get_embedding(user_input),
-        "limit": 3
+    query_vector = get_embedding(user_input)  # Implement this function
+    
+    results = courses_collection.aggregate([
+        {
+            "$vectorSearch": {
+                "index": "vector_index",  # Your index name from image
+                "path": "description",    # Field containing vectors
+                "queryVector": query_vector,
+                "numCandidates": 100,     # Number of candidate matches
+                "limit": 10                # Final results to return
+            }
+        },
+        {
+            "$project": {
+                "_id": 0,
+                "class_title": 1,
+                "description": 1,
+                "score": {"$meta": "vectorSearchScore"}
+            }
         }
-    }
     ])
     
-    results = list(results)
-    
+    results_list = list(results)
+
+    print(len(results_list))
+
+    results = jsonify(list(results))
+
     print(results)
 
-    for doc in results: 
-        print(doc)
-    
     try:
         session['chat_completion'] = get_response(user_input, "")
     except Exception as e:
@@ -93,8 +102,15 @@ def login():
         session["name"] = request.form.get("name")
         session["caseid"] = request.form.get("caseid")
         session["major"] = request.form.get("major")
+        if session["name"] == "ADMIN" and session["caseid"] == "ADMIN":
+            return redirect("/admin")
         return redirect("/")
     return render_template("login.html")
+
+@app.route('/admin')
+def admin():
+    return render_template("admin.html")
+
 
 @app.route('/logout')
 def logout():
