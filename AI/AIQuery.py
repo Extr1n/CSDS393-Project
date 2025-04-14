@@ -190,11 +190,11 @@ def get_relevant_document(prompt, user_major=None):
                     "score": {"$meta": "vectorSearchScore"}
                 }
             }
-        ])
+        ]
 
         print(results)
         
-        results = list(courses_collection.aggregate(pipeline))
+        results = list(courses_meta_collection.aggregate(pipeline))
         
         # If no results found
         if not results:
