@@ -11,7 +11,7 @@ scrape_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scr
 sys.path.append(scrape_path)
 
 # imported files to test (scrapeall and scrapereq)
-import parse, script_sub
+from scrape import parse, script_sub
 
 
 
