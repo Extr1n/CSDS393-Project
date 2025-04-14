@@ -110,33 +110,39 @@ def get_major_requirements(major):
         A formatted string containing major requirements.
     """
     try:
-        # Perform a case-insensitive search for the major in the requirements collection.
+        # Perform a search for the major in the requirements collection
+        # Use the array element match since title is stored as an array
         major_doc = requirements_collection.find_one(
-            {"title": {"$regex": major, "$options": "i"}},
+            {"title.0": {"$regex": major, "$options": "i"}},
             {"_id": 0}
         )
         
         if not major_doc:
             return None
         
-        formatted_requirements = f"Requirements for {major_doc.get('major', 'Unknown Major')}:\n\n"
+        # Get the actual major title from the array
+        major_title = major_doc.get('title', ['Unknown Major'])[0]
+        formatted_requirements = f"Requirements for {major_title}:\n\n"
         
-        # Include core requirements if available.
-        if 'core_requirements' in major_doc:
-            formatted_requirements += "Core Requirements:\n"
-            for course in major_doc['core_requirements']:
-                formatted_requirements += f"- {course}\n"
+        # Include credit hour requirements if available
+        if 'credit hours' in major_doc and major_doc['credit hours']:
+            credit_hours = major_doc['credit hours'][0]
+            formatted_requirements += f"Credit Hours Required: {credit_hours}\n\n"
+        
+        # Include required courses if available
+        if 'necessary' in major_doc and major_doc['necessary']:
+            formatted_requirements += "Required Courses:\n"
+            for course_array in major_doc['necessary']:
+                if course_array and len(course_array) > 0:
+                    formatted_requirements += f"- {course_array[0]}\n"
             formatted_requirements += "\n"
         
-        # Include elective requirements if available.
-        if 'elective_requirements' in major_doc:
-            formatted_requirements += "Elective Requirements:\n"
-            formatted_requirements += f"{major_doc['elective_requirements']}\n\n"
-        
-        # Include additional requirements if available.
-        if 'additional_requirements' in major_doc:
-            formatted_requirements += "Additional Requirements:\n"
-            formatted_requirements += f"{major_doc['additional_requirements']}\n\n"
+        # Include elective courses if available
+        if 'electives' in major_doc and major_doc['electives']:
+            formatted_requirements += "Elective Courses:\n"
+            for elective in major_doc['electives']:
+                formatted_requirements += f"- {elective}\n"
+            formatted_requirements += "\n"
         
         return formatted_requirements
     
