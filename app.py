@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_session import Session
 from pymongo import MongoClient
-from AI.AIQuery import get_response, get_relevant_document
+from AI.AIQuery import get_response, get_relevant_document, get_major_requirements
 from AI.Embeddings import get_embedding
 import random, threading, webbrowser
 import os
@@ -79,6 +79,11 @@ def process():
     try:
         # Get relevant documents using vector search, including major requirements
         relevant_doc = get_relevant_document(user_input)
+
+        major_req = get_major_requirements(user_major)
+
+        if major_req:
+            relevant_doc += "\n\n User's Major Requiremnts: \n \n" + major_req
         
         # Get AI response using the relevant document and user's major
         ai_response = get_response(user_input, relevant_doc, user_major)
