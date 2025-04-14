@@ -12,10 +12,10 @@ client = Groq()
 # The database is "cluster0" with two separate collections for course metadata and embeddings,
 # and one for requirements.
 mongo_client = MongoClient(os.getenv('DB_KEY'))
-db = mongo_client.cluster0
+db = mongo_client["cluster0"]
 
 # Collections for course metadata and requirements (stored in Documents/courses and Documents/requirements)
-courses_meta_collection = db["Documents.courses"]
+courses_meta_collection = db["Documents.Courses"]
 requirements_collection = db["Documents.requirements"]
 
 # Collection with course embeddings (vector index is built on this collection)
@@ -176,7 +176,7 @@ def get_relevant_document(prompt, user_major=None):
                     "queryVector": query_vector,
                     "numCandidates": 100,
                     "limit": 5,
-                    "filter": {"department": user_major} if user_major else None 
+
                 }
             },
             {
@@ -192,7 +192,7 @@ def get_relevant_document(prompt, user_major=None):
             }
         ]
 
-        print(results)
+        print(courses_embeddings_collection.find_one())
         
         results = list(courses_meta_collection.aggregate(pipeline))
         
@@ -217,3 +217,5 @@ def get_relevant_document(prompt, user_major=None):
     except Exception as e:
         print(f"Error in vector search: {str(e)}")
         return f"An error occurred while searching for relevant information: {str(e)}"
+
+
