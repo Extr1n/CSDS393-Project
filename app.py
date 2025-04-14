@@ -58,43 +58,25 @@ def process():
 
     session['user_input'] = user_input
     
+    # Get user's major from session if available
+    user_major = session.get('major')
+    print(f"User major: {user_major}")
+    
     print("Calling get_response with input:", user_input)
 
-    query_vector = get_embedding(user_input)  # Implement this function
-    
-    results = courses_collection.aggregate([
-        {
-            "$vectorSearch": {
-                "index": "vector_index",  # Your index name from image
-                "path": "description",    # Field containing vectors
-                "queryVector": query_vector,
-                "numCandidates": 100,     # Number of candidate matches
-                "limit": 10                # Final results to return
-            }
-        },
-        {
-            "$project": {
-                "_id": 0,
-                "class_title": 1,
-                "description": 1,
-                "score": {"$meta": "vectorSearchScore"}
-            }
-        }
-    ])
-    
-    results_list = list(results)
-
-    print(len(results_list))
-
-    results = jsonify(list(results))
-
-    print(results)
-
     try:
-        session['chat_completion'] = get_response(user_input, "")
+        # Get relevant documents using vector search, including major requirements
+        relevant_doc = get_relevant_document(user_input, user_major)
+        
+        # Get AI response using the relevant document and user's major
+        ai_response = get_response(user_input, relevant_doc, user_major)
+        
+        session['chat_completion'] = ai_response
+        session['relevant_doc'] = relevant_doc  # Store for display if needed
     except Exception as e:
-        print("Error calling get_response:", str(e))
+        print("Error processing request:", str(e))
         session['chat_completion'] = "An error occurred while processing your request."
+        session['relevant_doc'] = None
 
     return redirect(url_for('result'))
 
@@ -126,8 +108,13 @@ def chat():
 @app.route('/result')
 def result():
     user_input = session.get('user_input', None)
-    chat = session.get('chat_completion')
-    return render_template('return.html', user_input=user_input, chat_completion=chat)
+    chat_completion = session.get('chat_completion')
+    relevant_doc = session.get('relevant_doc', None)
+    
+    # You can decide whether to display the raw document or not
+    return render_template('return.html', 
+                          user_input=user_input, 
+                          chat_completion=chat_completion)
 
 @app.route('/course')
 def course():

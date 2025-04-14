@@ -2,22 +2,67 @@
 
 {% block content %}
 <div class="body">
-  <div class="container">
+  <div class="container" style="width: 80%; max-width: 800px;">
     <h1>AI Advisor Response</h1>
-    <h3>Your Question</h3>
-    {% if user_input %}
-        <p>{{ user_input }}</p>
-    {% else %}
-        <p>No input received</p>
-    {% endif %}
-    <h3>Advisor Answer</h3>
-    {% if chat_completion  %}
-        <p>{{ chat_completion }}</p>
-    {% else %}
-        <p>No answer recieved</p>
-    {% endif %}
-    <a href="{{ url_for('chat') }}" class="btn btn-primary">Go Back</a>
+    
+    <div class="question-section">
+      <h3>Your Question</h3>
+      {% if user_input %}
+          <p>{{ user_input }}</p>
+      {% else %}
+          <p>No input received</p>
+      {% endif %}
+    </div>
+    
+    <div class="answer-section">
+      <h3>Advisor Answer</h3>
+      {% if chat_completion %}
+          <div class="advisor-response">{{ chat_completion }}</div>
+      {% else %}
+          <p>No answer received</p>
+      {% endif %}
+    </div>
+    
+    <a href="{{ url_for('chat') }}" class="btn btn-primary">Ask Another Question</a>
   </div>
 </div>
 
+<style>
+  .body {
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 800px;
+    text-align: left;
+  }
+  
+  .question-section, .answer-section {
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .advisor-response {
+    white-space: pre-line;
+    line-height: 1.6;
+  }
+  
+  .btn-primary {
+    background-color: #0a4d8c;
+    border-color: #0a4d8c;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  h3 {
+    color: #0a4d8c;
+    margin-top: 0;
+  }
+</style>
 {% endblock %}
