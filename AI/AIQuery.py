@@ -112,7 +112,7 @@ def get_major_requirements(major):
     try:
         # Perform a case-insensitive search for the major in the requirements collection.
         major_doc = requirements_collection.find_one(
-            {"major": {"$regex": major, "$options": "i"}},
+            {"title": {"$regex": major, "$options": "i"}},
             {"_id": 0}
         )
         
