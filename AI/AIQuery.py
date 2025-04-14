@@ -172,7 +172,7 @@ def get_relevant_document(prompt, user_major=None):
         pipeline = [
             {
                 "$vectorSearch": {
-                    "index": "vector_index",
+                    "index": "cool_index",
                     "path": "embedding",    # Assuming the embedding field is called "embedding"
                     "queryVector": query_vector,
                     "numCandidates": 100,
