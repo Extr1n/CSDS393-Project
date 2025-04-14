@@ -3,7 +3,6 @@ from groq import Groq
 from pymongo import MongoClient
 import os
 from Embeddings import get_embedding
-import numpy as np 
 
 load_dotenv()
 
@@ -168,24 +167,12 @@ def get_relevant_document(prompt, user_major=None):
         # Generate the embedding vector for the prompt.
         query_vector = get_embedding(prompt)
         
-        # Convert the numpy array to a list, if necessary.
-        if isinstance(query_vector, np.ndarray):
-            query_vector = query_vector.tolist()
-        
-        # Convert each element to a Python float (MongoDB requires 64-bit floats).
-        query_vector = [float(val) for val in query_vector]
-        
-        # Check that the vector has the expected dimension (assuming 768 dimensions).
-        if len(query_vector) != 768:
-            raise ValueError(f"Embedding dimension mismatch. Expected 768, got {len(query_vector)}")
-        
-        # Define the aggregation pipeline for vector search.
-        # This query is run on the collection storing embeddings.
+        # Perform vector search in MongoDB
         pipeline = [
             {
                 "$vectorSearch": {
                     "index": "vector_index",
-                    "path": "embedding",
+                    "path": "embedding",    # Assuming the embedding field is called "embedding"
                     "queryVector": query_vector,
                     "numCandidates": 100,
                     "limit": 5,
@@ -203,29 +190,30 @@ def get_relevant_document(prompt, user_major=None):
                     "score": {"$meta": "vectorSearchScore"}
                 }
             }
-        ]
+        ])
+
+        print(results)
         
-        # Execute the vector search using an explicit timeout.
-        try:
-            results = list(courses_embeddings_collection.aggregate(pipeline, maxTimeMS=5000))
-        except Exception as agg_error:
-            print(f"Aggregation error: {str(agg_error)}")
-            return final_document + "\n\nError searching course database."
+        results = list(courses_collection.aggregate(pipeline))
         
+        # If no results found
         if not results:
-            return final_document or "No relevant courses found."
+            if not final_document:
+                return "I couldn't find specific information related to your question in the database."
+            return final_document
         
-        courses_info = "Relevant courses:\n\n"
+        # Format the results into a readable document
+        courses_info = "Here are some relevant courses that might answer your question:\n\n"
+        
         for course in results:
-            courses_info += (
-                f"Course: {course.get('code', 'N/A')} - {course.get('title', 'No title')}\n"
-                f"Credits: {course.get('credits', 'N/A')}\n"
-                f"Department: {course.get('department', 'N/A')}\n"
-                f"Description: {course.get('description', 'No description available')}\n\n"
-            )
+            courses_info += f"Course: {course.get('code', 'N/A')} - {course.get('title', 'N/A')}\n"
+            courses_info += f"Credits: {course.get('credits', 'N/A')}\n"
+            courses_info += f"Department: {course.get('department', 'N/A')}\n"
+            courses_info += f"Description: {course.get('description', 'N/A')}\n\n"
         
-        return final_document + courses_info
+        final_document += courses_info
+        return final_document
         
     except Exception as e:
-        print(f"Vector search error: {str(e)}")
-        return "Error retrieving information. Please try again later."
+        print(f"Error in vector search: {str(e)}")
+        return f"An error occurred while searching for relevant information: {str(e)}"
