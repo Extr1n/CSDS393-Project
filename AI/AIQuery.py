@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from groq import Groq
 from pymongo import MongoClient
 import os
-from Embeddings import get_embedding
+from AI.Embeddings import get_embedding
 
 load_dotenv()
 

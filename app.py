@@ -6,6 +6,7 @@ from AI.Embeddings import get_embedding
 import random, threading, webbrowser
 import os
 from dotenv import load_dotenv
+#import coursemethods
 
 load_dotenv()
 
@@ -22,14 +23,25 @@ Session(app)
 # MongoDB connection
 client = MongoClient(os.getenv('DB_KEY'))
 db = client.cluster0
+db2 = client.Documents #connection for reqs
 courses_collection = db["Documents.Courses"]
+reqs = db2["Requirements"]
 user_courses_collection = db.user_courses
+listreqs = []
 
 # Test the connection
 try:
     # Test the connection by listing collections
     collections = db.list_collection_names()
     print("Connected to MongoDB. Available collections:", collections)
+    
+    #test req connection
+    reqc = db2.list_collection_names()
+    print("Connected to MongoDB. Available collections:", reqc)
+    
+    for doc in reqs.find():
+        listreqs.append(doc['title'][0])
+    
     
     # Test the courses collection
     course_count = courses_collection.count_documents({})
@@ -85,11 +97,12 @@ def login():
     if request.method == "POST":
         session["name"] = request.form.get("name")
         session["caseid"] = request.form.get("caseid")
-        session["major"] = request.form.get("major")
+        session["major"] = request.form.get("majordrop")
+       
         if session["name"] == "ADMIN" and session["caseid"] == "ADMIN":
             return redirect("/admin")
         return redirect("/")
-    return render_template("login.html")
+    return render_template("login.html", reqs=listreqs)
 
 @app.route('/admin')
 def admin():
