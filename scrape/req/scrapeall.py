@@ -28,7 +28,7 @@ for i in ini:
 driver.quit()
 all_course_req = []
 b  = True
-for i in range(0,50):
+for i in range(0,len(href)):
     url = href[i]
     print(url)
     a = scrapereq.get_req(url)
