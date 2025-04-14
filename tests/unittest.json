@@ -1,0 +1,45 @@
+{
+    "title": [
+        "Astronomy, Minor"
+    ],
+    "credit hours": [
+        "17"
+    ],
+    "necessary": [
+        [
+            "ASTR221"
+        ],
+        [
+            "ASTR222"
+        ]
+    ],
+    "groups": [
+        [
+            "Choose one of the following:",
+            [
+                "PHYS115",
+                "PHYS121",
+                "PHYS123"
+            ]
+        ],
+        [
+            "Choose one of the following:",
+            [
+                "PHYS116",
+                "PHYS122",
+                "PHYS124"
+            ]
+        ],
+        [
+            "Choose one of the following:",
+            [
+                "ASTR306",
+                "ASTR311",
+                "ASTR323",
+                "ASTR328",
+                "ASTR333"
+            ]
+        ]
+    ],
+    "electives": []
+}
