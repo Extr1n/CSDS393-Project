@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from groq import Groq
 from pymongo import MongoClient
 import os
-from AI.Embeddings import get_embedding
+from Embeddings import get_embedding
 
 load_dotenv()
 
@@ -153,7 +153,7 @@ def get_relevant_document(prompt, user_major=None):
         # Generate embedding for the user's prompt
         query_vector = get_embedding(prompt)
         
-        # Perform vector search in Courses collection
+        # Perform vector search in MongoDB
         results = courses_collection.aggregate([
             {
                 "$vectorSearch": {
@@ -176,19 +176,24 @@ def get_relevant_document(prompt, user_major=None):
                 }
             }
         ])
+
+        print(results)
         
         # Convert results to list
         results_list = list(results)
         
-        # If we found relevant courses
-        if results_list:
-            final_document += "Relevant Courses:\n\n"
-            
-            for course in results_list:
-                final_document += f"Course: {course.get('code', 'N/A')} - {course.get('title', 'N/A')}\n"
-                final_document += f"Credits: {course.get('credits', 'N/A')}\n"
-                final_document += f"Department: {course.get('department', 'N/A')}\n"
-                final_document += f"Description: {course.get('description', 'N/A')}\n\n"
+        # If no results found
+        if not results_list:
+            return "I couldn't find specific course information related to your question in the database."
+        
+        # Format the results into a readable document
+        formatted_document = "Here are some relevant courses that might answer your question:\n\n"
+        
+        for course in results_list:
+            formatted_document += f"Course: {course.get('code', 'N/A')} - {course.get('title', 'N/A')}\n"
+            formatted_document += f"Credits: {course.get('credits', 'N/A')}\n"
+            formatted_document += f"Department: {course.get('department', 'N/A')}\n"
+            formatted_document += f"Description: {course.get('description', 'N/A')}\n\n"
         
         if not final_document:
             return "I couldn't find specific information related to your question in the database."
