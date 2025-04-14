@@ -15,11 +15,11 @@ mongo_client = MongoClient(os.getenv('DB_KEY'))
 db = mongo_client["cluster0"]
 
 # Collections for course metadata and requirements (stored in Documents/courses and Documents/requirements)
-courses_meta_collection = db["Documents.Courses"]
-requirements_collection = db["Documents.requirements"]
+courses_meta_collection = mongo_client["Documents"]["Courses"]
+requirements_collection = mongo_client["Documents"]["Requirements"]
 
 # Collection with course embeddings (vector index is built on this collection)
-courses_embeddings_collection = db["cluster0.Documents.Courses"]
+courses_embeddings_collection = mongo_client["cluster0"]["Documents.Courses"]
 
 # An initial chat completion example (this sends a simple "Hello!" to the advisor model)
 chat_completion = client.chat.completions.create(
@@ -167,6 +167,7 @@ def get_relevant_document(prompt, user_major=None):
         # Generate the embedding vector for the prompt.
         query_vector = get_embedding(prompt)
         
+        
         # Perform vector search in MongoDB
         pipeline = [
             {
@@ -194,7 +195,7 @@ def get_relevant_document(prompt, user_major=None):
 
         print(courses_embeddings_collection.find_one())
         
-        results = list(courses_meta_collection.aggregate(pipeline))
+        results = list(courses_embeddings_collection.aggregate(pipeline))
         
         # If no results found
         if not results:
