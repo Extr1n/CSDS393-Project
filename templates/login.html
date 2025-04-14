@@ -51,9 +51,14 @@
     <div class="container">
         <h2>Please enter your details</h2>
         <form action="/login" method="POST">
-        <input type="text" name="name" placeholder="Enter your name" required>
+            <input type="text" name="name" placeholder="Enter your name" required>
             <input type="text" name="caseid" placeholder="Enter your Case ID" required>
-            <input type="text" name="major" placeholder="Enter your Major" required>
+            <select type = "text" name="majordrop">
+                {% for req in reqs %}
+                
+                    <option value="">{{req }}</option>
+                {% endfor %}
+            </select>
             <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
             <button type="submit">Next</button>
         </form>
