@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from groq import Groq
 from pymongo import MongoClient
 import os
-from AI.Embeddings import get_embedding
+from Embeddings import get_embedding
 
 load_dotenv()
 
@@ -107,6 +107,8 @@ def get_relevant_document(prompt):
         # Generate embedding for the user's prompt
         query_vector = get_embedding(prompt)
         
+        print(query_vector)
+
         # Perform vector search in MongoDB
         results = courses_collection.aggregate([
             {
@@ -130,10 +132,14 @@ def get_relevant_document(prompt):
                 }
             }
         ])
+
+        print(results)
         
         # Convert results to list
         results_list = list(results)
         
+        print(results_list)
+
         # If no results found
         if not results_list:
             return "I couldn't find specific course information related to your question in the database."
