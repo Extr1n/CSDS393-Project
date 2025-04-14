@@ -43,6 +43,8 @@ threading.Timer(1.25, lambda: webbrowser.open(url) ).start()
 def index():
     if not session.get("name"):
         return redirect("/login")
+    if session["name"] == "ADMIN" and session["caseid"] == "ADMIN":
+        return render_template("admin.html")
     return render_template('index.html')
 
 @app.route('/process', methods=['POST'])

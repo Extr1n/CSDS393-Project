@@ -6,6 +6,20 @@
     <div class="container">
       <h1>Welcome, ADMIN!</h1>
         <h1>Add New Courses Below</h1>
+    <div class="forms">
+        <form action="/login" method="POST">
+          <input type="text" name"dpt" placeholder="Enter Department Name (CSDS)" required>
+          <input type="text" name="num" placeholder="Enter Course Number (101)" required>
+          <input type="text" name="title" placeholder="Enter Course Title (Intro to CS)" required>
+          <select name="units">
+            <option value="1 units">1 units</option>
+            <option value="3 units">3 units</option>
+            <option value="4 units">4 units</option>
+          </select>
+          <textarea type="textarea" name="desc" placeholder="Enter Course Description" required></textarea>
+          <button type="submit">Add</button>
+        </form>
+    </div>
     </div>
     </div>
 {% endblock %}
