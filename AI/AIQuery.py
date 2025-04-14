@@ -8,11 +8,21 @@ import numpy as np
 load_dotenv()
 
 client = Groq()
+
+# Connect to MongoDB using your connection string.
+# The database is "cluster0" with two separate collections for course metadata and embeddings,
+# and one for requirements.
 mongo_client = MongoClient(os.getenv('DB_KEY'))
 db = mongo_client.cluster0
-courses_collection = db["Documents.Courses"]
-requirements_collection = db["Documents.Requirements"]
 
+# Collections for course metadata and requirements (stored in Documents/courses and Documents/requirements)
+courses_meta_collection = db["Documents.courses"]
+requirements_collection = db["Documents.requirements"]
+
+# Collection with course embeddings (vector index is built on this collection)
+courses_embeddings_collection = db["cluster0.Documents.Courses"]
+
+# An initial chat completion example (this sends a simple "Hello!" to the advisor model)
 chat_completion = client.chat.completions.create(
     messages=[
         {
@@ -37,21 +47,24 @@ def get_response(prompt, document, user_major=None):
     Generate an AI response based on the user prompt and relevant documents.
     
     Args:
-        prompt: The user's query
-        document: Relevant document information retrieved from the database
-        user_major: The user's major if available
+        prompt: The user's query.
+        document: Relevant document information retrieved from the database.
+        user_major: The user's major if available.
     
     Returns:
-        AI-generated response text
+        AI-generated response text.
     """
     load_dotenv()
     
-    # Get relevant documents if none provided
+    # If no document was provided, retrieve relevant documents using vector search.
     if not document:
         document = get_relevant_document(prompt, user_major)
     
-    # Construct system prompt with retrieved document
-    system_content = "You are an advisor for Case Western Reserve University. Your goal is to help the user answer questions about courses and graduation requirements for their major."
+    # Build the system prompt with the retrieved information.
+    system_content = (
+        "You are an advisor for Case Western Reserve University. Your goal is to help the user answer questions "
+        "about courses and graduation requirements for their major."
+    )
     
     if user_major:
         system_content += f" The user's major is {user_major}."
@@ -61,7 +74,10 @@ def get_response(prompt, document, user_major=None):
     else:
         system_content += "\n\nI don't have specific information about that in my database."
     
-    system_content += "\n\nIf the user's question is not about CWRU's major requirements or courses, suggest they schedule a meeting with their 4-year advisor through MyJourney (https://journey.case.edu/s/)."
+    system_content += (
+        "\n\nIf the user's question is not about CWRU's major requirements or courses, suggest they schedule a meeting with "
+        "their 4-year advisor through MyJourney (https://journey.case.edu/s/)."
+    )
     
     chat_completion = client.chat.completions.create(
         messages=[
@@ -89,13 +105,13 @@ def get_major_requirements(major):
     Retrieve requirements for a specific major from the database.
     
     Args:
-        major: The user's declared major
+        major: The user's declared major.
     
     Returns:
-        Formatted string containing major requirements
+        A formatted string containing major requirements.
     """
     try:
-        # Look up the major in the requirements collection
+        # Perform a case-insensitive search for the major in the requirements collection.
         major_doc = requirements_collection.find_one(
             {"major": {"$regex": major, "$options": "i"}},
             {"_id": 0}
@@ -104,22 +120,21 @@ def get_major_requirements(major):
         if not major_doc:
             return None
         
-        # Format the major requirements
         formatted_requirements = f"Requirements for {major_doc.get('major', 'Unknown Major')}:\n\n"
         
-        # Add core requirements
+        # Include core requirements if available.
         if 'core_requirements' in major_doc:
             formatted_requirements += "Core Requirements:\n"
             for course in major_doc['core_requirements']:
                 formatted_requirements += f"- {course}\n"
             formatted_requirements += "\n"
         
-        # Add elective requirements
+        # Include elective requirements if available.
         if 'elective_requirements' in major_doc:
             formatted_requirements += "Elective Requirements:\n"
             formatted_requirements += f"{major_doc['elective_requirements']}\n\n"
         
-        # Add other requirements
+        # Include additional requirements if available.
         if 'additional_requirements' in major_doc:
             formatted_requirements += "Additional Requirements:\n"
             formatted_requirements += f"{major_doc['additional_requirements']}\n\n"
@@ -132,8 +147,15 @@ def get_major_requirements(major):
 
 def get_relevant_document(prompt, user_major=None):
     """
-    Creates an embedding for the user prompt and uses vector search to find relevant documents.
-    Also incorporates major requirements if available.
+    Create an embedding for the user prompt and use vector search on the courses embeddings collection.
+    Also incorporates major requirements if available from the requirements collection.
+    
+    Args:
+        prompt: The user's query.
+        user_major: The user's declared major (optional).
+    
+    Returns:
+        A string containing relevant document details.
     """
     try:
         final_document = ""
@@ -143,29 +165,31 @@ def get_relevant_document(prompt, user_major=None):
             if major_requirements:
                 final_document += major_requirements + "\n\n"
         
-        #CRUCIAL EMBEDDING FIXES
+        # Generate the embedding vector for the prompt.
         query_vector = get_embedding(prompt)
         
-        # Convert numpy array to list if necessary
+        # Convert the numpy array to a list, if necessary.
         if isinstance(query_vector, np.ndarray):
             query_vector = query_vector.tolist()
         
-        #Ensure values are Python floats (MongoDB requires 64-bit floats)
+        # Convert each element to a Python float (MongoDB requires 64-bit floats).
         query_vector = [float(val) for val in query_vector]
         
-        #Verify vector length matches index dimensions
+        # Check that the vector has the expected dimension (assuming 768 dimensions).
         if len(query_vector) != 768:
             raise ValueError(f"Embedding dimension mismatch. Expected 768, got {len(query_vector)}")
-
+        
+        # Define the aggregation pipeline for vector search.
+        # This query is run on the collection storing embeddings.
         pipeline = [
             {
                 "$vectorSearch": {
                     "index": "vector_index",
                     "path": "embedding",
-                    "queryVector": query_vector,  # 🔧 Now properly formatted
+                    "queryVector": query_vector,
                     "numCandidates": 100,
                     "limit": 5,
-                    "filter": {"department": user_major} if user_major else None  # 🔧 Optional filter
+                    "filter": {"department": user_major} if user_major else None 
                 }
             },
             {
@@ -181,9 +205,9 @@ def get_relevant_document(prompt, user_major=None):
             }
         ]
         
-        #Added explicit timeout and error handling
+        # Execute the vector search using an explicit timeout.
         try:
-            results = list(courses_collection.aggregate(pipeline, maxTimeMS=5000))
+            results = list(courses_embeddings_collection.aggregate(pipeline, maxTimeMS=5000))
         except Exception as agg_error:
             print(f"Aggregation error: {str(agg_error)}")
             return final_document + "\n\nError searching course database."
@@ -193,10 +217,9 @@ def get_relevant_document(prompt, user_major=None):
         
         courses_info = "Relevant courses:\n\n"
         for course in results:
-            #Handle potential missing fields
             courses_info += (
                 f"Course: {course.get('code', 'N/A')} - {course.get('title', 'No title')}\n"
-                f"Credits: {course.get('credits', 'N/A')}\n"  #Fixed typo in 'credits'
+                f"Credits: {course.get('credits', 'N/A')}\n"
                 f"Department: {course.get('department', 'N/A')}\n"
                 f"Description: {course.get('description', 'No description available')}\n\n"
             )
