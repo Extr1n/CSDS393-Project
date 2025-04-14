@@ -134,8 +134,12 @@ def get_req(url):
         "electives": electives
     }
     
+    
+  
     if all(value == "" or value == [] for value in data.values()):
         return None
     return data
+
+
 
 
