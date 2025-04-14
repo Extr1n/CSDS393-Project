@@ -95,6 +95,20 @@ def login():
 def admin():
     return render_template("admin.html")
 
+@app.route('/adminCourse', methods=["POST"])
+def admin_course():
+    course ={
+                "code": request.form.get("dpt") + " " + request.form.get("num"),
+                "title": request.form.get("title"),
+                "credits": request.form.get("units"),
+                "department": request.form.get("dpt"),
+                "description": request.form.get("desc")
+            }
+    print(course)
+    courses_collection.insert_one(course)
+
+    return render_template("added.html")
+
 
 @app.route('/logout')
 def logout():
