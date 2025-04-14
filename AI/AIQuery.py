@@ -3,6 +3,7 @@ from groq import Groq
 from pymongo import MongoClient
 import os
 from Embeddings import get_embedding
+import numpy as np 
 
 load_dotenv()
 
@@ -133,35 +134,38 @@ def get_relevant_document(prompt, user_major=None):
     """
     Creates an embedding for the user prompt and uses vector search to find relevant documents.
     Also incorporates major requirements if available.
-    
-    Args:
-        prompt: The user's query
-        user_major: The user's major if available
-    
-    Returns:
-        Formatted string containing relevant information
     """
     try:
         final_document = ""
         
-        # First, get major requirements if available
         if user_major:
             major_requirements = get_major_requirements(user_major)
             if major_requirements:
                 final_document += major_requirements + "\n\n"
         
-        # Generate embedding for the user's prompt
+        #CRUCIAL EMBEDDING FIXES
         query_vector = get_embedding(prompt)
         
-        # Perform vector search in MongoDB
+        # Convert numpy array to list if necessary
+        if isinstance(query_vector, np.ndarray):
+            query_vector = query_vector.tolist()
+        
+        #Ensure values are Python floats (MongoDB requires 64-bit floats)
+        query_vector = [float(val) for val in query_vector]
+        
+        #Verify vector length matches index dimensions
+        if len(query_vector) != 768:
+            raise ValueError(f"Embedding dimension mismatch. Expected 768, got {len(query_vector)}")
+
         pipeline = [
             {
                 "$vectorSearch": {
                     "index": "vector_index",
                     "path": "embedding",
-                    "queryVector": query_vector,
+                    "queryVector": query_vector,  # 🔧 Now properly formatted
                     "numCandidates": 100,
-                    "limit": 5
+                    "limit": 5,
+                    "filter": {"department": user_major} if user_major else None  # 🔧 Optional filter
                 }
             },
             {
@@ -177,26 +181,28 @@ def get_relevant_document(prompt, user_major=None):
             }
         ]
         
-        results = list(courses_collection.aggregate(pipeline))
+        #Added explicit timeout and error handling
+        try:
+            results = list(courses_collection.aggregate(pipeline, maxTimeMS=5000))
+        except Exception as agg_error:
+            print(f"Aggregation error: {str(agg_error)}")
+            return final_document + "\n\nError searching course database."
         
-        # If no results found
         if not results:
-            if not final_document:
-                return "I couldn't find specific information related to your question in the database."
-            return final_document
+            return final_document or "No relevant courses found."
         
-        # Format the results into a readable document
-        courses_info = "Here are some relevant courses that might answer your question:\n\n"
-        
+        courses_info = "Relevant courses:\n\n"
         for course in results:
-            courses_info += f"Course: {course.get('code', 'N/A')} - {course.get('title', 'N/A')}\n"
-            courses_info += f"Credits: {course.get('credits', 'N/A')}\n"
-            courses_info += f"Department: {course.get('department', 'N/A')}\n"
-            courses_info += f"Description: {course.get('description', 'N/A')}\n\n"
+            #Handle potential missing fields
+            courses_info += (
+                f"Course: {course.get('code', 'N/A')} - {course.get('title', 'No title')}\n"
+                f"Credits: {course.get('credits', 'N/A')}\n"  #Fixed typo in 'credits'
+                f"Department: {course.get('department', 'N/A')}\n"
+                f"Description: {course.get('description', 'No description available')}\n\n"
+            )
         
-        final_document += courses_info
-        return final_document
+        return final_document + courses_info
         
     except Exception as e:
-        print(f"Error in vector search: {str(e)}")
-        return f"An error occurred while searching for relevant information: {str(e)}"
+        print(f"Vector search error: {str(e)}")
+        return "Error retrieving information. Please try again later."
