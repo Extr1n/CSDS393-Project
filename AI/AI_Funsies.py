@@ -4,3 +4,5 @@ from Embeddings import get_embedding
 
 string = "I am interested in theoretical computer science"
 print(get_relevant_document(string))
+
+print(get_response(string, ""))
