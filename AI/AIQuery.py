@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from groq import Groq
 from pymongo import MongoClient
 import os
-from Embeddings import get_embedding
+from AI.Embeddings import get_embedding
 
 load_dotenv()
 
@@ -154,11 +154,11 @@ def get_relevant_document(prompt, user_major=None):
         query_vector = get_embedding(prompt)
         
         # Perform vector search in MongoDB
-        results = courses_collection.aggregate([
+        pipeline = [
             {
                 "$vectorSearch": {
                     "index": "vector_index",
-                    "path": "embedding",    # Assuming the embedding field is called "embedding"
+                    "path": "embedding",
                     "queryVector": query_vector,
                     "numCandidates": 100,
                     "limit": 5
@@ -175,29 +175,26 @@ def get_relevant_document(prompt, user_major=None):
                     "score": {"$meta": "vectorSearchScore"}
                 }
             }
-        ])
-
-        print(results)
+        ]
         
-        # Convert results to list
-        results_list = list(results)
+        results = list(courses_collection.aggregate(pipeline))
         
         # If no results found
-        if not results_list:
-            return "I couldn't find specific course information related to your question in the database."
+        if not results:
+            if not final_document:
+                return "I couldn't find specific information related to your question in the database."
+            return final_document
         
         # Format the results into a readable document
-        formatted_document = "Here are some relevant courses that might answer your question:\n\n"
+        courses_info = "Here are some relevant courses that might answer your question:\n\n"
         
-        for course in results_list:
-            formatted_document += f"Course: {course.get('code', 'N/A')} - {course.get('title', 'N/A')}\n"
-            formatted_document += f"Credits: {course.get('credits', 'N/A')}\n"
-            formatted_document += f"Department: {course.get('department', 'N/A')}\n"
-            formatted_document += f"Description: {course.get('description', 'N/A')}\n\n"
+        for course in results:
+            courses_info += f"Course: {course.get('code', 'N/A')} - {course.get('title', 'N/A')}\n"
+            courses_info += f"Credits: {course.get('credits', 'N/A')}\n"
+            courses_info += f"Department: {course.get('department', 'N/A')}\n"
+            courses_info += f"Description: {course.get('description', 'N/A')}\n\n"
         
-        if not final_document:
-            return "I couldn't find specific information related to your question in the database."
-        
+        final_document += courses_info
         return final_document
         
     except Exception as e:
