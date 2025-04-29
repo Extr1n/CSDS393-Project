@@ -1,3 +1,16 @@
+"""
+CWRU Course Advisor AI Module.
+
+This module provides functionality for retrieving and providing information about
+courses and graduation requirements at Case Western Reserve University using
+AI-powered responses and vector search.
+
+Functions:
+    get_response: Generate AI responses based on user prompts and relevant course data.
+    get_major_requirements: Retrieve requirements for a specific major.
+    get_relevant_document: Retrieve relevant course information based on user queries.
+"""
+
 from dotenv import load_dotenv
 from groq import Groq
 from pymongo import MongoClient
@@ -41,17 +54,28 @@ chat_completion = client.chat.completions.create(
     stream=False,
 )
 
-def get_response(prompt, document, user_major=None):
+def get_response(prompt, document=None, user_major=None):
     """
     Generate an AI response based on the user prompt and relevant documents.
     
+    Uses the Groq API with the llama-3.3-70b-versatile model to generate responses
+    that help CWRU students with questions about courses and major requirements.
+    
     Args:
-        prompt: The user's query.
-        document: Relevant document information retrieved from the database.
-        user_major: The user's major if available.
+        prompt (str): The user's query about courses or requirements.
+        document (str, optional): Relevant document information retrieved from the database.
+            If None, the function will attempt to retrieve relevant documents automatically.
+        user_major (str, optional): The user's major if available, used to provide
+            more targeted responses about major requirements.
     
     Returns:
-        AI-generated response text.
+        str: AI-generated response text answering the user's query.
+    
+    Example:
+        >>> response = get_response("What courses do I need for a Computer Science major?", 
+                                   user_major="Computer Science")
+        >>> print(response)
+        "To complete a Computer Science major at CWRU, you'll need the following courses..."
     """
     load_dotenv()
     
@@ -103,11 +127,28 @@ def get_major_requirements(major):
     """
     Retrieve requirements for a specific major from the database.
     
+    Searches the requirements collection in MongoDB for the specified major
+    and formats the requirements into a human-readable string.
+    
     Args:
-        major: The user's declared major.
+        major (str): The user's declared major (case-insensitive search is performed).
     
     Returns:
-        A formatted string containing major requirements.
+        str or None: A formatted string containing major requirements including 
+            credit hours, required courses, and elective courses. Returns None if the
+            major is not found or if an error occurs.
+    
+    Example:
+        >>> requirements = get_major_requirements("Computer Science")
+        >>> print(requirements)
+        "Requirements for Computer Science:
+        
+        Credit Hours Required: 120
+        
+        Required Courses:
+        - CSDS 132: Introduction to Programming in Java
+        - CSDS 233: Data Structures
+        ..."
     """
     try:
         # Perform a search for the major in the requirements collection
@@ -152,15 +193,33 @@ def get_major_requirements(major):
 
 def get_relevant_document(prompt, user_major=None):
     """
-    Create an embedding for the user prompt and use vector search on the courses embeddings collection.
-    Also incorporates major requirements if available from the requirements collection.
+    Retrieve relevant course information based on semantic similarity to the user query.
+    
+    Uses vector embeddings to perform a semantic search in the courses database and
+    also incorporates major requirements if available.
     
     Args:
-        prompt: The user's query.
-        user_major: The user's declared major (optional).
+        prompt (str): The user's query about courses or requirements.
+        user_major (str, optional): The user's declared major, used to include
+            major-specific requirements in the response.
     
     Returns:
-        A string containing relevant document details.
+        str: A formatted document containing relevant course information and/or
+            major requirements.
+    
+    Example:
+        >>> result = get_relevant_document("Tell me about machine learning courses", 
+                                          user_major="Computer Science")
+        >>> print(result)
+        "Requirements for Computer Science:
+        ...
+        
+        Here are some relevant courses that might answer your question:
+        
+        Course: CSDS 440 - Machine Learning
+        Credits: 3
+        Department: Computer Science
+        Description: This course covers fundamental concepts in machine learning..."
     """
     try:
         final_document = ""
@@ -173,7 +232,6 @@ def get_relevant_document(prompt, user_major=None):
         # Generate the embedding vector for the prompt.
         query_vector = get_embedding(prompt)
         
-        
         # Perform vector search in MongoDB
         pipeline = [
             {
@@ -183,7 +241,6 @@ def get_relevant_document(prompt, user_major=None):
                     "queryVector": query_vector,
                     "numCandidates": 100,
                     "limit": 5,
-
                 }
             },
             {
@@ -224,5 +281,3 @@ def get_relevant_document(prompt, user_major=None):
     except Exception as e:
         print(f"Error in vector search: {str(e)}")
         return f"An error occurred while searching for relevant information: {str(e)}"
-
-

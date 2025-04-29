@@ -1,3 +1,14 @@
+"""
+Text Embedding Module.
+
+This module provides functionality for generating vector embeddings from text
+using the nomic-ai/nomic-embed-text-v1 model. These embeddings enable semantic
+search capabilities throughout the CWRU Course Advisor system.
+
+Functions:
+    get_embedding: Convert text data into vector embeddings for semantic search.
+"""
+
 from sentence_transformers import SentenceTransformer
 import numpy as np
 
@@ -6,14 +17,31 @@ model = SentenceTransformer("nomic-ai/nomic-embed-text-v1", trust_remote_code=Tr
 
 def get_embedding(data, precision="float32"):
     """
-    Generate embeddings for text data.
+    Generate embeddings for text data using the nomic-embed-text-v1 model.
+    
+    Creates vector representations of text that capture semantic meaning,
+    allowing for similarity comparisons and vector search operations.
     
     Args:
-        data: String or list of strings to embed
-        precision: Precision of output embeddings ('float32' or 'float64')
+        data (str or list): String or list of strings to embed.
+        precision (str, optional): Precision of output embeddings ('float32' or 'float64').
+            Defaults to 'float32'.
     
     Returns:
-        List or list of lists containing embeddings
+        list or list of lists: Vector embeddings for the input text.
+            For a single string input, returns a single list of floats.
+            For a list of strings input, returns a list of lists.
+    
+    Raises:
+        ValueError: If input is not a string or list of strings.
+    
+    Example:
+        >>> embedding = get_embedding("What courses cover machine learning?")
+        >>> print(len(embedding))  # Prints the dimensionality of the embedding
+        768
+        >>> embeddings = get_embedding(["What is AI?", "How does machine learning work?"])
+        >>> print(len(embeddings))  # Prints the number of embeddings generated
+        2
     """
     try:
         # Handle both single strings and lists of strings
