@@ -66,6 +66,10 @@ pip install -r requirements.txt
 - **Difficulty Implementing Vector Search**
   - Integrating a working vector search was technically challenging and more complex and took more time than we anticipated.  
   *→ Future improvement*: Start with simpler keyword search first, then progressively move to vector models to ensure a working prototype earlier. 
+## Documentation
+- Documentation is found in "docs/build/index.html"
+
+
 ## License
 This project is licensed under the [MIT License](LICENSE).
 ## Github URL
