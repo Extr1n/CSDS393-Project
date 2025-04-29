@@ -1,3 +1,9 @@
+"""Main Flask application for Stellic Chatbot.
+
+This application allows users to search for, add, and manage academic courses.
+It integrates with MongoDB for data persistence and uses AI modules for intelligent querying.
+"""
+
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_session import Session
 from pymongo import MongoClient
@@ -6,10 +12,11 @@ from AI.Embeddings import get_embedding
 import random, threading, webbrowser
 import os
 from dotenv import load_dotenv
-#import coursemethods
+
 
 load_dotenv()
 
+#App configuration
 port = 5000 
 url = "http://127.0.0.1:{0}".format(port)
 
@@ -20,22 +27,21 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem" 
 Session(app)
 
-# MongoDB connection
+# MongoDB databse connection
 client = MongoClient(os.getenv('DB_KEY'))
-db = client.cluster0
-db2 = client.Documents #connection for reqs
+db = client.cluster0 # connection for courses and user info
+db2 = client.Documents # connection for degree requirements
 courses_collection = db["Documents.Courses"]
 reqs = db2["Requirements"]
 user_courses_collection = db.user_courses
 listreqs = []
 
-# Test the connection
+# Test the connection and preload requirements
 try:
-    # Test the connection by listing collections
+    
     collections = db.list_collection_names()
     print("Connected to MongoDB. Available collections:", collections)
     
-    #test req connection
     reqc = db2.list_collection_names()
     print("Connected to MongoDB. Available collections:", reqc)
     
@@ -43,7 +49,7 @@ try:
         listreqs.append(doc['title'][0])
     
     
-    # Test the courses collection
+
     course_count = courses_collection.count_documents({})
     print(f"Number of courses in database: {course_count}")
 except Exception as e:
@@ -53,6 +59,13 @@ threading.Timer(1.25, lambda: webbrowser.open(url) ).start()
 
 @app.route('/')
 def index():
+    """
+    Home page route. Checks if user is logged in and redirects accordingly.
+
+    Returns:
+        Response: Rendered HTML template for the home page or redirects to login page.
+    """
+    
     if not session.get("name"):
         return redirect("/login")
     if session["name"] == "ADMIN" and session["caseid"] == "ADMIN":
@@ -61,6 +74,14 @@ def index():
 
 @app.route('/process', methods=['POST'])
 def process():
+    """
+    Process user input from the chat interface. It retrieves the user's question,
+    checks for a valid input, and then calls the AI response function with the relevant documents.
+
+    Returns:
+        Response: Redirects to the result page with AI-generated content after processing the input.
+    """
+    
     user_input = request.form.get('question')
 
     print("Received user input:", user_input)
@@ -70,7 +91,7 @@ def process():
 
     session['user_input'] = user_input
     
-    # Get user's major from session if available
+    # retrieve user major from session if available
     user_major = session.get('major')
     print(f"User major: {user_major}")
     
@@ -99,6 +120,13 @@ def process():
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
+    """
+    Handles user login. If the request method is POST, it checks the credentials
+    and sets the session variables. If the credentials are valid, it redirects to the home page.
+
+    Returns:
+        Response: Redirects to main home page or admin dashboard, or renders the login template.
+    """
     if request.method == "POST":
         session["name"] = request.form.get("name")
         session["caseid"] = request.form.get("caseid")
@@ -111,10 +139,23 @@ def login():
 
 @app.route('/admin')
 def admin():
+    """
+    Admin page route. Render admin dashboard for course management.
+
+    Returns:
+        Response: Rendered HTML template for the admin page.
+    """
     return render_template("admin.html")
 
 @app.route('/adminCourse', methods=["POST"])
 def admin_course():
+    """
+    Admin course management route. Handles adding new courses to the database via admin panel.
+    
+
+    Returns:
+        Response: Redirects to the admin page after adding the course. Confirmatino page of course addition.
+    """
     course ={
                 "code": request.form.get("dpt") + " " + request.form.get("num"),
                 "title": request.form.get("title"),
@@ -130,15 +171,33 @@ def admin_course():
 
 @app.route('/logout')
 def logout():
+    """
+    Logout route. Clears the session and redirects to the home page.
+
+    Returns:
+        Response: Redirects to the home page.
+    """
     session.clear()
     return redirect("/")
 
 @app.route('/chat')
 def chat():
+    """
+    Renders the chat interface for user interaction. This is where users can ask questions and receive AI-generated responses.
+
+    Returns:
+        Response: Rendered HTML template for the chat page.
+    """
     return render_template('chat.html')
 
 @app.route('/result')
 def result():
+    """
+    Result page route. Displays result of AI query.
+
+    Returns:
+        Response: HTML template with the AI-generated response.
+    """
     user_input = session.get('user_input', None)
     chat_completion = session.get('chat_completion')
     relevant_doc = session.get('relevant_doc', None)
@@ -150,6 +209,13 @@ def result():
 
 @app.route('/course')
 def course():
+    """
+    User course management route. Displays available courses and user's enrolled courses.
+    This is where users can view and manage their course selections.
+
+    Returns:
+        Response: Course management HTML page with available and enrolled courses.
+    """
     if not session.get("name"):
         return redirect("/login")
     
@@ -171,6 +237,17 @@ def course():
 
 @app.route('/search_courses')
 def search_courses():
+    """
+    Search for courses based on user input. This function retrieves the search query from the request,
+    searches the courses collection, and returns matching courses.
+    
+    Query Args:
+        query (str): The search string entered by the user.
+    
+
+    Returns:
+        JSON: A list of courses matching the search query.
+    """
     query = request.args.get('query', '').strip()
     print(f"Searching for courses with query: {query}")  # Debug log
     
@@ -189,21 +266,24 @@ def search_courses():
             },
             {"_id": 0}  # Exclude MongoDB _id field
         ).limit(10))  # Limit results to 10 courses
-        # print(courses)  # Debug log
-        
-       
-        
-        
+
         print(f"Found {len(courses)} courses")  # Debug log
         print(f"Courses: {courses}")  # Debug log
-        
         return jsonify(courses)
+    
     except Exception as e:
         print(f"Error searching courses: {str(e)}")  # Debug log
         return jsonify({"error": str(e)}), 500
 
 @app.route('/add_course', methods=['POST'])
 def add_course():
+    """
+    Add a course to the user's course list. This function checks if the user is logged in,
+    validates the course data, and then adds the course to the user's list in the database.
+
+    Returns:
+        JSON: A message indicating success or failure of the operation.
+    """
     if not session.get("name"):
         print("User not logged in")  # Debug log
         return jsonify({"error": "Not logged in"}), 401
@@ -250,6 +330,13 @@ def add_course():
 
 @app.route('/init_db')
 def init_db():
+    """
+    Initialize the database by importing courses from Documents.Courses collection.
+    This function connects to the MongoDB database, retrieves all courses, and transforms them into a specific format.
+
+    Returns:
+        JSON: A message indicating success or failure of the operation, along with a sample course.
+    """
     try:
         # Connect to the actual MongoDB database
         client = MongoClient(os.getenv('DB_key'))
@@ -301,6 +388,13 @@ def init_db():
 
 @app.route('/delete_course', methods=['POST'])
 def delete_course():
+    """
+    Delete a course from the user's course list. This function checks if the user is logged in,
+    validates the course code, and then removes the course from the user's list in the database.
+
+    Returns:
+        JSON: A message indicating success or failure of the operation.
+    """
     if not session.get("name"):
         return jsonify({"error": "Not logged in"}), 401
     
