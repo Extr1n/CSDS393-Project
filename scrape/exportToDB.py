@@ -1,3 +1,20 @@
+"""Import course requirement data from a JSON file into MongoDB.
+
+This script loads course requirement data from a JSON file and imports it into
+a MongoDB collection. It uses environment variables for database connection
+parameters.
+
+Example:
+    $ python exportToDB.py
+
+Environment Variables:
+    MONGODB_URI: The MongoDB connection string URI.
+
+File Dependencies:
+    ./scrape/req/test.json: JSON file containing course requirement data to be 
+    imported into the database.
+"""
+
 import json
 import os
 from pymongo import MongoClient
