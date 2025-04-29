@@ -1,3 +1,7 @@
+"""
+    This script scrapes the course titles and descriptions from the CWRU course catelog for a specific subject area.
+"""
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -8,6 +12,15 @@ import re
 
 
 def collect_courses(link, titles, desc):
+    """
+    Collects course titles and descriptions from a given link using Selenium and BeautifulSoup.
+    This function navigates to the provided link, extracts course information, and appends it to the provided lists.
+
+    Args:
+        link (str): URL to the course catalog page for a specific subject area.
+        titles (list): A list to store the extracted course titles
+        desc (list): A list to store the extracted course descriptions
+    """
     driver =  webdriver.Chrome()
     driver.get(link)
     time.sleep(2)

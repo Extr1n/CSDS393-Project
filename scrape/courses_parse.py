@@ -1,3 +1,15 @@
+"""
+Final script for parsing the course output
+
+    Raises:
+        ValueError: If the course title cannot be parsed.
+        FileNotFoundError: If the allcourse.json file is not found.
+        json.JSONDecodeError: If there is an error decoding the JSON file.
+        Exception: If there is an error writing the parsed courses to a file.
+
+    Returns:
+        list: A list of dictionaries containing parsed course information.
+    """
 import os
 import json
 import re

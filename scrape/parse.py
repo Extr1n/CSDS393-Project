@@ -1,3 +1,12 @@
+"""
+    Script to parse the output course data from script.py. 
+    This script extracts course titles, descriptions, and other relevant information from the JSON file.
+    It also identifies and extracts prerequisites and course attributes from the descriptions, including the different degree requirements a given course fulfills.
+
+    Returns:
+        _type_: _description_
+ """
+
 import pandas as pd
 import re
 
@@ -5,6 +14,15 @@ df = pd.read_json('allcourse.json')
 
 
 def extract_prereqs(text):
+    """
+    Extracts the prerequisites from the course description text.
+
+    Args:
+        text (str): Course description text
+
+    Returns:
+        str: prerequisites string or empty string if not found
+    """
 
     match = re.search(r'Prereq:\s*(.*)', text, re.IGNORECASE)
     if not match:
