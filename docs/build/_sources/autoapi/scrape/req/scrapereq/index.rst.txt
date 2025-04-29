@@ -1,0 +1,57 @@
+scrape.req.scrapereq
+====================
+
+.. py:module:: scrape.req.scrapereq
+
+.. autoapi-nested-parse::
+
+   Scrapes course requirements from Case Western Reserve University's online bulletin
+   for a given program (e.g., Astronomy Minor), and structures the information into
+   a dictionary containing required courses, elective groups, and credit hours.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scrape.req.scrapereq.url
+   scrape.req.scrapereq.response
+   scrape.req.scrapereq.soup
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scrape.req.scrapereq.get_req
+
+
+Module Contents
+---------------
+
+.. py:data:: url
+   :value: 'https://bulletin.case.edu/arts-sciences/astronomy/astronomy-minor/#programrequirementstext'
+
+
+.. py:data:: response
+
+.. py:data:: soup
+
+.. py:function:: get_req(url)
+
+   Main function to extract course requirements from a CWRU bulletin program URL.
+
+   :param url: The URL of the bulletin program page to scrape.
+   :type url: str
+
+   :returns:
+
+             A dictionary with the extracted course requirement data
+                           including title, credit hours, necessary courses, grouped courses,
+                           and electives. Returns None if all values are empty.
+   :rtype: dict or None
+
+

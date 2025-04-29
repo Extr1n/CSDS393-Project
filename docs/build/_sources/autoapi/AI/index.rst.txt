@@ -1,0 +1,175 @@
+AI
+==
+
+.. py:module:: AI
+
+.. autoapi-nested-parse::
+
+   CWRU Course Advisor AI Package.
+
+   This package provides AI-powered tools for retrieving and providing information
+   about courses and graduation requirements at Case Western Reserve University.
+
+   Modules:
+       AIQuery: Core module for generating AI responses about courses and requirements.
+       Embeddings: Functionality for creating vector embeddings for semantic search.
+
+   Example usage:
+       from AI.AIQuery import get_response
+
+       response = get_response("What are the requirements for a Computer Science major?",
+                              user_major="Computer Science")
+       print(response)
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/AI/AIQuery/index
+   /autoapi/AI/AI_Funsies/index
+   /autoapi/AI/Embeddings/index
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   AI.get_response
+   AI.get_major_requirements
+   AI.get_relevant_document
+   AI.get_embedding
+
+
+Package Contents
+----------------
+
+.. py:function:: get_response(prompt, document=None, user_major=None)
+
+   Generate an AI response based on the user prompt and relevant documents.
+
+   Uses the Groq API with the llama-3.3-70b-versatile model to generate responses
+   that help CWRU students with questions about courses and major requirements.
+
+   :param prompt: The user's query about courses or requirements.
+   :type prompt: str
+   :param document: Relevant document information retrieved from the database.
+                    If None, the function will attempt to retrieve relevant documents automatically.
+   :type document: str, optional
+   :param user_major: The user's major if available, used to provide
+                      more targeted responses about major requirements.
+   :type user_major: str, optional
+
+   :returns: AI-generated response text answering the user's query.
+   :rtype: str
+
+   .. rubric:: Example
+
+   >>> response = get_response("What courses do I need for a Computer Science major?",
+                              user_major="Computer Science")
+   >>> print(response)
+   "To complete a Computer Science major at CWRU, you'll need the following courses..."
+
+
+.. py:function:: get_major_requirements(major)
+
+   Retrieve requirements for a specific major from the database.
+
+   Searches the requirements collection in MongoDB for the specified major
+   and formats the requirements into a human-readable string.
+
+   :param major: The user's declared major (case-insensitive search is performed).
+   :type major: str
+
+   :returns:
+
+             A formatted string containing major requirements including
+                 credit hours, required courses, and elective courses. Returns None if the
+                 major is not found or if an error occurs.
+   :rtype: str or None
+
+   .. rubric:: Example
+
+   >>> requirements = get_major_requirements("Computer Science")
+   >>> print(requirements)
+   "Requirements for Computer Science:
+
+   Credit Hours Required: 120
+
+   Required Courses:
+   - CSDS 132: Introduction to Programming in Java
+   - CSDS 233: Data Structures
+   ..."
+
+
+.. py:function:: get_relevant_document(prompt, user_major=None)
+
+   Retrieve relevant course information based on semantic similarity to the user query.
+
+   Uses vector embeddings to perform a semantic search in the courses database and
+   also incorporates major requirements if available.
+
+   :param prompt: The user's query about courses or requirements.
+   :type prompt: str
+   :param user_major: The user's declared major, used to include
+                      major-specific requirements in the response.
+   :type user_major: str, optional
+
+   :returns:
+
+             A formatted document containing relevant course information and/or
+                 major requirements.
+   :rtype: str
+
+   .. rubric:: Example
+
+   >>> result = get_relevant_document("Tell me about machine learning courses",
+                                     user_major="Computer Science")
+   >>> print(result)
+   "Requirements for Computer Science:
+   ...
+
+   Here are some relevant courses that might answer your question:
+
+   Course: CSDS 440 - Machine Learning
+   Credits: 3
+   Department: Computer Science
+   Description: This course covers fundamental concepts in machine learning..."
+
+
+.. py:function:: get_embedding(data, precision='float32')
+
+   Generate embeddings for text data using the nomic-embed-text-v1 model.
+
+   Creates vector representations of text that capture semantic meaning,
+   allowing for similarity comparisons and vector search operations.
+
+   :param data: String or list of strings to embed.
+   :type data: str or list
+   :param precision: Precision of output embeddings ('float32' or 'float64').
+                     Defaults to 'float32'.
+   :type precision: str, optional
+
+   :returns:
+
+             Vector embeddings for the input text.
+                 For a single string input, returns a single list of floats.
+                 For a list of strings input, returns a list of lists.
+   :rtype: list or list of lists
+
+   :raises ValueError: If input is not a string or list of strings.
+
+   .. rubric:: Example
+
+   >>> embedding = get_embedding("What courses cover machine learning?")
+   >>> print(len(embedding))  # Prints the dimensionality of the embedding
+   768
+   >>> embeddings = get_embedding(["What is AI?", "How does machine learning work?"])
+   >>> print(len(embeddings))  # Prints the number of embeddings generated
+   2
+
+

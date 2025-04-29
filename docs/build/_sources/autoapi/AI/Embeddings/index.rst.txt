@@ -1,0 +1,71 @@
+AI.Embeddings
+=============
+
+.. py:module:: AI.Embeddings
+
+.. autoapi-nested-parse::
+
+   Text Embedding Module.
+
+   This module provides functionality for generating vector embeddings from text
+   using the nomic-ai/nomic-embed-text-v1 model. These embeddings enable semantic
+   search capabilities throughout the CWRU Course Advisor system.
+
+   Functions:
+       get_embedding: Convert text data into vector embeddings for semantic search.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   AI.Embeddings.model
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   AI.Embeddings.get_embedding
+
+
+Module Contents
+---------------
+
+.. py:data:: model
+
+.. py:function:: get_embedding(data, precision='float32')
+
+   Generate embeddings for text data using the nomic-embed-text-v1 model.
+
+   Creates vector representations of text that capture semantic meaning,
+   allowing for similarity comparisons and vector search operations.
+
+   :param data: String or list of strings to embed.
+   :type data: str or list
+   :param precision: Precision of output embeddings ('float32' or 'float64').
+                     Defaults to 'float32'.
+   :type precision: str, optional
+
+   :returns:
+
+             Vector embeddings for the input text.
+                 For a single string input, returns a single list of floats.
+                 For a list of strings input, returns a list of lists.
+   :rtype: list or list of lists
+
+   :raises ValueError: If input is not a string or list of strings.
+
+   .. rubric:: Example
+
+   >>> embedding = get_embedding("What courses cover machine learning?")
+   >>> print(len(embedding))  # Prints the dimensionality of the embedding
+   768
+   >>> embeddings = get_embedding(["What is AI?", "How does machine learning work?"])
+   >>> print(len(embeddings))  # Prints the number of embeddings generated
+   2
+
+

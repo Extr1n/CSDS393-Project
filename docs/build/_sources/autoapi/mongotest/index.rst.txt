@@ -1,0 +1,22 @@
+mongotest
+=========
+
+.. py:module:: mongotest
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   mongotest.MONGO_URI
+   mongotest.client
+
+
+Module Contents
+---------------
+
+.. py:data:: MONGO_URI
+
+.. py:data:: client
+

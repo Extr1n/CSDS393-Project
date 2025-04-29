@@ -1,0 +1,199 @@
+app
+===
+
+.. py:module:: app
+
+.. autoapi-nested-parse::
+
+   Main Flask application for Stellic Chatbot.
+
+   This application allows users to search for, add, and manage academic courses.
+   It integrates with MongoDB for data persistence and uses AI modules for intelligent querying.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   app.port
+   app.url
+   app.app
+   app.client
+   app.db
+   app.db2
+   app.courses_collection
+   app.reqs
+   app.user_courses_collection
+   app.listreqs
+   app.collections
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   app.index
+   app.process
+   app.login
+   app.admin
+   app.admin_course
+   app.logout
+   app.chat
+   app.result
+   app.course
+   app.search_courses
+   app.add_course
+   app.init_db
+   app.delete_course
+
+
+Module Contents
+---------------
+
+.. py:data:: port
+   :value: 5000
+
+
+.. py:data:: url
+   :value: 'http://127.0.0.1:5000'
+
+
+.. py:data:: app
+
+.. py:data:: client
+
+.. py:data:: db
+
+.. py:data:: db2
+
+.. py:data:: courses_collection
+
+.. py:data:: reqs
+
+.. py:data:: user_courses_collection
+
+.. py:data:: listreqs
+   :value: []
+
+
+.. py:data:: collections
+
+.. py:function:: index()
+
+   Home page route. Checks if user is logged in and redirects accordingly.
+
+   :returns: Rendered HTML template for the home page or redirects to login page.
+   :rtype: Response
+
+
+.. py:function:: process()
+
+   Process user input from the chat interface. It retrieves the user's question,
+   checks for a valid input, and then calls the AI response function with the relevant documents.
+
+   :returns: Redirects to the result page with AI-generated content after processing the input.
+   :rtype: Response
+
+
+.. py:function:: login()
+
+   Handles user login. If the request method is POST, it checks the credentials
+   and sets the session variables. If the credentials are valid, it redirects to the home page.
+
+   :returns: Redirects to main home page or admin dashboard, or renders the login template.
+   :rtype: Response
+
+
+.. py:function:: admin()
+
+   Admin page route. Render admin dashboard for course management.
+
+   :returns: Rendered HTML template for the admin page.
+   :rtype: Response
+
+
+.. py:function:: admin_course()
+
+   Admin course management route. Handles adding new courses to the database via admin panel.
+
+
+   :returns: Redirects to the admin page after adding the course. Confirmatino page of course addition.
+   :rtype: Response
+
+
+.. py:function:: logout()
+
+   Logout route. Clears the session and redirects to the home page.
+
+   :returns: Redirects to the home page.
+   :rtype: Response
+
+
+.. py:function:: chat()
+
+   Renders the chat interface for user interaction. This is where users can ask questions and receive AI-generated responses.
+
+   :returns: Rendered HTML template for the chat page.
+   :rtype: Response
+
+
+.. py:function:: result()
+
+   Result page route. Displays result of AI query.
+
+   :returns: HTML template with the AI-generated response.
+   :rtype: Response
+
+
+.. py:function:: course()
+
+   User course management route. Displays available courses and user's enrolled courses.
+   This is where users can view and manage their course selections.
+
+   :returns: Course management HTML page with available and enrolled courses.
+   :rtype: Response
+
+
+.. py:function:: search_courses()
+
+   Search for courses based on user input. This function retrieves the search query from the request,
+   searches the courses collection, and returns matching courses.
+
+   Query Args:
+       query (str): The search string entered by the user.
+
+
+   :returns: A list of courses matching the search query.
+   :rtype: JSON
+
+
+.. py:function:: add_course()
+
+   Add a course to the user's course list. This function checks if the user is logged in,
+   validates the course data, and then adds the course to the user's list in the database.
+
+   :returns: A message indicating success or failure of the operation.
+   :rtype: JSON
+
+
+.. py:function:: init_db()
+
+   Initialize the database by importing courses from Documents.Courses collection.
+   This function connects to the MongoDB database, retrieves all courses, and transforms them into a specific format.
+
+   :returns: A message indicating success or failure of the operation, along with a sample course.
+   :rtype: JSON
+
+
+.. py:function:: delete_course()
+
+   Delete a course from the user's course list. This function checks if the user is logged in,
+   validates the course code, and then removes the course from the user's list in the database.
+
+   :returns: A message indicating success or failure of the operation.
+   :rtype: JSON
+
+

@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="Python" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scrape.parse &mdash; Stellic Chatbot 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=afdf7161"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="scrape.req" href="../req/index.html" />
+    <link rel="prev" title="scrape.exportToDB" href="../exportToDB/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Stellic Chatbot
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../AI/index.html">AI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../app/index.html">app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../conf/index.html">conf</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">scrape</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../DBTest/index.html">scrape.DBTest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../courses_parse/index.html">scrape.courses_parse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../exportToDB/index.html">scrape.exportToDB</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">scrape.parse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../req/index.html">scrape.req</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../script/index.html">scrape.script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../script_sub/index.html">scrape.script_sub</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../mongotest/index.html">mongotest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../AI_Funsies/index.html">AI_Funsies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_Parse/index.html">test_Parse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_DBTest/index.html">test_DBTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_Script/index.html">test_Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_AIQuery/index.html">test_AIQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index_courses/index.html">index_courses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_ScrapeAll/index.html">test_ScrapeAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_Embeddings/index.html">test_Embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../test_CourseParse/index.html">test_CourseParse</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Stellic Chatbot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">scrape</a></li>
+      <li class="breadcrumb-item active">scrape.parse</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/autoapi/scrape/parse/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-scrape.parse">
+<span id="scrape-parse"></span><h1>scrape.parse<a class="headerlink" href="#module-scrape.parse" title="Link to this heading"></a></h1>
+<p>Script to parse the output course data from script.py.
+This script extracts course titles, descriptions, and other relevant information from the JSON file.
+It also identifies and extracts prerequisites and course attributes from the descriptions, including the different degree requirements a given course fulfills.</p>
+<dl class="field-list simple">
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+</dl>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.df" title="scrape.parse.df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">df</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.casglob" title="scrape.parse.casglob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casglob</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.casquan" title="scrape.parse.casquan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casquan</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.sagedepsem" title="scrape.parse.sagedepsem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sagedepsem</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.sagesencap" title="scrape.parse.sagesencap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sagesencap</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.ugercapproj" title="scrape.parse.ugercapproj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugercapproj</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.ugercommin" title="scrape.parse.ugercommin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugercommin</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.ugerdisccomm" title="scrape.parse.ugerdisccomm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugerdisccomm</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.humdiv" title="scrape.parse.humdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">humdiv</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.ugerlocalglob" title="scrape.parse.ugerlocalglob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugerlocalglob</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.ugermoralethical" title="scrape.parse.ugermoralethical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugermoralethical</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.ugerquan" title="scrape.parse.ugerquan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugerquan</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.ugerglobalpers" title="scrape.parse.ugerglobalpers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugerglobalpers</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.ugerwellmovfull" title="scrape.parse.ugerwellmovfull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugerwellmovfull</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.ugerwellmovehalf" title="scrape.parse.ugerwellmovehalf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugerwellmovehalf</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.ugerwellnofull" title="scrape.parse.ugerwellnofull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugerwellnofull</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.ugerwellnohalf" title="scrape.parse.ugerwellnohalf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugerwellnohalf</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scrape.parse.extract_prereqs" title="scrape.parse.extract_prereqs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_prereqs</span></code></a>(text)</p></td>
+<td><p>Extracts the prerequisites from the course description text.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scrape.parse.add_info" title="scrape.parse.add_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_info</span></code></a>(df)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.df">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">df</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scrape.parse.df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scrape.parse.extract_prereqs">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">extract_prereqs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scrape.parse.extract_prereqs" title="Link to this definition"></a></dt>
+<dd><p>Extracts the prerequisites from the course description text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) -- Course description text</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>prerequisites string or empty string if not found</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.casglob">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">casglob</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">CAS</span> <span class="pre">Global</span> <span class="pre">&amp;</span> <span class="pre">Cultural</span> <span class="pre">Diversity</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.casglob" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.casquan">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">casquan</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'</span> <span class="pre">Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">CAS</span> <span class="pre">Quantitative</span> <span class="pre">Reasoning</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.casquan" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.sagedepsem">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">sagedepsem</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">SAGES</span> <span class="pre">Departmental</span> <span class="pre">Seminar</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.sagedepsem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.sagesencap">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">sagesencap</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">SAGES</span> <span class="pre">Senior</span> <span class="pre">Capstone</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.sagesencap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugercapproj">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugercapproj</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Capstone</span> <span class="pre">Project</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugercapproj" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugercommin">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugercommin</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Communication</span> <span class="pre">Intensive</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugercommin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugerdisccomm">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugerdisccomm</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Disciplinary</span> <span class="pre">Communication</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugerdisccomm" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.humdiv">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">humdiv</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Human</span> <span class="pre">Diversity</span> <span class="pre">&amp;</span> <span class="pre">Commonality</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.humdiv" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugerlocalglob">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugerlocalglob</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Local</span> <span class="pre">&amp;</span> <span class="pre">Global</span> <span class="pre">Engagement</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugerlocalglob" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugermoralethical">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugermoralethical</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Moral</span> <span class="pre">&amp;</span> <span class="pre">Ethical</span> <span class="pre">Reasoning</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugermoralethical" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugerquan">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugerquan</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Quantitative</span> <span class="pre">Reasoning</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugerquan" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugerglobalpers">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugerglobalpers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Understanding</span> <span class="pre">Global</span> <span class="pre">Perspectives</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugerglobalpers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugerwellmovfull">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugerwellmovfull</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Full-Semester</span> <span class="pre">Wellness/Movement</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugerwellmovfull" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugerwellmovehalf">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugerwellmovehalf</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Half-Semester</span> <span class="pre">Wellness/Movement</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugerwellmovehalf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugerwellnofull">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugerwellnofull</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Full-Semester</span> <span class="pre">Wellness/Non-movement</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugerwellnofull" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scrape.parse.ugerwellnohalf">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">ugerwellnohalf</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Counts</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">Half-Semester</span> <span class="pre">Wellness/Non-movement</span> <span class="pre">course'</span></em><a class="headerlink" href="#scrape.parse.ugerwellnohalf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scrape.parse.add_info">
+<span class="sig-prename descclassname"><span class="pre">scrape.parse.</span></span><span class="sig-name descname"><span class="pre">add_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scrape.parse.add_info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../exportToDB/index.html" class="btn btn-neutral float-left" title="scrape.exportToDB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../req/index.html" class="btn btn-neutral float-right" title="scrape.req" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Aidan Bugayong, Natalie Lee, Sam Lin, Brandon Lee.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

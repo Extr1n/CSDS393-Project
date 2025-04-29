@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="Python" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>app &mdash; Stellic Chatbot 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=afdf7161"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="conf" href="../conf/index.html" />
+    <link rel="prev" title="AI.Embeddings" href="../AI/Embeddings/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Stellic Chatbot
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../AI/index.html">AI</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">app</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#app.port"><code class="docutils literal notranslate"><span class="pre">port</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.url"><code class="docutils literal notranslate"><span class="pre">url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.app"><code class="docutils literal notranslate"><span class="pre">app</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.client"><code class="docutils literal notranslate"><span class="pre">client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.db"><code class="docutils literal notranslate"><span class="pre">db</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.db2"><code class="docutils literal notranslate"><span class="pre">db2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.courses_collection"><code class="docutils literal notranslate"><span class="pre">courses_collection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.reqs"><code class="docutils literal notranslate"><span class="pre">reqs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.user_courses_collection"><code class="docutils literal notranslate"><span class="pre">user_courses_collection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.listreqs"><code class="docutils literal notranslate"><span class="pre">listreqs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.collections"><code class="docutils literal notranslate"><span class="pre">collections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.process"><code class="docutils literal notranslate"><span class="pre">process()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.admin"><code class="docutils literal notranslate"><span class="pre">admin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.admin_course"><code class="docutils literal notranslate"><span class="pre">admin_course()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.logout"><code class="docutils literal notranslate"><span class="pre">logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.chat"><code class="docutils literal notranslate"><span class="pre">chat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.result"><code class="docutils literal notranslate"><span class="pre">result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.course"><code class="docutils literal notranslate"><span class="pre">course()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.search_courses"><code class="docutils literal notranslate"><span class="pre">search_courses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.add_course"><code class="docutils literal notranslate"><span class="pre">add_course()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.init_db"><code class="docutils literal notranslate"><span class="pre">init_db()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.delete_course"><code class="docutils literal notranslate"><span class="pre">delete_course()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../conf/index.html">conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scrape/index.html">scrape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mongotest/index.html">mongotest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AI_Funsies/index.html">AI_Funsies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_Parse/index.html">test_Parse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_DBTest/index.html">test_DBTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_Script/index.html">test_Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_AIQuery/index.html">test_AIQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_courses/index.html">index_courses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_ScrapeAll/index.html">test_ScrapeAll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_Embeddings/index.html">test_Embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test_CourseParse/index.html">test_CourseParse</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Stellic Chatbot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+      <li class="breadcrumb-item active">app</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/autoapi/app/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-app">
+<span id="app"></span><h1>app<a class="headerlink" href="#module-app" title="Link to this heading"></a></h1>
+<p>Main Flask application for Stellic Chatbot.</p>
+<p>This application allows users to search for, add, and manage academic courses.
+It integrates with MongoDB for data persistence and uses AI modules for intelligent querying.</p>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.port" title="app.port"><code class="xref py py-obj docutils literal notranslate"><span class="pre">port</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.url" title="app.url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">url</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.app" title="app.app"><code class="xref py py-obj docutils literal notranslate"><span class="pre">app</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.client" title="app.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.db" title="app.db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">db</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.db2" title="app.db2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">db2</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.courses_collection" title="app.courses_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">courses_collection</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.reqs" title="app.reqs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reqs</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.user_courses_collection" title="app.user_courses_collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user_courses_collection</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.listreqs" title="app.listreqs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">listreqs</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.collections" title="app.collections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collections</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.index" title="app.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>()</p></td>
+<td><p>Home page route. Checks if user is logged in and redirects accordingly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.process" title="app.process"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process</span></code></a>()</p></td>
+<td><p>Process user input from the chat interface. It retrieves the user's question,</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.login" title="app.login"><code class="xref py py-obj docutils literal notranslate"><span class="pre">login</span></code></a>()</p></td>
+<td><p>Handles user login. If the request method is POST, it checks the credentials</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.admin" title="app.admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">admin</span></code></a>()</p></td>
+<td><p>Admin page route. Render admin dashboard for course management.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.admin_course" title="app.admin_course"><code class="xref py py-obj docutils literal notranslate"><span class="pre">admin_course</span></code></a>()</p></td>
+<td><p>Admin course management route. Handles adding new courses to the database via admin panel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.logout" title="app.logout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logout</span></code></a>()</p></td>
+<td><p>Logout route. Clears the session and redirects to the home page.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.chat" title="app.chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat</span></code></a>()</p></td>
+<td><p>Renders the chat interface for user interaction. This is where users can ask questions and receive AI-generated responses.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.result" title="app.result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">result</span></code></a>()</p></td>
+<td><p>Result page route. Displays result of AI query.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.course" title="app.course"><code class="xref py py-obj docutils literal notranslate"><span class="pre">course</span></code></a>()</p></td>
+<td><p>User course management route. Displays available courses and user's enrolled courses.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.search_courses" title="app.search_courses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_courses</span></code></a>()</p></td>
+<td><p>Search for courses based on user input. This function retrieves the search query from the request,</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.add_course" title="app.add_course"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_course</span></code></a>()</p></td>
+<td><p>Add a course to the user's course list. This function checks if the user is logged in,</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#app.init_db" title="app.init_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_db</span></code></a>()</p></td>
+<td><p>Initialize the database by importing courses from Documents.Courses collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#app.delete_course" title="app.delete_course"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_course</span></code></a>()</p></td>
+<td><p>Delete a course from the user's course list. This function checks if the user is logged in,</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="app.port">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">port</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5000</span></em><a class="headerlink" href="#app.port" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.url">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'http://127.0.0.1:5000'</span></em><a class="headerlink" href="#app.url" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.app">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">app</span></span><a class="headerlink" href="#app.app" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.client">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">client</span></span><a class="headerlink" href="#app.client" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.db">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">db</span></span><a class="headerlink" href="#app.db" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.db2">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">db2</span></span><a class="headerlink" href="#app.db2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.courses_collection">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">courses_collection</span></span><a class="headerlink" href="#app.courses_collection" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.reqs">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">reqs</span></span><a class="headerlink" href="#app.reqs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.user_courses_collection">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">user_courses_collection</span></span><a class="headerlink" href="#app.user_courses_collection" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.listreqs">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">listreqs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#app.listreqs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="app.collections">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">collections</span></span><a class="headerlink" href="#app.collections" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.index">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.index" title="Link to this definition"></a></dt>
+<dd><p>Home page route. Checks if user is logged in and redirects accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rendered HTML template for the home page or redirects to login page.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.process">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.process" title="Link to this definition"></a></dt>
+<dd><p>Process user input from the chat interface. It retrieves the user's question,
+checks for a valid input, and then calls the AI response function with the relevant documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redirects to the result page with AI-generated content after processing the input.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.login">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.login" title="Link to this definition"></a></dt>
+<dd><p>Handles user login. If the request method is POST, it checks the credentials
+and sets the session variables. If the credentials are valid, it redirects to the home page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redirects to main home page or admin dashboard, or renders the login template.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.admin">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">admin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.admin" title="Link to this definition"></a></dt>
+<dd><p>Admin page route. Render admin dashboard for course management.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rendered HTML template for the admin page.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.admin_course">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">admin_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.admin_course" title="Link to this definition"></a></dt>
+<dd><p>Admin course management route. Handles adding new courses to the database via admin panel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redirects to the admin page after adding the course. Confirmatino page of course addition.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.logout">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.logout" title="Link to this definition"></a></dt>
+<dd><p>Logout route. Clears the session and redirects to the home page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redirects to the home page.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.chat">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">chat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.chat" title="Link to this definition"></a></dt>
+<dd><p>Renders the chat interface for user interaction. This is where users can ask questions and receive AI-generated responses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rendered HTML template for the chat page.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.result">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.result" title="Link to this definition"></a></dt>
+<dd><p>Result page route. Displays result of AI query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HTML template with the AI-generated response.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.course">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.course" title="Link to this definition"></a></dt>
+<dd><p>User course management route. Displays available courses and user's enrolled courses.
+This is where users can view and manage their course selections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Course management HTML page with available and enrolled courses.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.search_courses">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">search_courses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.search_courses" title="Link to this definition"></a></dt>
+<dd><p>Search for courses based on user input. This function retrieves the search query from the request,
+searches the courses collection, and returns matching courses.</p>
+<dl class="simple">
+<dt>Query Args:</dt><dd><p>query (str): The search string entered by the user.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of courses matching the search query.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.add_course">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">add_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.add_course" title="Link to this definition"></a></dt>
+<dd><p>Add a course to the user's course list. This function checks if the user is logged in,
+validates the course data, and then adds the course to the user's list in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A message indicating success or failure of the operation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.init_db">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">init_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.init_db" title="Link to this definition"></a></dt>
+<dd><p>Initialize the database by importing courses from Documents.Courses collection.
+This function connects to the MongoDB database, retrieves all courses, and transforms them into a specific format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A message indicating success or failure of the operation, along with a sample course.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.delete_course">
+<span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">delete_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.delete_course" title="Link to this definition"></a></dt>
+<dd><p>Delete a course from the user's course list. This function checks if the user is logged in,
+validates the course code, and then removes the course from the user's list in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A message indicating success or failure of the operation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../AI/Embeddings/index.html" class="btn btn-neutral float-left" title="AI.Embeddings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../conf/index.html" class="btn btn-neutral float-right" title="conf" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Aidan Bugayong, Natalie Lee, Sam Lin, Brandon Lee.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

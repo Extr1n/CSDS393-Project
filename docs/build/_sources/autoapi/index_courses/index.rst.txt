@@ -1,0 +1,32 @@
+index_courses
+=============
+
+.. py:module:: index_courses
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   index_courses.index_collections
+   index_courses.index_collection
+
+
+Module Contents
+---------------
+
+.. py:function:: index_collections()
+
+   Generate and store embeddings for all courses and requirements in the database.
+   This should be run once to initialize the vector database.
+
+
+.. py:function:: index_collection(collection, collection_type)
+
+   Generate and store embeddings for all documents in a collection.
+
+   :param collection: MongoDB collection object
+   :param collection_type: String identifier for the collection ('courses' or 'requirements')
+
+

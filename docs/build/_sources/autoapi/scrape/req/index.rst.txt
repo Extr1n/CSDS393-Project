@@ -1,0 +1,16 @@
+scrape.req
+==========
+
+.. py:module:: scrape.req
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/scrape/req/scrapeall/index
+   /autoapi/scrape/req/scrapereq/index
+
+

@@ -1,0 +1,24 @@
+API Reference
+=============
+
+This page contains auto-generated API reference documentation [#f1]_.
+
+.. toctree::
+   :titlesonly:
+
+   /autoapi/AI/index
+   /autoapi/app/index
+   /autoapi/conf/index
+   /autoapi/scrape/index
+   /autoapi/mongotest/index
+   /autoapi/AI_Funsies/index
+   /autoapi/test_Parse/index
+   /autoapi/test_DBTest/index
+   /autoapi/test_Script/index
+   /autoapi/test_AIQuery/index
+   /autoapi/index_courses/index
+   /autoapi/test_ScrapeAll/index
+   /autoapi/test_Embeddings/index
+   /autoapi/test_CourseParse/index
+
+.. [#f1] Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-autoapi>`_

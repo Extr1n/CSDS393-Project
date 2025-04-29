@@ -1,0 +1,21 @@
+scrape
+======
+
+.. py:module:: scrape
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/scrape/DBTest/index
+   /autoapi/scrape/courses_parse/index
+   /autoapi/scrape/exportToDB/index
+   /autoapi/scrape/parse/index
+   /autoapi/scrape/req/index
+   /autoapi/scrape/script/index
+   /autoapi/scrape/script_sub/index
+
+

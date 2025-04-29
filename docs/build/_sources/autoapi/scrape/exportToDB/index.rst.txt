@@ -1,0 +1,28 @@
+scrape.exportToDB
+=================
+
+.. py:module:: scrape.exportToDB
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scrape.exportToDB.data
+   scrape.exportToDB.client
+   scrape.exportToDB.db
+   scrape.exportToDB.collection
+
+
+Module Contents
+---------------
+
+.. py:data:: data
+
+.. py:data:: client
+
+.. py:data:: db
+
+.. py:data:: collection
+

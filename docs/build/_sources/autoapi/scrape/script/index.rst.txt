@@ -1,0 +1,51 @@
+scrape.script
+=============
+
+.. py:module:: scrape.script
+
+.. autoapi-nested-parse::
+
+   Main script to scrape course descriptions from Case Western Reserve University Bulletin.
+   This script uses Selenium to navigate the bulletin website, extract course titles and descriptions.
+
+   Visits main CWRU bulletin and passes each page to script_sub.py
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scrape.script.driver
+   scrape.script.links
+   scrape.script.href
+   scrape.script.titles
+   scrape.script.desc
+   scrape.script.d
+   scrape.script.df
+
+
+Module Contents
+---------------
+
+.. py:data:: driver
+
+.. py:data:: links
+
+.. py:data:: href
+   :value: []
+
+
+.. py:data:: titles
+   :value: []
+
+
+.. py:data:: desc
+   :value: []
+
+
+.. py:data:: d
+
+.. py:data:: df
+

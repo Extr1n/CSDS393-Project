@@ -1,0 +1,35 @@
+scrape.script_sub
+=================
+
+.. py:module:: scrape.script_sub
+
+.. autoapi-nested-parse::
+
+   This script scrapes the course titles and descriptions from the CWRU course catelog for a specific subject area.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scrape.script_sub.collect_courses
+
+
+Module Contents
+---------------
+
+.. py:function:: collect_courses(link, titles, desc)
+
+   Collects course titles and descriptions from a given link using Selenium and BeautifulSoup.
+   This function navigates to the provided link, extracts course information, and appends it to the provided lists.
+
+   :param link: URL to the course catalog page for a specific subject area.
+   :type link: str
+   :param titles: A list to store the extracted course titles
+   :type titles: list
+   :param desc: A list to store the extracted course descriptions
+   :type desc: list
+
+

@@ -1,0 +1,133 @@
+scrape.parse
+============
+
+.. py:module:: scrape.parse
+
+.. autoapi-nested-parse::
+
+   Script to parse the output course data from script.py.
+   This script extracts course titles, descriptions, and other relevant information from the JSON file.
+   It also identifies and extracts prerequisites and course attributes from the descriptions, including the different degree requirements a given course fulfills.
+
+   :returns: _description_
+   :rtype: _type_
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scrape.parse.df
+   scrape.parse.casglob
+   scrape.parse.casquan
+   scrape.parse.sagedepsem
+   scrape.parse.sagesencap
+   scrape.parse.ugercapproj
+   scrape.parse.ugercommin
+   scrape.parse.ugerdisccomm
+   scrape.parse.humdiv
+   scrape.parse.ugerlocalglob
+   scrape.parse.ugermoralethical
+   scrape.parse.ugerquan
+   scrape.parse.ugerglobalpers
+   scrape.parse.ugerwellmovfull
+   scrape.parse.ugerwellmovehalf
+   scrape.parse.ugerwellnofull
+   scrape.parse.ugerwellnohalf
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scrape.parse.extract_prereqs
+   scrape.parse.add_info
+
+
+Module Contents
+---------------
+
+.. py:data:: df
+   :value: None
+
+
+.. py:function:: extract_prereqs(text)
+
+   Extracts the prerequisites from the course description text.
+
+   :param text: Course description text
+   :type text: str
+
+   :returns: prerequisites string or empty string if not found
+   :rtype: str
+
+
+.. py:data:: casglob
+   :value: 'Counts as a CAS Global & Cultural Diversity course'
+
+
+.. py:data:: casquan
+   :value: ' Counts as a CAS Quantitative Reasoning course'
+
+
+.. py:data:: sagedepsem
+   :value: 'Counts as a SAGES Departmental Seminar course'
+
+
+.. py:data:: sagesencap
+   :value: 'Counts as a SAGES Senior Capstone course'
+
+
+.. py:data:: ugercapproj
+   :value: 'Counts as a Capstone Project course'
+
+
+.. py:data:: ugercommin
+   :value: 'Counts as a Communication Intensive course'
+
+
+.. py:data:: ugerdisccomm
+   :value: 'Counts as a Disciplinary Communication course'
+
+
+.. py:data:: humdiv
+   :value: 'Counts as a Human Diversity & Commonality course'
+
+
+.. py:data:: ugerlocalglob
+   :value: 'Counts as a Local & Global Engagement course'
+
+
+.. py:data:: ugermoralethical
+   :value: 'Counts as a Moral & Ethical Reasoning course'
+
+
+.. py:data:: ugerquan
+   :value: 'Counts as a Quantitative Reasoning course'
+
+
+.. py:data:: ugerglobalpers
+   :value: 'Counts as a Understanding Global Perspectives course'
+
+
+.. py:data:: ugerwellmovfull
+   :value: 'Counts as a Full-Semester Wellness/Movement course'
+
+
+.. py:data:: ugerwellmovehalf
+   :value: 'Counts as a Half-Semester Wellness/Movement course'
+
+
+.. py:data:: ugerwellnofull
+   :value: 'Counts as a Full-Semester Wellness/Non-movement course'
+
+
+.. py:data:: ugerwellnohalf
+   :value: 'Counts as a Half-Semester Wellness/Non-movement course'
+
+
+.. py:function:: add_info(df)
+

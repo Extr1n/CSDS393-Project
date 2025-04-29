@@ -1,0 +1,72 @@
+scrape.courses_parse
+====================
+
+.. py:module:: scrape.courses_parse
+
+.. autoapi-nested-parse::
+
+   Final script for parsing the course output
+
+       Raises:
+           ValueError: If the course title cannot be parsed.
+           FileNotFoundError: If the allcourse.json file is not found.
+           json.JSONDecodeError: If there is an error decoding the JSON file.
+           Exception: If there is an error writing the parsed courses to a file.
+
+       Returns:
+           list: A list of dictionaries containing parsed course information.
+
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scrape.courses_parse.directory_path
+   scrape.courses_parse.parsed_courses
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scrape.courses_parse.parse_course_info
+   scrape.courses_parse.parse_allcourses_json
+
+
+Module Contents
+---------------
+
+.. py:function:: parse_course_info(course_data)
+
+   Parse course information and extract separate components.
+
+   :param course_data: Dictionary containing course title and description
+   :type course_data: dict
+
+   :returns: Parsed course information with separated components
+   :rtype: dict
+
+
+.. py:function:: parse_allcourses_json(directory_path)
+
+   Parse the allcourse.json file in the specified directory.
+
+   :param directory_path: Path to the directory containing allcourse.json
+   :type directory_path: str
+
+   :returns: List of parsed course information
+   :rtype: list
+
+
+.. py:data:: directory_path
+   :value: '/Users/tsaially/Desktop/Classes/CSDS 393/project/CSDS393-Project/scrape'
+
+
+.. py:data:: parsed_courses
+   :value: []
+
+

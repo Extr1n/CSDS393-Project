@@ -1,0 +1,21 @@
+AI_Funsies
+==========
+
+.. py:module:: AI_Funsies
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   AI_Funsies.string
+
+
+Module Contents
+---------------
+
+.. py:data:: string
+   :value: 'I am interested in theoretical computer science'
+
+

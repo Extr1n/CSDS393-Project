@@ -1,0 +1,55 @@
+scrape.req.scrapeall
+====================
+
+.. py:module:: scrape.req.scrapeall
+
+.. autoapi-nested-parse::
+
+   Scrapes academic program requirement data from Case Western Reserve University's
+   online bulletin using Selenium and a custom parser (`scrapereq.py`). The scraped
+   data is saved as a JSON file.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scrape.req.scrapeall.main
+   scrape.req.scrapeall.driver
+   scrape.req.scrapeall.ini
+   scrape.req.scrapeall.href
+   scrape.req.scrapeall.a
+   scrape.req.scrapeall.all_course_req
+   scrape.req.scrapeall.b
+   scrape.req.scrapeall.url
+
+
+Module Contents
+---------------
+
+.. py:data:: main
+   :value: 'https://bulletin.case.edu/academic-programs/#filter=.filter_2'
+
+
+.. py:data:: driver
+
+.. py:data:: ini
+
+.. py:data:: href
+   :value: []
+
+
+.. py:data:: a
+
+.. py:data:: all_course_req
+   :value: []
+
+
+.. py:data:: b
+   :value: True
+
+
+.. py:data:: url
+

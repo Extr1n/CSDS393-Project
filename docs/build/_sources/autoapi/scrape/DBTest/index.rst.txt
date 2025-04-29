@@ -1,0 +1,22 @@
+scrape.DBTest
+=============
+
+.. py:module:: scrape.DBTest
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scrape.DBTest.loader
+   scrape.DBTest.docs
+
+
+Module Contents
+---------------
+
+.. py:data:: loader
+
+.. py:data:: docs
+
