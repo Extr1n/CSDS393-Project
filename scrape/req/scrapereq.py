@@ -1,3 +1,9 @@
+"""
+Scrapes course requirements from Case Western Reserve University's online bulletin 
+for a given program (e.g., Astronomy Minor), and structures the information into 
+a dictionary containing required courses, elective groups, and credit hours.
+"""
+
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -13,6 +19,17 @@ soup = BeautifulSoup(response.text, "html.parser")
 
 # Print formatted HTML
 def get_req(url):
+    """
+    Main function to extract course requirements from a CWRU bulletin program URL.
+
+    Args:
+        url (str): The URL of the bulletin program page to scrape.
+
+    Returns:
+        dict or None: A dictionary with the extracted course requirement data 
+                      including title, credit hours, necessary courses, grouped courses,
+                      and electives. Returns None if all values are empty.
+    """
     blocks = []
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
@@ -20,6 +37,13 @@ def get_req(url):
     title = soup.find("h1", class_="page-title")
         
     def collect_req(link, blocks):
+        """
+        Helper function to collect all course blocks from a bulletin program page.
+
+        Args:
+            link (str): URL of the bulletin program page.
+            blocks (list): A list to append found course blocks (HTML table elements).
+        """
         response = requests.get(link)
         soup = BeautifulSoup(response.text, "html.parser")
         
@@ -39,6 +63,12 @@ def get_req(url):
     credithours = []
 
     def parse_block(block):
+        """
+        Parses an HTML block to extract course information.
+
+        Args:
+            block (bs4.element.Tag): A BeautifulSoup object representing a course table.
+        """
         table = block.find("tbody")
         list = table.find_all("tr")
         required = False

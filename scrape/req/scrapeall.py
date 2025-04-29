@@ -1,3 +1,9 @@
+"""
+Scrapes academic program requirement data from Case Western Reserve University's 
+online bulletin using Selenium and a custom parser (`scrapereq.py`). The scraped 
+data is saved as a JSON file.
+"""
+
 import requests
 from bs4 import BeautifulSoup
 import json
